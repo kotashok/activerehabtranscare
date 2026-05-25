@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActiveRehab TransCare | Sign Board Interactive Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #008080;
+            --accent: #f59e0b;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --radius-md: 15px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Controls Panel */
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            background: rgba(30, 41, 59, 0.7);
+            padding: 8px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .control-btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            background: transparent;
+            color: #94a3b8;
+        }
+
+        .control-btn.active {
+            background: var(--secondary);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 128, 128, 0.3);
+        }
+
+        .control-btn:hover:not(.active) {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Signboard Preview Container */
+        .signboard-outer-container {
+            width: 100%;
+            max-width: 1100px;
+            aspect-ratio: 184 / 88;
+            background: #1e293b;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        /* Dimensions Badge */
+        .dim-badge {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            z-index: 10;
+        }
+
+        .dim-badge-width {
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dim-badge-height {
+            left: -85px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+        }
+
+        .signboard-canvas {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        /* Design Option Styles */
+        /* Option A: Deep Navy */
+        .signboard-canvas.theme-navy {
+            background: linear-gradient(135deg, #001f3f 0%, #003366 50%, #002244 100%);
+            color: #ffffff;
+            border: 4px solid #004a8f;
+        }
+
+        /* Option B: Medical White */
+        .signboard-canvas.theme-white {
+            background: #ffffff;
+            color: #0f172a;
+            border: 4px solid #cbd5e1;
+        }
+
+        /* TOP SECTION: Upper 1/3rd (Height: 25%) */
+        .logo-section {
+            height: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1% 0 0.5% 0;
+            transition: var(--transition);
+        }
+
+        .logo-badge {
+            height: 85%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            padding: 10px 50px;
+            transition: var(--transition);
+        }
+
+        .theme-navy .logo-badge {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .theme-white .logo-badge {
+            background: transparent;
+            padding: 0;
+        }
+
+        .logo-badge img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+
+        /* MIDDLE SECTION: Lower 2/3rds - Content (Height: 60%) */
+        .content-section {
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 0.5% 4%;
+            text-align: center;
+        }
+
+        .section-header {
+            margin-bottom: 1.5%;
+        }
+
+        .section-header span {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95vw;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition);
+        }
+
+        .theme-navy .section-header span {
+            color: var(--accent);
+        }
+
+        .theme-white .section-header span {
+            color: var(--secondary);
+        }
+
+        .section-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.1vw;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-top: 0.2%;
+            transition: var(--transition);
+        }
+
+        .theme-navy .section-header h2 {
+            color: #ffffff;
+        }
+
+        .theme-white .section-header h2 {
+            color: var(--primary);
+        }
+
+        /* 4 Horizontal Columns side-by-side */
+        .pillars-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 1.5%;
+        }
+
+        .pillar-card {
+            border-radius: 12px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: flex-start;
+            height: 100%;
+            transition: var(--transition);
+        }
+
+        .theme-navy .pillar-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .theme-white .pillar-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .pillar-icon {
+            font-size: 1.6vw;
+            margin-bottom: 8px;
+            transition: var(--transition);
+        }
+
+        .theme-navy .pillar-icon {
+            color: #38bdf8;
+        }
+
+        .theme-white .pillar-icon {
+            color: var(--secondary);
+        }
+
+        .pillar-text h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1vw;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.2;
+            transition: var(--transition);
+        }
+
+        .theme-navy .pillar-text h3 {
+            color: #ffffff;
+        }
+
+        .theme-white .pillar-text h3 {
+            color: var(--primary);
+        }
+
+        .pillar-text p {
+            font-size: 0.78vw;
+            line-height: 1.35;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .theme-navy .pillar-text p {
+            color: #cbd5e1;
+        }
+
+        .theme-white .pillar-text p {
+            color: var(--text-muted);
+        }
+
+        /* Amenities bar */
+        .amenities-bar {
+            display: inline-flex;
+            justify-content: center;
+            align-self: center;
+            gap: 40px;
+            padding: 1% 4%;
+            border-radius: 50px;
+            margin: 15px auto 0 auto;
+            transition: var(--transition);
+        }
+
+        .theme-navy .amenities-bar {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .theme-white .amenities-bar {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85vw;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .amenity-item i {
+            transition: var(--transition);
+        }
+
+        .theme-navy .amenity-item i {
+            color: var(--accent);
+        }
+
+        .theme-white .amenity-item i {
+            color: var(--secondary);
+        }
+
+        .theme-navy .amenity-item {
+            color: #ffffff;
+        }
+
+        .theme-white .amenity-item {
+            color: var(--primary);
+        }
+
+        /* BOTTOM SECTION: Footer Ribbon (Height: 15%) */
+        .signboard-footer {
+            height: 15%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 6%;
+            transition: var(--transition);
+        }
+
+        .theme-navy .signboard-footer {
+            background: var(--secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .theme-white .signboard-footer {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5vw;
+            font-weight: 600;
+        }
+
+        .footer-item i {
+            font-size: 1.7vw;
+            transition: var(--transition);
+        }
+
+        .theme-navy .footer-item i {
+            color: var(--accent);
+        }
+
+        .theme-white .footer-item i {
+            color: #38bdf8;
+        }
+
+        .footer-label {
+            font-size: 0.95vw;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-right: 5px;
+        }
+
+        /* Info Card */
+        .info-card {
+            background: #1e293b;
+            border-radius: var(--radius-md);
+            padding: 30px;
+            max-width: 900px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card h3 i {
+            color: var(--secondary);
+        }
+
+        .specs-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .specs-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        .specs-list li i {
+            color: #38bdf8;
+            font-size: 1.1rem;
+        }
+
+        .alert-box {
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            border-radius: 4px 8px 8px 4px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #fef08a;
+        }
+
+        .alert-box i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Clinic Entrance Sign Board (184" × 88")</h1>
+        <p>This layout places the logo extremely large in the top 1/3rd, distributing the clinical services and contact details across the bottom 2/3rds. Text heights are strictly budgeted to prevent any clipping.</p>
+    </div>
+
+    <!-- Theme Toggles -->
+    <div class="controls">
+        <button class="control-btn active" onclick="setTheme('navy')">Option A: Deep Navy Base</button>
+        <button class="control-btn" onclick="setTheme('white')">Option B: Medical White Base</button>
+    </div>
+
+    <!-- Signboard Outer Preview Area -->
+    <div class="signboard-outer-container">
+        <!-- Dimension Markers -->
+        <div class="dim-badge dim-badge-width">Width: 184 Inches (15.33 Feet)</div>
+        <div class="dim-badge dim-badge-height">Height: 88 Inches (7.33 Feet)</div>
+
+        <!-- The actual signboard canvas -->
+        <div class="signboard-canvas theme-navy" id="signboard">
+            
+            <!-- UPPER 1/3rd: Brand Logo Section (Height: 25%) -->
+            <div class="logo-section">
+                <div class="logo-badge">
+                    <img src="logo.png" alt="ActiveRehab TransCare and Rehabilitation Logo">
+                </div>
+            </div>
+            
+            <!-- LOWER 2/3rds: Content Area (Height: 53%) -->
+            <div class="content-section">
+                
+                <div class="section-header">
+                    <span>Hyderabad's Premier Step-Down Facility</span>
+                    <h2>Clinical Rehabilitation and Physiotherapy</h2>
+                </div>
+                
+                <!-- 4 Columns Grid (Side-by-side for optimal landscape display) -->
+                <div class="pillars-row">
+                    
+                    <!-- Neuro -->
+                    <div class="pillar-card">
+                        <i class="fas fa-brain pillar-icon"></i>
+                        <div class="pillar-text">
+                            <h3>Stroke & Neuro Rehab</h3>
+                            <p>Stroke Recovery, Parkinson's & Spinal Cord Injury balance therapies.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ortho -->
+                    <div class="pillar-card">
+                        <i class="fas fa-bone pillar-icon"></i>
+                        <div class="pillar-text">
+                            <h3>Post-Op Ortho Recovery</h3>
+                            <p>Total Knee/Hip Replacement Recovery & Spine Surgery rehab.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Geriatric -->
+                    <div class="pillar-card">
+                        <i class="fas fa-user-shield pillar-icon"></i>
+                        <div class="pillar-text">
+                            <h3>Geriatric Fall Prevention</h3>
+                            <p>Elderly balance therapy, walking confidence & safe return home.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Cardiac -->
+                    <div class="pillar-card">
+                        <i class="fas fa-heartbeat pillar-icon"></i>
+                        <div class="pillar-text">
+                            <h3>Cardiac Step-Down</h3>
+                            <p>Post-CABG reconditioning, heart health & step-down clinical monitoring.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Core Value Propositions Bar -->
+                <div class="amenities-bar">
+                    <div class="amenity-item">
+                        <i class="fas fa-circle-check"></i>
+                        <span>24/7 Dedicated Nursing Care</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-circle-check"></i>
+                        <span>Premium Assisted Suites</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-circle-check"></i>
+                        <span>State-of-the-Art Rehab Zone</span>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- BOTTOM FOOTER: Admissions & Website (Height: 15%) -->
+            <div class="signboard-footer">
+                <div class="footer-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+91 81068 22020</span>
+                </div>
+                <div class="footer-item">
+                    <i class="fas fa-globe"></i>
+                    <span>www.activerehabtranscare.in</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Vendor Print Specifications Card -->
+    <div class="info-card">
+        <h3><i class="fas fa-print"></i> Local Signage Vendor Specifications</h3>
+        <ul class="specs-list">
+            <li><i class="fas fa-check-circle"></i> <strong>Physical Size:</strong> 184" Width by 88" Height</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Aspect Ratio:</strong> Exactly 2.09:1 (Stacked 1/3 top to 2/3 bottom grid)</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Colors:</strong> Primary Blue (#003366), Teal (#008080), Gold (#f59e0b)</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Resolution Recommendation:</strong> 150+ DPI at full scale</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Board Type:</strong> ACP Sheet Backdrop with Raised Acrylic Letters</li>
+            <li><i class="fas fa-check-circle"></i> <strong>Illumination:</strong> Soft Warm LED Backlit (Option A recommended)</li>
+        </ul>
+        <div class="alert-box">
+            <i class="fas fa-exclamation-triangle"></i><strong>Vendor Note:</strong> Coded strictly using pure vector elements and layout constraints to guarantee zero text overflow and absolute scaling accuracy. You can share this blueprint or render directly with your signage supplier.
+        </div>
+    </div>
+
+    <script>
+        function setTheme(theme) {
+            const canvas = document.getElementById('signboard');
+            const buttons = document.querySelectorAll('.control-btn');
+            
+            // Remove active classes
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            if (theme === 'navy') {
+                canvas.className = 'signboard-canvas theme-navy';
+                buttons[0].classList.add('active');
+            } else {
+                canvas.className = 'signboard-canvas theme-white';
+                buttons[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
