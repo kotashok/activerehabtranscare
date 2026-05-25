@@ -37,9 +37,10 @@
       "logo": "https://activerehabtranscare.in/logo.png",
       "image": "https://activerehabtranscare.in/hero_rehab.png",
       "telephone": "+91-8106822020",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=ActiveRehab+TransCare+Kompally",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Plot No. 4-1-1, 41/A & 48, Laxmi Nagar Colony, Kompally",
+        "streetAddress": "Plot No. 4-1-1, 41/A & 48, Laxmi Nagar Colony, Kompally, Near Sri Meru Hospital",
         "addressLocality": "Hyderabad",
         "addressRegion": "Telangana",
         "postalCode": "500100",
@@ -68,7 +69,40 @@
         "@type": "MedicalOrganization",
         "name": "ActiveRehab",
         "url": "https://activerehab.in"
-      }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "2"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Ramesh K."
+          },
+          "datePublished": "2026-05-18",
+          "reviewBody": "The transition from hospital to home was daunting after my father's stroke. The team at ActiveCare TransCare made his recovery smooth, professional, and deeply caring. He walked out on his own two feet.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Sunita M."
+          },
+          "datePublished": "2026-05-20",
+          "reviewBody": "After my knee replacement, the 24/7 care and dedicated physiotherapy sessions were exactly what I needed. I recovered faster than my surgeon expected. Truly a premium facility.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        }
+      ]
     }
     </script>
 </head>
@@ -85,7 +119,7 @@
         <!-- Navigation (Integrated) -->
         <nav class="container" style="padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 100;">
             <div class="logo">
-                <a href="index.html"><img src="logo.png" alt="ActiveRehab TransCare - Elite Recovery and Rehabilitation Center in Hyderabad" style="height: 70px; cursor: pointer;"></a>
+                <a href="index.html"><img src="logo.png" alt="ActiveRehab TransCare - Elite Recovery and Rehabilitation Center in Hyderabad" width="146" height="70" style="height: 70px; cursor: pointer;"></a>
             </div>
             <div class="hamburger" id="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
                 <i class="fas fa-bars"></i>
@@ -135,7 +169,7 @@
             </div>
             <div class="hero-image" style="flex: 1; display: flex; justify-content: flex-end;">
                 <div class="glass-card" style="width: 450px; height: 500px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,51,102,0.15); overflow: hidden; position: relative;">
-                    <img src="hero_rehab.png" alt="ActiveRehab TransCare Premium Rehabilitation Wing in Kompally, Hyderabad" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="hero_rehab.png" alt="ActiveRehab TransCare Premium Rehabilitation Wing in Kompally, Hyderabad" width="450" height="500" loading="eager" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             </div>
         </header>
@@ -231,8 +265,8 @@
             </div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
                 <div class="glass-card team-card">
-                    <div class="team-img-placeholder" style="overflow: hidden;">
-                        <img src="doctor_ashok.png" alt="Dr. Ashok P. Kota - Lead Physiotherapist at ActiveRehab TransCare" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="team-img-placeholder" style="overflow: hidden; width: 300px; height: 350px;">
+                        <img src="doctor_ashok.png" alt="Dr. Ashok P. Kota - Lead Physiotherapist at ActiveRehab TransCare" width="300" height="350" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="team-info">
                         <h3>Dr. Ashok P. Kota</h3>
@@ -241,8 +275,8 @@
                     </div>
                 </div>
                 <div class="glass-card team-card">
-                    <div class="team-img-placeholder" style="overflow: hidden;">
-                        <img src="manager_kumar.png" alt="Kumar Yeldi - Marketing Manager at ActiveRehab TransCare" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="team-img-placeholder" style="overflow: hidden; width: 300px; height: 350px;">
+                        <img src="manager_kumar.png" alt="Kumar Yeldi - Marketing Manager at ActiveRehab TransCare" width="300" height="350" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="team-info">
                         <h3>Kumar Yeldi</h3>
@@ -293,7 +327,7 @@
                 <!-- Blog Card 1 -->
                 <div class="glass-card blog-card">
                     <div class="blog-img-container">
-                        <img src="blog_ortho.png" alt="Ortho Rehabilitation Recovery - Post-Operative Knee Surgery Rehabilitation">
+                        <img src="blog_ortho.png" alt="Ortho Rehabilitation Recovery - Post-Operative Knee Surgery Rehabilitation" width="350" height="220" loading="lazy">
                         <span class="blog-badge">Ortho Care</span>
                     </div>
                     <div class="blog-card-body">
@@ -302,7 +336,7 @@
                             <span><i class="far fa-user"></i> Dr. Ashok P. Kota</span>
                         </div>
                         <h3>5 Steps to a Safe and Speedy Recovery After Knee Surgery</h3>
-                        <p>Discover the essential post-operative protocols, pain management techniques, and mobility milestones that ensure a safe and strong transition home.</p>
+                        <p>Discover the essential post-operative protocols, pain management techniques, and mobility milestones that ensure a safe and strong <a href="ortho-stepdown.html" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">transition home after orthopedic surgery</a>.</p>
                         <button class="btn btn-secondary blog-read-btn" data-article="knee-surgery" style="width: 100%; margin-top: 15px; padding: 10px 20px; font-size: 0.95rem;">Read Article</button>
                     </div>
                 </div>
@@ -310,7 +344,7 @@
                 <!-- Blog Card 2 -->
                 <div class="glass-card blog-card">
                     <div class="blog-img-container">
-                        <img src="blog_neuro.png" alt="Neurological Rehabilitation and Stroke Recovery Therapy">
+                        <img src="blog_neuro.png" alt="Neurological Rehabilitation and Stroke Recovery Therapy" width="350" height="220" loading="lazy">
                         <span class="blog-badge">Neuro Rehab</span>
                     </div>
                     <div class="blog-card-body">
@@ -319,7 +353,7 @@
                             <span><i class="far fa-user"></i> Dr. Ashok P. Kota</span>
                         </div>
                         <h3>The Critical Role of Neuro Rehabilitation in Stroke Recovery</h3>
-                        <p>Time is brain. Learn how early, intensive step-down neuro rehabilitation therapies restore motor skills, speech, and independence post-stroke.</p>
+                        <p>Time is brain. Learn how early, intensive <a href="neuro-rehabilitation.html" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">step-down neuro rehabilitation therapies</a> restore motor skills, speech, and independence post-stroke.</p>
                         <button class="btn btn-secondary blog-read-btn" data-article="stroke-recovery" style="width: 100%; margin-top: 15px; padding: 10px 20px; font-size: 0.95rem;">Read Article</button>
                     </div>
                 </div>
@@ -327,7 +361,7 @@
                 <!-- Blog Card 3 -->
                 <div class="glass-card blog-card">
                     <div class="blog-img-container">
-                        <img src="blog_stepdown.png" alt="Elderly Fall Prevention and Balance Training Therapy for Seniors">
+                        <img src="blog_stepdown.png" alt="Elderly Fall Prevention and Balance Training Therapy for Seniors" width="350" height="220" loading="lazy">
                         <span class="blog-badge" style="background: var(--secondary);">Fall Prevention</span>
                     </div>
                     <div class="blog-card-body">
@@ -336,7 +370,7 @@
                             <span><i class="far fa-user"></i> Dr. Ashok P. Kota</span>
                         </div>
                         <h3>Preventing Silent Falls: Advanced Balance & Vestibular Therapy for Seniors</h3>
-                        <p>Falls are the leading cause of injury in seniors. Learn how targeted clinical balance therapies, strength drills, and home-safety prep restore independence.</p>
+                        <p>Falls are the leading cause of injury in seniors. Learn how targeted clinical <a href="geriatric-fall-prevention.html" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">balance and geriatric therapy</a>, strength drills, and home-safety prep restore independence.</p>
                         <button class="btn btn-secondary blog-read-btn" data-article="fall-prevention" style="width: 100%; margin-top: 15px; padding: 10px 20px; font-size: 0.95rem;">Read Article</button>
                     </div>
                 </div>
@@ -403,7 +437,7 @@
     </section>
 
     <footer style="background: var(--primary); color: white; padding: 50px 0; text-align: center;">
-        <a href="index.html" class="footer-logo-container"><img src="logo.png" alt="ActiveRehab TransCare Logo" style="height: 55px; object-fit: contain;"></a>
+        <a href="index.html" class="footer-logo-container"><img src="logo.png" alt="ActiveRehab TransCare Logo" width="115" height="55" loading="lazy" style="height: 55px; object-fit: contain;"></a>
         <div style="margin-bottom: 25px; display: flex; justify-content: center; gap: 30px; font-size: 1.1rem; flex-wrap: wrap;">
             <a href="tel:+918106822020" style="color: white; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 10px; transition: var(--transition);"><i class="fas fa-phone-alt" style="color: var(--secondary-light);"></i> +91 81068 22020</a>
             <a href="https://wa.me/918106822020" target="_blank" style="color: white; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 10px; transition: var(--transition);"><i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp Chat</a>
