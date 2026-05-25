@@ -1,0 +1,401 @@
+WEBSITE & SEO AUDIT REPORT
+activerehabtranscare.in
+ActiveRehab TransCare  |  Elite Recovery & Rehabilitation  |  May 2026
+On-Page SEO
+65/100
+65%
+Technical SEO
+30/100
+30%
+Local SEO
+20/100
+20%
+Trust & Content
+50/100
+50%
+
+SITE TYPE: Custom HTML/CSS website (not WordPress). New site — launched in 2026. No CMS detected.
+
+PREPARED FOR: Dr. Ashok P. Kota — ActiveRehab TransCare, Kompally, Hyderabad
+
+SCOPE: Full audit of all 5 pages of activerehabtranscare.in covering on-page SEO, technical SEO, conversion readiness, local SEO, content gaps, and a prioritised growth roadmap.
+
+1. Executive Summary
+
+ActiveRehab TransCare is a new (2026) premium step-down rehabilitation facility in Kompally, Hyderabad. The website is professionally designed with excellent clinical content — a significant improvement over typical rehab facility websites. The service pages are detailed, credible, and written with genuine clinical authority.
+
+However, the site has one overriding problem that makes everything else secondary:
+
+THE SINGLE BIGGEST ISSUE: Almost every call-to-action (CTA) button on the site links to '#' — meaning it does nothing when clicked. 'Book a Tour', 'Contact Us', 'Check Admission Eligibility', 'Check Suite Availability', and 'Partner with Us' are all broken. Visitors who want to enquire or book cannot do so through any button other than the WhatsApp link and phone number. The site is currently unable to convert traffic into patients.
+
+Beyond the broken CTAs, the site is brand new, has zero SEO infrastructure (no schema, no sitemap, no analytics tracking, no Google Business Profile), and the blog section shows 4 articles but they have no actual individual pages — readers who click 'Read Article' cannot read the article.
+
+The good news: this site has exceptional bones. The clinical positioning (step-down care) is a genuine niche with very few competitors in Hyderabad. The content quality is high, the service pages are detailed, and Dr. Ashok P. Kota's real credentials are front and centre. With a focused sprint on the issues below, this site can rank for high-intent keywords within 90 days.
+
+What the site is doing well:
+Clean, professional custom HTML site — fast, no bloat, no plugin overhead
+Excellent page titles: descriptive, under 60 characters, branded correctly
+Well-written meta descriptions — specific, include location, no keyword stuffing
+Real clinical team: Dr. Ashok P. Kota with 17+ years' experience, real credentials
+Detailed service pages with clinical protocols, equipment lists, and recovery timelines
+Consistent NAP (Name, Address, Phone) across all pages
+WhatsApp chat button prominently placed — good for mobile-first Indian patients
+Partner hospital (Sri Meru Superspeciality Hospital) lends credibility
+Multi-step intake form with clinical screening questions — differentiates from standard contact forms
+OG tags and Twitter Card tags present on all pages
+
+2. Critical & High-Priority Issues
+
+Issues are ranked by severity. CRITICAL issues are actively preventing the site from generating leads. Fix these before doing anything else.
+
+#
+Severity
+Issue
+Recommended Fix
+Impact
+C1
+CRITICAL
+ALL primary CTA buttons link to '#' and do nothing. This includes: 'Book a Tour' (homepage hero), 'Contact Us' (homepage hero), 'Check Admission Eligibility' (all 4 service pages), 'Check Suite Availability' (all 4 service pages), 'Our Expertise' (homepage), 'Partner with Us' (navigation). The only working contact paths are the phone number and WhatsApp link.
+Wire all CTA buttons to the booking modal (#book-tour-modal) or the WhatsApp link (wa.me/918106822020), or a dedicated contact page. The multi-step intake form modal exists — the buttons just need to trigger it. This is a one-hour fix that will immediately unlock patient enquiries.
+Conversion rate — 0 bookings possible currently
+C2
+CRITICAL
+Blog posts have no individual pages. The homepage shows 4 blog articles ('Read Article' is shown) but clicking these does nothing — there are no actual blog post HTML pages. Blog posts that exist only as thumbnails provide zero SEO value, zero E-E-A-T signal, and frustrate visitors.
+Create individual HTML pages for each blog post (e.g. /blog-knee-replacement-recovery.html, /blog-stroke-rehab.html). Each page needs: full article content (1,000+ words), author bio, date, schema markup (BlogPosting), and internal links to relevant service pages.
+SEO organic traffic, E-E-A-T, visitor engagement
+C3
+CRITICAL
+No analytics tracking. No Google Analytics (GA4), no Google Tag Manager, no Microsoft Clarity, and no Search Console verified. There is no way to know how many visitors the site receives, where they come from, or which pages they view. You cannot optimise what you cannot measure.
+Install Google Tag Manager immediately (free, takes 10 minutes). Through GTM, add: GA4 for traffic analytics, Google Ads conversion tracking when you run campaigns, and Search Console site verification tag. Also submit the site to Google Search Console and request indexing.
+Cannot measure or improve performance without this
+C4
+CRITICAL
+No XML sitemap exists (sitemap.xml returns 404). Without a sitemap, Google discovers pages only by crawling links. For a new site with few external backlinks, this significantly delays indexing — Google may not even know all 5 pages exist yet.
+Create and submit a sitemap.xml listing all pages. Submit it in Google Search Console. For a static HTML site, this can be a simple file listing all 5 page URLs.
+Indexation speed and completeness
+H1
+HIGH
+No schema markup on any page. Missing: MedicalClinic (or LocalBusiness) for the facility, Physician for Dr. Kota, FAQPage for the FAQ section on the homepage, and BlogPosting for blog articles. Schema is mandatory for rich results and is a local ranking signal.
+Add JSON-LD schema blocks to the <head> of each page. Priority: MedicalClinic schema on homepage with NAP data; Physician schema for Dr. Kota; FAQPage for the homepage FAQ section (3 FAQs exist and are ready); BlogPosting on each blog post page once created.
+Rich results, local rankings
+H2
+HIGH
+No Google Business Profile (GBP) mentioned or linked. There is no 'Find us on Google Maps' link, no embedded map, and no reference to a Google listing. For a step-down care facility, families searching 'rehab centre near me' or 'step-down care Kompally' find GBP listings first.
+Create and verify a GBP listing for ActiveRehab TransCare at the Kompally address. Category: 'Rehabilitation Center' (primary), 'Physiotherapist' (secondary). Add photos, services, hours. Link to the GBP from the website footer.
+Local pack (Maps) rankings — currently invisible
+H3
+HIGH
+No Google Maps embed on the website. Patients and family members need to find the facility. Currently the address is shown as text only (Plot No. 4-1-1, 41/A & 48, Laxmi Nagar Colony, Kompally). No map is embedded anywhere.
+Embed a Google Map on the homepage (in the contact/footer section) and on a dedicated Contact page. This also sends a local relevance signal to Google.
+Patient experience, local SEO
+H4
+HIGH
+OG image is identical across all 5 pages (hero_rehab.png). When any page is shared on WhatsApp, Facebook, or LinkedIn, the same image appears. Service-specific images (neuro rehab, ortho, cardio, geriatric) would dramatically improve click-through from social shares.
+Create unique OG images (1200x630px) for each page. At minimum: one for neuro rehab, one for ortho, one for cardio, one for geriatric. The current hero image can stay as the homepage default.
+Social sharing click-through rate
+H5
+HIGH
+The Cardiorespiratory Rehab page has a typo in its og:url meta tag: 'activerrehabtranscare.in' (double r). If this page is shared on social media, the preview link will point to a non-existent domain.
+Change <meta property='og:url' content='https://activerrehabtranscare.in/cardiorespiratory-rehab.html'> to the correct URL: https://activerehabtranscare.in/cardiorespiratory-rehab.html
+Social sharing broken on cardio page
+H6
+HIGH
+URLs use .html file extensions (/neuro-rehabilitation.html, /ortho-stepdown.html, etc.). Clean URLs without extensions are modern best practice, more shareable, and slightly preferred by Google. Example: /neuro-rehabilitation/ is better than /neuro-rehabilitation.html.
+When the site is rebuilt or next updated, move to clean URLs (remove .html extensions). Set up 301 redirects from .html to the clean URL. Note: this is lower priority than the CRITICAL fixes above — don't do this while the site is brand new without proper redirects.
+Minor SEO + professionalism
+H7
+HIGH
+Only 2 testimonials, both with anonymous initials (Ramesh K., Sunita M.) and no photos, no dates, no Google review links, no verification. For a premium healthcare facility with 'elite' positioning, this is insufficient social proof — especially for decisions as important as post-surgical recovery.
+Add minimum 5 verified testimonials with: full first name + last initial, date of treatment, condition treated, and a photo (with patient consent). Link to Google reviews where possible. Consider adding a real-time Google review widget.
+Trust and conversion rate
+M1
+MEDIUM
+No dedicated Contact page. There is no /contact.html page — only a phone number and WhatsApp link in the footer/navigation. Patients who want to send an email, enquire about pricing, or ask pre-admission questions have no clear web form to use.
+Create a /contact.html page with: full address, phone number, WhatsApp button, email address, embedded Google Map, and a simple contact form. This page should be prominently linked in the navigation.
+Conversion rate, professionalism
+M2
+MEDIUM
+No dedicated About / Team page. Dr. Ashok P. Kota's bio on the homepage is only one sentence. Kumar Yeldi (Marketing Manager) appears in the clinical team section, which looks odd. For a healthcare facility, detailed clinician credentials are a major E-E-A-T signal.
+Create an /about.html page featuring: Dr. Kota's full qualifications, experience, publications or credentials; the nursing and support team; the facility's founding story and mission; photos of the actual facility interior.
+E-E-A-T, trust, Google's quality ratings
+M3
+MEDIUM
+No pricing or admissions information. For a 'premium/elite' step-down facility, prospective patients and their families cannot make an enquiry without knowing approximate costs. This creates friction that results in people contacting competitors instead.
+Add an Admissions section or page with: approximate pricing range for single vs double suite, what is included (meals, nursing, physio sessions), insurance/TPA empanelment information if applicable, and the admissions process step-by-step.
+Conversion rate, qualified lead quality
+M4
+MEDIUM
+The canonical tag on the homepage is https://activerehabtranscare.in (no trailing slash, no /index.html). All other pages use full .html paths. This minor inconsistency is low-risk but should be standardised. Ensure the canonical matches the URL you want Google to index.
+Change homepage canonical to https://activerehabtranscare.in/ (add trailing slash) or https://activerehabtranscare.in/index.html, and ensure it matches what you submit in Search Console.
+Minor — canonical consistency
+M5
+MEDIUM
+Only 1 partner hospital (Sri Meru Superspeciality Hospital) is listed. The 'Partners' navigation dropdown has 'Partner with Us' which links to '#'. For a step-down facility, hospital referrals are the primary patient acquisition channel. A wider referral network is critical.
+Build a hospital/doctor referral landing page (/referrals.html or /partners.html) that explains the referral process, discharge protocols, and the clinical handover workflow. Reach out to other hospitals in Kompally and North Hyderabad. List all active referral partners on the page.
+Patient volume — referrals are the #1 source for step-down care
+L1
+LOW
+No robots.txt file. While not critical for a small site, robots.txt is standard practice and its absence can occasionally cause unexpected crawl issues.
+Create a simple /robots.txt file: 'User-agent: * / Allow: / / Sitemap: https://activerehabtranscare.in/sitemap.xml'
+Technical best practice
+L2
+LOW
+No social media links in the footer. The homepage has no Facebook, Instagram, or LinkedIn links. Social signals and active social profiles build trust for a new business.
+Create business profiles on Facebook and Instagram. Add social links to the website footer. Post facility photos, patient success stories (anonymised), and clinical content.
+Brand visibility, trust
+
+3. Local SEO Strategy
+
+Step-down care is a high-intent, location-specific search. When a patient is discharged from Yashoda Hospital, Apollo, or Sri Meru, their family will search 'step-down care near [hospital]' or 'rehab facility Kompally'. The site currently has zero local SEO infrastructure.
+
+3.1 Google Business Profile — Priority #1
+A verified GBP listing is the most important local SEO asset for this facility. Without it, the site is invisible in Google Maps results and the local 3-pack for searches like:
+step-down care facility Hyderabad
+rehabilitation centre Kompally
+post-surgery recovery centre Hyderabad
+stroke rehab facility near me
+physiotherapy care home Hyderabad
+
+GBP setup checklist:
+Business name: ActiveRehab TransCare — Rehabilitation & Step-Down Care
+Primary category: Rehabilitation Center
+Secondary categories: Physiotherapist, Nursing Home (if applicable)
+Address: Plot No. 4-1-1, 41/A & 48, Laxmi Nagar Colony, Kompally, Hyderabad, Telangana 500100
+Phone: +91 81068 22020
+Website: https://activerehabtranscare.in
+Hours: Add opening hours — ideally 24/7 or list visiting hours
+Photos: Upload 10+ photos — facility interior, suites, rehab equipment, team
+Description: Write a 750-character description emphasising step-down care, 24/7 monitoring, and specialisations
+Services: Add each specialisation (Stroke Rehab, Ortho Recovery, Cardio Rehab, Fall Prevention) as a service
+
+3.2 Schema Markup Required
+Add the following JSON-LD schema blocks:
+
+Schema Type
+Where to Add
+Key Fields
+MedicalClinic (LocalBusiness)
+Homepage (index.html)
+name, address, telephone, url, openingHours, geo coordinates, sameAs (GBP URL), medicalSpecialty, image
+Physician
+Homepage + About page
+name: Dr. Ashok P. Kota, jobTitle, worksFor (clinic), medicalSpecialty, description, image
+FAQPage
+Homepage (FAQ section)
+3 existing FAQs already on page — just add schema markup around them
+BlogPosting
+Each blog post page
+headline, author, datePublished, dateModified, description, image, mainEntityOfPage
+BreadcrumbList
+All pages
+Breadcrumb navigation trail for each page
+WebSite
+Homepage
+name, url, potentialAction (sitelinks search)
+
+3.3 Target Keywords by Specialisation
+The site should target three tiers of keywords: brand-level, specialisation-level, and long-tail condition queries. Below are the highest-priority keyword targets for each service.
+
+Service
+Primary Target Keywords
+Long-Tail / High-Intent
+Step-Down / Facility
+step-down care Hyderabad, rehabilitation centre Kompally, post-surgery recovery Hyderabad
+where to go after hospital discharge Hyderabad, step-down facility near Sri Meru Hospital Kompally
+Neuro / Stroke
+stroke rehabilitation Hyderabad, neuro rehab centre Kompally, stroke recovery facility
+best stroke rehab after hospital discharge Hyderabad, post-stroke physiotherapy Kompally
+Ortho Recovery
+post knee replacement rehab Hyderabad, TKR recovery centre, after knee surgery recovery Kompally
+where to recover after knee replacement surgery Hyderabad, knee replacement step-down care
+Cardio Rehab
+cardiac rehabilitation Hyderabad, post-CABG recovery centre, after bypass surgery rehab
+step-down care after bypass surgery Hyderabad, post-CABG physiotherapy Kompally
+Fall Prevention
+elderly fall prevention Hyderabad, geriatric rehabilitation Kompally, senior balance therapy
+fall prevention programme for elderly Hyderabad, vestibular therapy seniors Kompally
+
+3.4 Healthcare Directory Citations
+As a new facility, building citations on healthcare-specific directories is critical for local SEO. Target these platforms:
+Practo — list as a 'Nursing Home' or 'Rehabilitation Centre'. Add all specialisations.
+Justdial — list under 'Rehabilitation Centers' and 'Physiotherapists' in Kompally, Hyderabad
+Sulekha — similar listing
+Lybrate — list Dr. Ashok P. Kota as a practitioner at this facility
+Wockhardt / hospital discharge planning directories — contact hospital social workers who handle discharge planning
+Bing Places for Business — often overlooked
+Apple Maps — important for iPhone users searching 'near me'
+
+4. Content Gaps & Missing Pages
+
+4.1 Pages That Must Be Created
+
+Page
+Priority & Purpose
+Key Content
+/contact.html
+CRITICAL — Convert visitors
+Phone, WhatsApp, email, Google Map embed, contact form, address, directions from major hospitals
+4 Blog Post Pages
+CRITICAL — SEO + E-E-A-T
+Full articles (1,000+ words each) for the 4 existing blog topics. Add author bio, date, internal links to service pages, related articles.
+/about.html
+HIGH — Trust & E-E-A-T
+Dr. Kota full bio + credentials, nursing team, facility story, mission, real facility photos, accreditations/affiliations
+/admissions.html
+HIGH — Conversion
+How the admissions process works, what documents are needed from the discharging hospital, suite options with photos, approximate pricing, insurance/TPA empanelment
+/referrals.html
+HIGH — B2B patient acquisition
+For doctors and hospital discharge planners: referral process, discharge handover form, clinical coordinator contact, protocols
+/faqs.html
+MEDIUM — SEO + conversion
+Expand the 3 homepage FAQs to 15–20 covering: who is eligible, what is included, cost, location, visiting hours, what to bring, what happens after discharge
+/blog/
+MEDIUM — SEO hub
+Blog index page linking to all articles. Target: 2–4 articles per month on conditions treated (stroke recovery, post-knee replacement, COPD rehab, fall prevention tips)
+/partners.html
+MEDIUM — Referral network
+List all partner hospitals, doctor network, discharge planning coordinators, 'Refer a Patient' section
+
+4.2 Blog Content Strategy
+Step-down and rehabilitation facilities are underserved in the Indian healthcare content landscape. A consistent blog with clinical authority can rank for dozens of long-tail queries. Recommended article pipeline:
+
+'What is step-down care and when do you need it?' — educational, high funnel, explains the concept for families
+'How to choose a rehabilitation facility after discharge in Hyderabad' — captures mid-funnel decision makers
+'Recovery timeline after Total Knee Replacement: what to expect week by week' — very high search volume
+'Signs your elderly parent needs professional fall prevention therapy' — emotional, high intent for geriatric families
+'Post-stroke recovery: what happens in the first 4 weeks?' — captures stroke patient families at the decision point
+'CABG bypass surgery recovery: how monitored cardiac rehab reduces readmission risk' — targets cardiologists for referrals
+'Physiotherapy vs. step-down care: what is the difference?' — captures people searching for physio who need more
+'How to talk to your doctor about step-down care discharge planning' — helps families have the referral conversation
+
+5. Technical SEO
+
+5.1 Analytics & Search Console — Do This Today
+IMPORTANT: Without analytics, you are flying blind. Install Google Tag Manager first — it is free, takes under 30 minutes, and lets you add all other tracking without touching the HTML files again.
+
+Step-by-step setup:
+Create a Google Tag Manager account at tagmanager.google.com. Add the two GTM code snippets to every page's <head> and <body>.
+Inside GTM, create a GA4 Configuration tag. This gives you visitor counts, traffic sources, page views, and conversion events.
+Verify the site in Google Search Console (search.google.com/search-console). Use the GTM verification method. Submit the sitemap.xml once created.
+Set up a conversion event in GA4 for WhatsApp click and phone number click — these are your primary conversion actions right now.
+
+5.2 Sitemap
+Create /sitemap.xml manually listing all pages. Until a blog section is built, this will be simple:
+https://activerehabtranscare.in/
+https://activerehabtranscare.in/neuro-rehabilitation.html
+https://activerehabtranscare.in/ortho-stepdown.html
+https://activerehabtranscare.in/cardiorespiratory-rehab.html
+https://activerehabtranscare.in/geriatric-fall-prevention.html
+Add new pages to the sitemap as they are created. Submit in Google Search Console.
+
+5.3 Performance & Mobile
+The site is custom HTML (no WordPress/Elementor overhead), which is excellent for speed. Verify:
+Run through Google PageSpeed Insights — target 85+ on both mobile and desktop
+Ensure hero_rehab.png is optimised (compressed, served in WebP if possible) — it is used as OG image on all pages so it must be fast-loading
+The multi-step booking modal contains JavaScript — verify it works correctly on iOS Safari and Android Chrome
+Verify all WhatsApp links open correctly on mobile (wa.me/ format is correct and used throughout)
+
+5.4 On-Page SEO Checklist by Page
+Current status for each page:
+
+Page
+Title
+Meta Desc.
+Schema
+Key Gap
+Homepage
+✅ Good
+✅ Good
+❌ Missing
+Broken CTAs, no map, no analytics
+Neuro Rehab
+✅ Good
+✅ Good
+❌ Missing
+Broken CTAs, no breadcrumb
+Ortho Step-Down
+✅ Good
+✅ Good
+❌ Missing
+Broken CTAs, no breadcrumb
+Cardio Rehab
+✅ Good
+✅ Good
+❌ Missing
+og:url typo, broken CTAs
+Geriatric / Falls
+✅ Good
+✅ Good
+❌ Missing
+Broken CTAs, no breadcrumb
+
+6. Competitive Positioning — Unique Strengths to Amplify
+
+Step-down care facilities are rare in Hyderabad. This is a genuine differentiator that the site does not fully exploit yet. Below are the competitive strengths that should be made more prominent:
+
+6.1 'Step-Down Care' Is an Underserved Market
+Most patients and families in India do not know that step-down care exists as a category. They search for 'physiotherapy' or 'nursing home' when they actually need step-down care. The site should explicitly educate visitors on why step-down care is different from — and superior to — a regular nursing home or home physiotherapy for post-surgical patients. A dedicated 'What is Step-Down Care?' educational page would rank well and capture patients currently searching with the wrong keyword.
+
+6.2 Hospital Adjacency to Sri Meru
+The facility is adjacent to Sri Meru Superspeciality Hospital. This is an enormous advantage: patients discharging from Sri Meru can walk across. This proximity is barely mentioned on the site. Every page should reference 'adjacent to Sri Meru Superspeciality Hospital, Kompally' with a link to the hospital's website. The contact page should include a map showing the walking/driving distance from the hospital.
+
+6.3 24/7 Clinical Monitoring
+Round-the-clock nursing and monitoring is a premium feature that differentiates TransCare from home physiotherapy and basic nursing homes. This should appear in the hero section headline, not just in a bullet list. Consider adding '24/7 Telemetry & Nursing Monitoring' as a visible trust badge on every page.
+
+6.4 Clinical Protocol Depth
+The service pages contain genuinely impressive clinical protocols (PNF, CIMT, CPM devices, FES systems, VOR therapy). Most rehab facility websites in India are vague. This clinical depth is a major trust signal for referring doctors and educated patients. Consider creating a downloadable 'Clinical Protocols Guide' PDF that hospital discharge planners can share — it positions ActiveRehab TransCare as a credible clinical partner.
+
+6.5 Niche Specialisations Not Covered Elsewhere
+Guillain-Barré Syndrome (GBS), post-COVID reconditioning, and CHF (Congestive Heart Failure) management are listed as conditions treated. These are highly specific — most rehab facilities don't mention them. These deserve dedicated sections or pages, as they attract families who have already failed to find suitable care elsewhere.
+
+7. Prioritised Action Plan
+
+This Week: Make the Site Functional
+WHY: The site currently cannot convert a single visitor. Fix broken CTAs first — everything else is irrelevant until someone can actually book.
+
+Fix ALL broken CTA buttons — wire them to the booking modal or WhatsApp. This is a one-hour HTML change that immediately unlocks patient enquiries.
+Fix the og:url typo on cardiorespiratory-rehab.html (activerrehabtranscare → activerehabtranscare).
+Install Google Tag Manager on all pages. Add GA4 tracking. Set up Google Search Console. Submit the site for indexing.
+Create sitemap.xml and robots.txt. Submit sitemap in Search Console.
+
+Month 1: Foundation — Schema, GBP, Core Pages
+Create and verify Google Business Profile for ActiveRehab TransCare at the Kompally address.
+Add JSON-LD schema to all pages: MedicalClinic, Physician, FAQPage (homepage), BreadcrumbList.
+Create /contact.html with address, phone, email, WhatsApp button, Google Maps embed, and contact form.
+Create /about.html with Dr. Kota's full credentials, team bios, and real facility photos.
+Create individual pages for all 4 existing blog articles. Each page needs 1,000+ words of full content, author bio, date, and BlogPosting schema.
+Build Practo and Justdial listings. Ensure NAP is consistent with the website.
+
+Month 2–3: Growth — Content, Referrals, Reviews
+Create /admissions.html covering the enquiry process, pricing, what to bring, and insurance details.
+Create /referrals.html for hospital doctors and discharge planners. Include a referral form and Dr. Kota's direct contact.
+Publish 2–4 new blog articles per month. Priority topics: 'what is step-down care', 'TKR recovery timeline', 'stroke rehab what to expect'.
+Actively request Google reviews from discharged patients. Target: 15+ reviews in first 3 months of operation.
+Approach other hospitals in Kompally, Miyapur, and Bachupally for referral partnerships. Add them to a /partners page.
+
+Ongoing Monthly
+Publish 2 blog articles (condition-specific, location-targeted)
+Post 4 GBP updates per month — facility updates, team posts, seasonal tips
+Respond to every Google review within 24 hours
+Track rankings in Search Console for target keywords weekly
+Review GA4 monthly: which pages get most traffic, which pages have highest drop-off
+
+
+8. Quick Wins Summary
+
+If you can only do 5 things from this report this week, do these:
+
+1. Fix the broken CTA buttons — TODAY Every single 'Book a Tour', 'Contact Us', and 'Check Availability' button on the site does nothing. This is costing you real enquiries right now. A developer can fix this in under an hour.
+
+2. Install Google Analytics (via GTM) — this week You have no idea how many people are visiting the site, where they're coming from, or what they're clicking. Without this you cannot make any data-driven decisions.
+
+3. Create individual blog post pages — this week 4 blog posts are shown as thumbnails but clicking 'Read Article' leads nowhere. These posts represent hours of clinical writing — give them actual pages so they can rank on Google.
+
+4. Create a Google Business Profile — Month 1 You are currently invisible in Google Maps. Families searching 'rehab centre Kompally' or 'step-down care Hyderabad' on Google cannot find you. A GBP is free and is the single biggest local ranking lever.
+
+5. Add MedicalClinic + FAQPage schema — Month 1 The site has no structured data at all. Adding schema is a one-time technical change that enables rich results and tells Google exactly what your facility does and where it is.
+
+
+— End of Report —
+Prepared by Claude AI for Dr. Ashok P. Kota  |  ActiveRehab TransCare  |  May 2026
