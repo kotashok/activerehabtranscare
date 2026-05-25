@@ -26,81 +26,142 @@
     <meta name="twitter:image" content="https://activerehabtranscare.in/hero_rehab.png">
 
     <!-- Structured Data (JSON-LD) for Local Search Discoverability -->
+    <!-- Structured Data (JSON-LD) for Local Search Discoverability -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "MedicalClinic",
-      "name": "ActiveRehab TransCare",
-      "alternateName": "ActiveRehab Step-Down & Rehabilitation Wing",
-      "description": "Hyderabad's premier step-down facility offering elite recovery and rehabilitation pathways for post-operative recovery, stroke rehab, and geriatric fall prevention.",
-      "url": "https://activerehabtranscare.in",
-      "logo": "https://activerehabtranscare.in/logo.png",
-      "image": "https://activerehabtranscare.in/hero_rehab.png",
-      "telephone": "+91-8106822020",
-      "hasMap": "https://www.google.com/maps/search/?api=1&query=ActiveRehab+TransCare+Kompally",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Plot No. 4-1-1, 41/A & 48, Laxmi Nagar Colony, Kompally, Near Sri Meru Hospital",
-        "addressLocality": "Hyderabad",
-        "addressRegion": "Telangana",
-        "postalCode": "500100",
-        "addressCountry": "IN"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "medicalSpecialty": [
-        "Physiotherapy",
-        "NeurologicalRehabilitation",
-        "Geriatric"
-      ],
-      "parentOrganization": {
-        "@type": "MedicalOrganization",
-        "name": "ActiveRehab",
-        "url": "https://activerehab.in"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "2"
-      },
-      "review": [
+      "@graph": [
         {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Ramesh K."
+          "@type": "MedicalClinic",
+          "@id": "https://activerehabtranscare.in/#clinic",
+          "name": "ActiveRehab TransCare",
+          "alternateName": "ActiveRehab Step-Down & Rehabilitation Wing",
+          "description": "Hyderabad's premier step-down facility offering elite recovery and rehabilitation pathways for post-operative recovery, stroke rehab, and geriatric fall prevention.",
+          "url": "https://activerehabtranscare.in",
+          "logo": "https://activerehabtranscare.in/logo.png",
+          "image": "https://activerehabtranscare.in/hero_rehab.png",
+          "telephone": "+91-8106822020",
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=ActiveRehab+TransCare+Kompally",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot No. 4-1-1, 41/A & 48, Laxmi Nagar Colony, Kompally, Near Sri Meru Hospital",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "postalCode": "500100",
+            "addressCountry": "IN"
           },
-          "datePublished": "2026-05-18",
-          "reviewBody": "The transition from hospital to home was daunting after my father's stroke. The team at ActiveCare TransCare made his recovery smooth, professional, and deeply caring. He walked out on his own two feet.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+          },
+          "medicalSpecialty": [
+            "Physiotherapy",
+            "NeurologicalRehabilitation",
+            "Geriatric"
+          ],
+          "parentOrganization": {
+            "@type": "MedicalOrganization",
+            "name": "ActiveRehab",
+            "url": "https://activerehab.in"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "2"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Ramesh K."
+              },
+              "datePublished": "2026-05-18",
+              "reviewBody": "The transition from hospital to home was daunting after my father's stroke. The team at ActiveCare TransCare made his recovery smooth, professional, and deeply caring. He walked out on his own two feet.",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+              }
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Sunita M."
+              },
+              "datePublished": "2026-05-20",
+              "reviewBody": "After my knee replacement, the 24/7 care and dedicated physiotherapy sessions were exactly what I needed. I recovered faster than my surgeon expected. Truly a premium facility.",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+              }
+            }
+          ]
         },
         {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Sunita M."
+          "@type": "Physician",
+          "@id": "https://activerehabtranscare.in/#physician",
+          "name": "Dr. Ashok P. Kota",
+          "image": "https://activerehabtranscare.in/doctor_ashok.png",
+          "description": "Lead Physiotherapist at ActiveRehab TransCare, expert in advanced neurological and orthopedic rehabilitation with 17+ years of experience.",
+          "telephone": "+91-8106822020",
+          "worksFor": {
+            "@type": "MedicalClinic",
+            "@id": "https://activerehabtranscare.in/#clinic"
           },
-          "datePublished": "2026-05-20",
-          "reviewBody": "After my knee replacement, the 24/7 care and dedicated physiotherapy sessions were exactly what I needed. I recovered faster than my surgeon expected. Truly a premium facility.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot No. 4-1-1, 41/A & 48, Laxmi Nagar Colony, Kompally, Near Sri Meru Hospital",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "postalCode": "500100",
+            "addressCountry": "IN"
+          },
+          "medicalSpecialty": [
+            "Physiotherapy",
+            "NeurologicalRehabilitation",
+            "Geriatric"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://activerehabtranscare.in/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a Step-Down Care Facility?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A step-down facility bridges the gap between an acute hospital stay and returning home. It provides medical monitoring, intense rehabilitation, and nursing care for patients who no longer need an ICU but aren't ready to go home safely."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer 24/7 nursing and medical support?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Our facility is equipped with 24/7 clinical monitoring, dedicated nursing staff, and on-call medical doctors to handle any emergencies or routine care needs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the typical duration of stay?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The duration depends on the patient's condition and recovery goals. It typically ranges from 1 to 4 weeks for orthopedic surgeries, and longer for intensive neurological rehabilitation."
+              }
+            }
+          ]
         }
       ]
     }
@@ -146,7 +207,7 @@
                     <a href="#partners" class="dropbtn" style="text-decoration: none; color: var(--primary); font-weight: 600; font-family: 'Outfit';">Partners <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                     <div class="dropdown-content glass-card">
                         <a href="#partners">Sri Meru Hospital</a>
-                        <a href="#partners">Partner with Us</a>
+                        <a href="#" id="partner-us-btn">Partner with Us</a>
                     </div>
                 </div>
                 <a href="#blogs" style="text-decoration: none; color: var(--primary); font-weight: 600; font-family: 'Outfit'; transition: var(--transition);">Blogs</a>
@@ -337,46 +398,11 @@
                         </div>
                         <h3>Restoring Balance: Advanced Stance & Gait Correction After Knee Replacement</h3>
                         <p>Discover how computerized stance re-education and progressive loading restore walking symmetry and eliminate limps post-total knee replacement.</p>
-                        <button class="btn btn-secondary blog-read-btn" data-article="restoring-balance-advanced-stance-gait-correction-after-knee-replacement" style="width: 100%; margin-top: 15px; padding: 10px 20px; font-size: 0.95rem;">Read Article</button>
+                        <a href="restoring-balance-advanced-stance-gait-correction-after-knee-replacement.html" class="btn btn-secondary" style="width: 100%; margin-top: 15px; padding: 10px 20px; font-size: 0.95rem; text-align: center;">Read Article</a>
                     </div>
                 </div>
 
-
-                <!-- Blog Card 1 -->
-                <div class="glass-card blog-card">
-                    <div class="blog-img-container">
-                        <img src="blog_ortho.png" alt="Ortho Rehabilitation Recovery - Post-Operative Knee Surgery Rehabilitation" width="350" height="220" loading="lazy">
-                        <span class="blog-badge">Ortho Care</span>
-                    </div>
-                    <div class="blog-card-body">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar-alt"></i> May 15, 2026</span>
-                            <span><i class="far fa-user"></i> Dr. Ashok P. Kota</span>
-                        </div>
-                        <h3>5 Steps to a Safe and Speedy Recovery After Knee Surgery</h3>
-                        <p>Discover the essential post-operative protocols, pain management techniques, and mobility milestones that ensure a safe and strong <a href="ortho-stepdown.html" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">transition home after orthopedic surgery</a>.</p>
-                        <button class="btn btn-secondary blog-read-btn" data-article="knee-surgery" style="width: 100%; margin-top: 15px; padding: 10px 20px; font-size: 0.95rem;">Read Article</button>
-                    </div>
-                </div>
-
-                <!-- Blog Card 2 -->
-                <div class="glass-card blog-card">
-                    <div class="blog-img-container">
-                        <img src="blog_neuro.png" alt="Neurological Rehabilitation and Stroke Recovery Therapy" width="350" height="220" loading="lazy">
-                        <span class="blog-badge">Neuro Rehab</span>
-                    </div>
-                    <div class="blog-card-body">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar-alt"></i> May 10, 2026</span>
-                            <span><i class="far fa-user"></i> Dr. Ashok P. Kota</span>
-                        </div>
-                        <h3>The Critical Role of Neuro Rehabilitation in Stroke Recovery</h3>
-                        <p>Time is brain. Learn how early, intensive <a href="neuro-rehabilitation.html" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">step-down neuro rehabilitation therapies</a> restore motor skills, speech, and independence post-stroke.</p>
-                        <button class="btn btn-secondary blog-read-btn" data-article="stroke-recovery" style="width: 100%; margin-top: 15px; padding: 10px 20px; font-size: 0.95rem;">Read Article</button>
-                    </div>
-                </div>
-
-                <!-- Blog Card 3 -->
+                <!-- Blog Card: Fall Prevention -->
                 <div class="glass-card blog-card">
                     <div class="blog-img-container">
                         <img src="blog_stepdown.png" alt="Elderly Fall Prevention and Balance Training Therapy for Seniors" width="350" height="220" loading="lazy">
@@ -388,8 +414,59 @@
                             <span><i class="far fa-user"></i> Dr. Ashok P. Kota</span>
                         </div>
                         <h3>Preventing Silent Falls: Advanced Balance & Vestibular Therapy for Seniors</h3>
-                        <p>Falls are the leading cause of injury in seniors. Learn how targeted clinical <a href="geriatric-fall-prevention.html" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">balance and geriatric therapy</a>, strength drills, and home-safety prep restore independence.</p>
-                        <button class="btn btn-secondary blog-read-btn" data-article="fall-prevention" style="width: 100%; margin-top: 15px; padding: 10px 20px; font-size: 0.95rem;">Read Article</button>
+                        <p>Falls are the leading cause of injury in seniors. Learn how targeted clinical balance and geriatric therapy, strength drills, and home-safety prep restore independence.</p>
+                        <a href="fall-prevention.html" class="btn btn-secondary" style="width: 100%; margin-top: 15px; padding: 10px 20px; font-size: 0.95rem; text-align: center;">Read Article</a>
+                    </div>
+                </div>
+
+                <!-- Blog Card: Knee Surgery -->
+                <div class="glass-card blog-card">
+                    <div class="blog-img-container">
+                        <img src="blog_ortho.png" alt="Ortho Rehabilitation Recovery - Post-Operative Knee Surgery Rehabilitation" width="350" height="220" loading="lazy">
+                        <span class="blog-badge">Ortho Care</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> May 15, 2026</span>
+                            <span><i class="far fa-user"></i> Dr. Ashok P. Kota</span>
+                        </div>
+                        <h3>5 Steps to a Safe and Speedy Recovery After Knee Surgery</h3>
+                        <p>Discover the essential post-operative protocols, pain management techniques, and mobility milestones that ensure a safe and strong transition home after orthopedic surgery.</p>
+                        <a href="knee-surgery.html" class="btn btn-secondary" style="width: 100%; margin-top: 15px; padding: 10px 20px; font-size: 0.95rem; text-align: center;">Read Article</a>
+                    </div>
+                </div>
+
+                <!-- Blog Card: Stroke Recovery -->
+                <div class="glass-card blog-card">
+                    <div class="blog-img-container">
+                        <img src="blog_neuro.png" alt="Neurological Rehabilitation and Stroke Recovery Therapy" width="350" height="220" loading="lazy">
+                        <span class="blog-badge">Neuro Rehab</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> May 10, 2026</span>
+                            <span><i class="far fa-user"></i> Dr. Ashok P. Kota</span>
+                        </div>
+                        <h3>The Critical Role of Neuro Rehabilitation in Stroke Recovery</h3>
+                        <p>Time is brain. Learn how early, intensive step-down neuro rehabilitation therapies restore motor skills, speech, and independence post-stroke.</p>
+                        <a href="stroke-recovery.html" class="btn btn-secondary" style="width: 100%; margin-top: 15px; padding: 10px 20px; font-size: 0.95rem; text-align: center;">Read Article</a>
+                    </div>
+                </div>
+
+                <!-- Blog Card: Step-Down Care -->
+                <div class="glass-card blog-card">
+                    <div class="blog-img-container">
+                        <img src="blog_stepdown.png" alt="Step-Down Transitional Care" width="350" height="220" loading="lazy">
+                        <span class="blog-badge" style="background: var(--primary);">Step-Down Care</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> May 05, 2026</span>
+                            <span><i class="far fa-user"></i> Dr. Ashok P. Kota</span>
+                        </div>
+                        <h3>Why Step-Down Care Bridges the Gap Between Hospital and Home</h3>
+                        <p>The day of hospital discharge is mixed with emotions. Learn how dedicated step-down transition care reduces hospital readmissions and accelerates physical recovery.</p>
+                        <a href="stepdown-care.html" class="btn btn-secondary" style="width: 100%; margin-top: 15px; padding: 10px 20px; font-size: 0.95rem; text-align: center;">Read Article</a>
                     </div>
                 </div>
             </div>
