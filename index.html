@@ -102,11 +102,10 @@
                 <div class="dropdown">
                     <a href="#services" class="dropbtn" style="text-decoration: none; color: var(--primary); font-weight: 600; font-family: 'Outfit';">Specializations <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                     <div class="dropdown-content glass-card">
-                        <a href="#services">Ortho Step-Down</a>
-                        <a href="#services">Neuro Rehabilitation</a>
-                        <a href="#services">Geriatric Step-Down</a>
-                        <a href="#services">Cardiac Recovery</a>
-                        <a href="#services">Post-Op Monitoring</a>
+                        <a href="neuro-rehabilitation.html">Stroke & Neuro Rehab</a>
+                        <a href="ortho-stepdown.html">Post-Op Ortho Recovery</a>
+                        <a href="cardiorespiratory-rehab.html">Cardiorespiratory Rehab</a>
+                        <a href="geriatric-fall-prevention.html">Geriatric Fall Prevention</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -187,24 +186,37 @@
                 <h2>Specialized Recovery Pathways</h2>
             </div>
             <div class="pathways-grid">
-                <div class="glass-card pathway-card" data-pathway="ortho" style="padding: 30px; border-radius: 20px;">
-                    <i class="fas fa-bone" style="font-size: 40px; color: var(--primary); margin-bottom: 20px;"></i>
-                    <h3>Ortho Step-Down</h3>
-                    <p style="font-size: 0.9rem; margin-top: 10px; line-height: 1.5;">TKR, THR, and Spine surgery rehabilitation to restore mobility and independence.</p>
-                    <div style="margin-top: 20px; font-weight: 600; color: var(--secondary); display: flex; align-items: center; gap: 5px; font-size: 0.9rem;">View Pathway <i class="fas fa-arrow-right" style="font-size: 0.8rem; transition: transform 0.2s ease;"></i></div>
-                </div>
-                <div class="glass-card pathway-card" data-pathway="neuro" style="padding: 30px; border-radius: 20px;">
+                <!-- Stroke & Neuro Rehab -->
+                <div class="glass-card pathway-card" onclick="window.location.href='neuro-rehabilitation.html';" style="padding: 30px; border-radius: 20px;">
                     <i class="fas fa-brain" style="font-size: 40px; color: var(--primary); margin-bottom: 20px;"></i>
-                    <h3>Neuro Rehabilitation</h3>
-                    <p style="font-size: 0.9rem; margin-top: 10px; line-height: 1.5;">Intensive recovery protocols for Stroke, Parkinson’s, and Spinal Cord injuries.</p>
-                    <div style="margin-top: 20px; font-weight: 600; color: var(--secondary); display: flex; align-items: center; gap: 5px; font-size: 0.9rem;">View Pathway <i class="fas fa-arrow-right" style="font-size: 0.8rem; transition: transform 0.2s ease;"></i></div>
+                    <h3>Stroke & Neuro Rehab</h3>
+                    <p style="font-size: 0.9rem; margin-top: 10px; line-height: 1.5;">Intensive recovery protocols for Stroke, Parkinson’s, and spinal cord injuries.</p>
+                    <a href="neuro-rehabilitation.html" style="text-decoration: none; margin-top: 20px; font-weight: 600; color: var(--secondary); display: flex; align-items: center; gap: 5px; font-size: 0.9rem;">View Pathway <i class="fas fa-arrow-right" style="font-size: 0.8rem; transition: transform 0.2s ease;"></i></a>
                 </div>
-                <div class="glass-card pathway-card pathway-card-highlighted" data-pathway="geriatric" style="padding: 30px; border-radius: 20px;">
+                
+                <!-- Post-Op Ortho Recovery -->
+                <div class="glass-card pathway-card" onclick="window.location.href='ortho-stepdown.html';" style="padding: 30px; border-radius: 20px;">
+                    <i class="fas fa-bone" style="font-size: 40px; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h3>Post-Op Ortho Recovery</h3>
+                    <p style="font-size: 0.9rem; margin-top: 10px; line-height: 1.5;">TKR, THR, and Spine surgery rehabilitation to restore mobility and independence.</p>
+                    <a href="ortho-stepdown.html" style="text-decoration: none; margin-top: 20px; font-weight: 600; color: var(--secondary); display: flex; align-items: center; gap: 5px; font-size: 0.9rem;">View Pathway <i class="fas fa-arrow-right" style="font-size: 0.8rem; transition: transform 0.2s ease;"></i></a>
+                </div>
+
+                <!-- Cardiorespiratory Rehab -->
+                <div class="glass-card pathway-card" onclick="window.location.href='cardiorespiratory-rehab.html';" style="padding: 30px; border-radius: 20px;">
+                    <i class="fas fa-heartbeat" style="font-size: 40px; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h3>Cardiorespiratory Rehab</h3>
+                    <p style="font-size: 0.9rem; margin-top: 10px; line-height: 1.5;">Specialized post-CABG bypass and chronic respiratory reconditioning care.</p>
+                    <a href="cardiorespiratory-rehab.html" style="text-decoration: none; margin-top: 20px; font-weight: 600; color: var(--secondary); display: flex; align-items: center; gap: 5px; font-size: 0.9rem;">View Pathway <i class="fas fa-arrow-right" style="font-size: 0.8rem; transition: transform 0.2s ease;"></i></a>
+                </div>
+                
+                <!-- Geriatric Fall Prevention -->
+                <div class="glass-card pathway-card pathway-card-highlighted" onclick="window.location.href='geriatric-fall-prevention.html';" style="padding: 30px; border-radius: 20px;">
                     <span style="background: rgba(0, 128, 128, 0.15); color: var(--secondary); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: inline-block; letter-spacing: 0.5px; font-family: 'Outfit';">Focus: Fall Prevention</span>
-                    <i class="fas fa-user-clock" style="font-size: 40px; color: var(--secondary); margin-bottom: 20px; display: block;"></i>
-                    <h3>Geriatric & Fall Prevention</h3>
-                    <p style="font-size: 0.9rem; margin-top: 10px; line-height: 1.5;">Transitional care and elder-focused balance therapies designed to restore walking confidence and eliminate fall risks at home.</p>
-                    <div style="margin-top: 20px; font-weight: 600; color: var(--secondary); display: flex; align-items: center; gap: 5px; font-size: 0.9rem;">View Pathway <i class="fas fa-arrow-right" style="font-size: 0.8rem; transition: transform 0.2s ease;"></i></div>
+                    <i class="fas fa-user-shield" style="font-size: 40px; color: var(--secondary); margin-bottom: 20px; display: block;"></i>
+                    <h3>Geriatric Fall Prevention</h3>
+                    <p style="font-size: 0.9rem; margin-top: 10px; line-height: 1.5;">Elderly balance therapy, walking confidence, and home safety slip reconditioning.</p>
+                    <a href="geriatric-fall-prevention.html" style="text-decoration: none; margin-top: 20px; font-weight: 600; color: var(--secondary); display: flex; align-items: center; gap: 5px; font-size: 0.9rem;">View Pathway <i class="fas fa-arrow-right" style="font-size: 0.8rem; transition: transform 0.2s ease;"></i></a>
                 </div>
             </div>
         </div>
