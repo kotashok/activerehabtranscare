@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActiveRehab TransCare | GMB Cover Photo Render</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #008080;
+            --accent: #e65c00;
+            --gold: #f59e0b;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: var(--text-dark);
+            width: 1080px;
+            height: 608px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            border: 8px solid var(--primary);
+        }
+
+        /* REGIONAL TELUGU LOGO - Left Side */
+        .telugu-logo {
+            position: absolute;
+            top: 45px;
+            left: 45px;
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .telugu-logo .telugu-active {
+            color: var(--primary);
+        }
+
+        .telugu-logo .telugu-rehab {
+            color: var(--accent);
+        }
+
+        /* LOGO SECTION - Centered Brand Logo */
+        .logo-section {
+            height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+        }
+
+        .logo-section img {
+            height: 95px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* CONTENT SECTION */
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 40px;
+            margin-bottom: 15px;
+        }
+
+        /* Tagline & Main Title */
+        .section-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-header span {
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .section-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.1;
+        }
+
+        /* 4 Specialty Columns */
+        .pillars-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            width: 100%;
+            margin-bottom: 22px;
+        }
+
+        .pillar-card {
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 16px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: flex-start;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            height: 100%;
+        }
+
+        .pillar-icon {
+            font-size: 26px;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+
+        .pillar-text h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 6px;
+            line-height: 1.2;
+        }
+
+        .pillar-text p {
+            font-size: 11px;
+            line-height: 1.4;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        /* Amenities Capsule Bar */
+        .amenities-bar {
+            display: inline-flex;
+            justify-content: center;
+            gap: 35px;
+            padding: 8px 35px;
+            border-radius: 50px;
+            background: #f8fafc;
+            border: 1.5px solid #cbd5e1;
+            align-items: center;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            color: var(--primary);
+        }
+
+        .amenity-item i {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        /* BOTTOM FOOTER RIBBON */
+        .signboard-footer {
+            height: 90px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 80px;
+            background: var(--primary);
+            border-top: 3px solid #004a8f;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .footer-item i {
+            font-size: 22px;
+            color: var(--gold);
+            background: rgba(245, 158, 11, 0.12);
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1.5px solid var(--gold);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- REGIONAL TELUGU LOGO -->
+    <div class="telugu-logo">
+        <span class="telugu-active">ఆక్టివ్</span> <span class="telugu-rehab">రీహాబ్</span>
+    </div>
+
+    <!-- UPPER LOGO SECTION -->
+    <div class="logo-section">
+        <img src="logo.png" alt="ActiveRehab TransCare Logo">
+    </div>
+    
+    <!-- MIDDLE CONTENT SECTION -->
+    <div class="content-section">
+        
+        <div class="section-header">
+            <span>HYDERABAD'S BEST STEP-DOWN FACILITY</span>
+            <h2>Clinical Rehabilitation and Physiotherapy</h2>
+        </div>
+        
+        <!-- 4 Columns Specialty Grid -->
+        <div class="pillars-row">
+            
+            <!-- Neuro -->
+            <div class="pillar-card">
+                <i class="fas fa-brain pillar-icon"></i>
+                <div class="pillar-text">
+                    <h3>Stroke & Neuro Rehab</h3>
+                    <p>Stroke Recovery, Parkinson's & Spinal Cord Injury Balance therapies.</p>
+                </div>
+            </div>
+            
+            <!-- Ortho -->
+            <div class="pillar-card">
+                <i class="fas fa-bone pillar-icon"></i>
+                <div class="pillar-text">
+                    <h3>Post-Op Ortho Recovery</h3>
+                    <p>Total Knee/Hip Replacement Recovery & Spine Surgery rehab.</p>
+                </div>
+            </div>
+            
+            <!-- Geriatric -->
+            <div class="pillar-card">
+                <i class="fas fa-user-shield pillar-icon"></i>
+                <div class="pillar-text">
+                    <h3>Geriatric Fall Prevention</h3>
+                    <p>Elderly balance therapy, walking confidence & safe return home.</p>
+                </div>
+            </div>
+            
+            <!-- Cardiac -->
+            <div class="pillar-card">
+                <i class="fas fa-heartbeat pillar-icon"></i>
+                <div class="pillar-text">
+                    <h3>Cardiac Step-Down</h3>
+                    <p>Post-CABG reconditioning, heart health & step-down clinical monitoring.</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Core Value Propositions Capsule Bar -->
+        <div class="amenities-bar">
+            <div class="amenity-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Dedicated Nursing Care</span>
+            </div>
+            <div class="amenity-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Premium Assisted Suites</span>
+            </div>
+            <div class="amenity-item">
+                <i class="fas fa-check-circle"></i>
+                <span>State-of-the-Art Rehab Zone</span>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- BOTTOM FOOTER -->
+    <div class="signboard-footer">
+        <div class="footer-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>+91 81068 22020</span>
+        </div>
+        <div class="footer-item">
+            <i class="fas fa-globe"></i>
+            <span>activerehabtranscare.in</span>
+        </div>
+    </div>
+
+</body>
+</html>
