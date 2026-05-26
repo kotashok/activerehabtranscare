@@ -266,6 +266,141 @@
         </div>
     </section>
 
+    <!-- Related Recovery Pathways Section -->
+    <section class="related-pathways" style="padding: 60px 0; background: rgba(0, 51, 102, 0.01); border-top: 1px solid rgba(0, 51, 102, 0.08); border-bottom: 1px solid rgba(0, 51, 102, 0.08);">
+        <style>
+            .pathway-card {
+                position: relative;
+                padding: 35px 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+                border: 1px solid rgba(0, 51, 102, 0.08);
+                overflow: hidden;
+                height: 100%;
+                border-radius: var(--radius-md);
+                background: var(--glass-bg);
+            }
+            .pathway-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 30px rgba(0, 51, 102, 0.12);
+                border-color: rgba(0, 128, 128, 0.3);
+            }
+            .pathway-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 4px;
+                height: 100%;
+                background: var(--secondary);
+                opacity: 0.8;
+                transition: width 0.3s ease;
+            }
+            .pathway-card:hover::before {
+                width: 6px;
+            }
+            .pathway-link {
+                color: var(--secondary);
+                text-decoration: none;
+                font-weight: 600;
+                font-family: 'Outfit', sans-serif;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 0.95rem;
+                margin-top: auto;
+                transition: color 0.3s ease;
+            }
+            .pathway-card:hover .pathway-link {
+                color: var(--secondary-light);
+            }
+            .pathway-link i {
+                font-size: 0.85rem;
+                transition: transform 0.3s ease;
+            }
+            .pathway-card:hover .pathway-link i {
+                transform: translateX(4px);
+            }
+            .pathway-icon-wrapper {
+                width: 50px;
+                height: 50px;
+                border-radius: 12px;
+                background: rgba(0, 128, 128, 0.08);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+                color: var(--secondary);
+                font-size: 1.4rem;
+                transition: background 0.3s ease, color 0.3s ease;
+            }
+            .pathway-card:hover .pathway-icon-wrapper {
+                background: var(--secondary);
+                color: var(--white);
+            }
+        </style>
+        <div class="container">
+            <div class="section-title" style="margin-bottom: 45px;">
+                <h2 style="font-size: 2.2rem; margin-bottom: 15px; color: var(--primary);">Related Recovery Pathways</h2>
+                <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    Explore our integrated medical rehabilitation specialties designed to guide patient transitions from acute hospital discharge to complete functional independence.
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- CARD 1: Neuro Rehab -->
+                <div class="pathway-card">
+                    <div>
+                        <div class="pathway-icon-wrapper">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--primary); font-family: 'Outfit';">Neurological Rehabilitation</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+                            Focused clinical neuroplasticity therapies targeting stroke, spinal trauma, Parkinson's, and vestibular disorders to rebuild lost neuromotor pathways.
+                        </p>
+                    </div>
+                    <a href="neuro-rehabilitation.html" class="pathway-link">
+                        Explore Recovery Pathway <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- CARD 2: Ortho Step-Down -->
+                <div class="pathway-card">
+                    <div>
+                        <div class="pathway-icon-wrapper">
+                            <i class="fas fa-bone"></i>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--primary); font-family: 'Outfit';">Orthopedic Step-Down Care</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+                            Structured high-frequency rehabilitation following major joint replacements, spine interventions, and complex fracture surgeries to restore full mobility.
+                        </p>
+                    </div>
+                    <a href="ortho-stepdown.html" class="pathway-link">
+                        Explore Recovery Pathway <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- CARD 3: Geriatric & Fall Prevention -->
+                <div class="pathway-card">
+                    <div>
+                        <div class="pathway-icon-wrapper">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--primary); font-family: 'Outfit';">Geriatric & Fall Prevention</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+                            Evidence-based balance retraining, muscle alignment, and home transition screening to prevent recurrent slips and empower active aging.
+                        </p>
+                    </div>
+                    <a href="geriatric-fall-prevention.html" class="pathway-link">
+                        Explore Recovery Pathway <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Unified Footer -->
     <footer style="background: var(--primary); color: white; padding: 50px 0; text-align: center;">
         <a href="index.html" class="footer-logo-container"><img src="logo.png" alt="ActiveRehab TransCare Logo" style="height: 55px; object-fit: contain;"></a>
