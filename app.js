@@ -48,6 +48,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Blog Article Database & Dialog Logic
     const articles = {
+        'neuroplasticity-in-action-rebuilding-independence-after-a-stroke': {
+            title: "Neuroplasticity in Action: Rebuilding Independence After a Stroke",
+            category: "Neuro Rehab",
+            date: "May 29, 2026",
+            author: "Dr. Ashok P. Kota",
+            image: "blog_neuro.png",
+            content: `
+                <p class="lead">A stroke represents a major disruption to neural pathways, but cerebral tissue possesses a remarkable power called neuroplasticity. This allows healthy regions of the brain to learn and take over functions previously handled by the damaged areas.</p>
+            <h5>1. Task-Oriented Repetitive Training</h5>
+            <p>Passive range of motion is insufficient. True recovery requires stroke rehabilitation focused on goal-oriented tasks, such as reaching for objects or guided standing, to force the brain to forge new motor connections.</p>
+            <h5>2. Regulating Hypertonia & Spasticity</h5>
+            <p>Hyperactive muscle reflexes can lead to painful muscle shortening and joint contractures. Specialized <a href="neuro-rehabilitation.html" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">neurological step-down rehabilitation</a> incorporates neuro-cryotherapy and prolonged stretching to calm overactive nerve groups.</p>
+            <h5>3. The Subacute Recovery Window</h5>
+            <p>The first 3 to 6 months post-stroke represent the golden window for motor recovery. In a dedicated transition facility, patients receive the intensive, multi-hour daily therapy and round-the-clock nursing supervision needed to maximize their independent walking outcomes.</p>
+
+                    <!-- WhatsApp Call to Action (Point 3) -->
+                    <div class="blog-cta-box glass-card" style="margin-top: 40px; padding: 30px; text-align: center; background: rgba(0, 128, 128, 0.05); border: 1px solid rgba(0, 128, 128, 0.15); border-radius: var(--radius-md);">
+                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366; margin-bottom: 15px; display: inline-block;"></i>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: var(--primary);">Secure Your Stroke & Neuro Recovery Suite</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Coordinate a seamless transition from hospital discharge. Dr. Ashok P. Kota will build a targeted task-oriented neuroplasticity program.</p>
+                        <a href="https://wa.me/918106822020" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; padding: 12px 25px; align-items: center; justify-content: center; text-decoration: none; gap: 8px; border-radius: var(--radius-sm);">
+                            <i class="fab fa-whatsapp" style="margin-bottom: 0;"></i> Consult with Dr. Ashok
+                        </a>
+                    </div>
+            `
+        },
+
         'restoring-balance-advanced-stance-gait-correction-after-knee-replacement': {
             title: "Restoring Balance: Advanced Stance & Gait Correction After Knee Replacement",
             category: "Ortho Care",
