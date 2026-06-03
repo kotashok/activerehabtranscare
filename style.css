@@ -967,3 +967,86 @@ body.modal-open {
 }
 
 
+
+
+/* Top Utility Bar */
+.top-bar {
+    background: var(--primary);
+    color: white;
+    padding: 8px 0;
+    font-size: 0.82rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 101;
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-contact {
+    display: flex;
+    gap: 20px;
+}
+
+.top-bar-contact a {
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.top-bar-contact a:hover {
+    color: var(--secondary-light);
+}
+
+.top-bar-social {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.top-bar-social span {
+    opacity: 0.75;
+    font-size: 0.8rem;
+    margin-right: 4px;
+}
+
+.top-bar-social a {
+    color: white;
+    opacity: 0.85;
+    transition: transform 0.2s, color 0.2s, opacity 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-bar-social a:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.top-bar-social a.wa-link:hover {
+    color: #25D366;
+}
+
+.top-bar-social a.insta-link:hover {
+    color: #E1306C;
+}
+
+.top-bar-social a.linkedin-link:hover {
+    color: #0A66C2;
+}
+
+.top-bar-social a.yt-link:hover {
+    color: #FF0000;
+}
+
+/* Hide on mobile screens to maintain header cleanliness */
+@media (max-width: 768px) {
+    .top-bar {
+        display: none;
+    }
+}
