@@ -536,24 +536,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (navBookBtn) navBookBtn.addEventListener('click', openBookingModal);
         if (heroContactBtn) heroContactBtn.addEventListener('click', openBookingModal);
         
-        const partnerUsBtn = document.getElementById('partner-us-btn');
-        if (partnerUsBtn) {
-            partnerUsBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                openBookingModal(e);
-                
-                // Prefill diagnosis field to Healthcare Partner / Other
-                const diagnosisInput = document.getElementById('book-diagnosis');
-                if (diagnosisInput) diagnosisInput.value = 'General Recovery / Other';
-                
-                // Update form option button styles
-                const otherBtn = document.querySelector(`.form-option-btn[data-field="diagnosis"][data-value="General Recovery / Other"]`);
-                if (otherBtn) {
-                    bookingForm.querySelectorAll(`.form-option-btn[data-field="diagnosis"]`).forEach(btn => btn.classList.remove('active-option'));
-                    otherBtn.classList.add('active-option');
-                }
-            });
-        }
+        
+        // Partner with Us button now links directly to referrals.html, no modal interception needed
+        
         
         if (bookingCloseBtn) bookingCloseBtn.addEventListener('click', closeBookingModal);
         if (bookingOverlay) bookingOverlay.addEventListener('click', closeBookingModal);
