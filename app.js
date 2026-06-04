@@ -625,7 +625,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 relation: 'Self',
                 diagnosis: 'Geriatric & Fall Prevention',
                 mobility: 'Bedridden / Needs Max Assistance',
-                room: 'Single Sharing Suite'
+                room: 'Single Suite'
             };
             
             optionButtons.forEach(btn => {
