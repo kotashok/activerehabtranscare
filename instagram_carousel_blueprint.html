@@ -168,6 +168,7 @@
             align-items: center;
             gap: 20px;
             margin-bottom: 25px;
+            padding-right: 180px; /* Leave space for top-right logo watermark */
         }
 
         .slide-light .icon-box {
@@ -274,24 +275,25 @@
         .slide-light .grid-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-            margin-top: 10px;
+            gap: 30px;
+            margin-top: 15px;
         }
 
         .slide-light .grid-item {
             background: var(--white);
             border: 1px solid rgba(0,0,0,0.06);
-            border-radius: 15px;
-            padding: 22px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             display: flex;
             align-items: flex-start;
-            gap: 15px;
+            gap: 20px;
+            min-height: 230px;
         }
 
         .slide-light .grid-item i {
             color: var(--secondary);
-            font-size: 26px;
+            font-size: 28px;
             margin-top: 4px;
         }
 
@@ -303,8 +305,8 @@
 
         .slide-light .grid-item-eng {
             font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            font-size: 22px;
+            font-weight: 700;
+            font-size: 24px;
             color: var(--primary);
             line-height: 1.25;
         }
@@ -312,8 +314,17 @@
         .slide-light .grid-item-tel {
             font-family: 'Noto Sans Telugu', sans-serif;
             font-size: 18px;
-            color: var(--text-muted);
+            font-weight: 700;
+            color: var(--accent);
             line-height: 1.35;
+        }
+
+        .slide-light .grid-item-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            color: var(--text-muted);
+            margin-top: 8px;
+            line-height: 1.45;
         }
 
         /* Slide 9: CTA Details */
@@ -541,7 +552,7 @@
             </div>
             <div class="description-group">
                 <p class="eng-body">Healing requires targeted biological support. Our nutritionists design specific menus aligned with your surgery type, managing protein levels for tissue repair alongside calorie-pacing to promote physical rebuilding.</p>
-                <p class="tel-body">శరీరం త్వరగా కోలుకోవడానికి పోషకాహారం ఎంతో ముఖ్యం. మీ సర్జరీ రకం మరియు ఆరోగ్య పరిస్థితిని బట్టి నిపుణుల సమక్షంలో ప్రోటీన్లు మరియు విటమిన్లు గల సమతుల్య ఆహారాన్ని సిద్ధం చేస్తాం.</p>
+                <p class="tel-body">శరీరం త్వరగా కోలుకోవడానికి పోషకాహారం ఎంతో ముఖ్యం. మీ శస్త్రచికిత్స మరియు ఆరోగ్య పరిస్థితిని బట్టి నిపుణుల సమక్షంలో ప్రోటీన్లు మరియు విటమిన్లు గల సమతుల్య ఆహారాన్ని సిద్ధం చేస్తాం.</p>
             </div>
         </div>
         <div class="slide-footer">
@@ -553,8 +564,9 @@
     <!-- ==================== SLIDE 8 ==================== -->
     <div class="slide slide-light" id="slide-8">
         <img class="logo-watermark" src="logo.png" alt="Logo">
-        <div class="text-container" style="padding: 80px 70px 30px 70px;">
-            <div class="title-row" style="margin-bottom: 25px;">
+        <!-- Add a 130px top padding to ensure the title row starts below the absolute logo watermark -->
+        <div class="text-container" style="padding: 130px 70px 40px 70px;">
+            <div class="title-row" style="margin-bottom: 25px; padding-right: 180px;">
                 <div class="icon-box"><i class="fas fa-question-circle"></i></div>
                 <div class="title-group">
                     <h2 class="eng-title" style="font-size: 38px;">Who Benefits From Step-Down Rehab?</h2>
@@ -567,7 +579,8 @@
                     <i class="fas fa-check-circle"></i>
                     <div class="grid-item-text">
                         <span class="grid-item-eng">Orthopaedic Post-Op</span>
-                        <span class="grid-item-tel">మోకాలు, నడుము, వెన్నెముక సర్జరీ</span>
+                        <span class="grid-item-tel">మోకాలు, నడుము, వెన్నెముక సర్జరీ రికవరీ</span>
+                        <p class="grid-item-desc">Targeted joint mobilization, muscle strengthening, and limp reversal post TKR/THR.</p>
                     </div>
                 </div>
                 <div class="grid-item">
@@ -575,6 +588,7 @@
                     <div class="grid-item-text">
                         <span class="grid-item-eng">Stroke & Neuro Rehab</span>
                         <span class="grid-item-tel">పక్షవాతం, పార్కిన్సన్స్ కేర్</span>
+                        <p class="grid-item-desc">Task-specific repetitive training to leverage neuroplasticity and regain motor control.</p>
                     </div>
                 </div>
                 <div class="grid-item">
@@ -582,6 +596,7 @@
                     <div class="grid-item-text">
                         <span class="grid-item-eng">Cardiac Post-Op</span>
                         <span class="grid-item-tel">బైపాస్, వాల్వ్ సర్జరీ రికవరీ</span>
+                        <p class="grid-item-desc">MET-pacing protocols, respiratory reconditioning, and heart rate vital monitoring.</p>
                     </div>
                 </div>
                 <div class="grid-item">
@@ -589,13 +604,15 @@
                     <div class="grid-item-text">
                         <span class="grid-item-eng">Major Abdominal Post-Op</span>
                         <span class="grid-item-tel">పెద్ద జనరల్ సర్జరీ రికవరీ</span>
+                        <p class="grid-item-desc">Pain management, continuous nursing support, and guided mobility post general surgeries.</p>
                     </div>
                 </div>
-                <div class="grid-item" style="grid-column: span 2;">
+                <div class="grid-item" style="grid-column: span 2; min-height: 180px;">
                     <i class="fas fa-check-circle"></i>
                     <div class="grid-item-text">
                         <span class="grid-item-eng">Elderly Supervised Recovery</span>
                         <span class="grid-item-tel">వయసు మీద పడిన వారికి నిరంతర సంరక్షణ మరియు బ్యాలెన్స్ థెరపీ</span>
+                        <p class="grid-item-desc">Advanced balance reconditioning, gaze stabilization, and home-safety preparation to eliminate falls.</p>
                     </div>
                 </div>
             </div>
