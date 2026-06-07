@@ -66,6 +66,7 @@
         }
 
         .slide-dark .logo {
+            width: 240px;
             height: 85px;
             object-fit: contain;
         }
@@ -139,16 +140,19 @@
             object-fit: cover;
         }
 
-        .slide-light .logo-watermark {
+        /* Logo Watermark explicitly sized and positioned on Slide */
+        .logo-watermark {
             position: absolute;
             top: 40px;
             right: 40px;
-            height: 60px;
+            width: 180px;
+            height: 52px;
             object-fit: contain;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 16px;
-            border-radius: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 6px 12px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            z-index: 1000;
         }
 
         .slide-light .text-container {
@@ -398,9 +402,9 @@
 
     <!-- ==================== SLIDE 2 ==================== -->
     <div class="slide slide-light" id="slide-2">
+        <img class="logo-watermark" src="logo.png" alt="Logo">
         <div class="slide-image">
             <img src="hero_rehab.png" alt="ActiveRehab TransCare Premium rehabilitation corridor">
-            <img class="logo-watermark" src="logo.png" alt="Logo">
         </div>
         <div class="text-container">
             <div class="title-row">
@@ -424,9 +428,9 @@
 
     <!-- ==================== SLIDE 3 ==================== -->
     <div class="slide slide-light" id="slide-3">
+        <img class="logo-watermark" src="logo.png" alt="Logo">
         <div class="slide-image">
             <img src="gmb_day_4_premium_recovery_suites.jpg" alt="ActiveRehab TransCare Premium patient room">
-            <img class="logo-watermark" src="logo.png" alt="Logo">
         </div>
         <div class="text-container">
             <div class="title-row">
@@ -449,9 +453,9 @@
 
     <!-- ==================== SLIDE 4 ==================== -->
     <div class="slide slide-light" id="slide-4">
+        <img class="logo-watermark" src="logo.png" alt="Logo">
         <div class="slide-image">
             <img src="blog_neuro.png" alt="ActiveRehab TransCare Physiotherapist guidance session">
-            <img class="logo-watermark" src="logo.png" alt="Logo">
         </div>
         <div class="text-container">
             <div class="title-row">
@@ -474,9 +478,9 @@
 
     <!-- ==================== SLIDE 5 ==================== -->
     <div class="slide slide-light" id="slide-5">
+        <img class="logo-watermark" src="logo.png" alt="Logo">
         <div class="slide-image">
             <img src="gmb_day_5_cardiorespiratory_rehab.jpg" alt="ActiveRehab TransCare Vitals monitoring telemetry">
-            <img class="logo-watermark" src="logo.png" alt="Logo">
         </div>
         <div class="text-container">
             <div class="title-row">
@@ -499,9 +503,9 @@
 
     <!-- ==================== SLIDE 6 ==================== -->
     <div class="slide slide-light" id="slide-6">
+        <img class="logo-watermark" src="logo.png" alt="Logo">
         <div class="slide-image">
             <img src="blog_neuroplasticity_stroke.png" alt="ActiveRehab TransCare Respiratory rehabilitation session">
-            <img class="logo-watermark" src="logo.png" alt="Logo">
         </div>
         <div class="text-container">
             <div class="title-row">
@@ -524,9 +528,9 @@
 
     <!-- ==================== SLIDE 7 ==================== -->
     <div class="slide slide-light" id="slide-7">
+        <img class="logo-watermark" src="logo.png" alt="Logo">
         <div class="slide-image">
             <img src="instagram_carousel_food.png" alt="ActiveRehab TransCare Nutritional recovery diet">
-            <img class="logo-watermark" src="logo.png" alt="Logo">
         </div>
         <div class="text-container">
             <div class="title-row">
@@ -549,8 +553,9 @@
 
     <!-- ==================== SLIDE 8 ==================== -->
     <div class="slide slide-light" id="slide-8">
-        <div class="text-container" style="padding: 60px 70px 30px 70px;">
-            <div class="title-row" style="margin-bottom: 15px;">
+        <img class="logo-watermark" src="logo.png" alt="Logo">
+        <div class="text-container" style="padding: 80px 70px 30px 70px;">
+            <div class="title-row" style="margin-bottom: 25px;">
                 <div class="icon-box"><i class="fas fa-question-circle"></i></div>
                 <div class="title-group">
                     <h2 class="eng-title" style="font-size: 38px;">Who Benefits From Step-Down Rehab?</h2>
