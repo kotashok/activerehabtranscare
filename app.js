@@ -48,6 +48,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Blog Article Database & Dialog Logic
     const articles = {
+        'heart-rate-monitored-pacing-telemetry-rehabilitation-post-cabg': {
+            title: "Heart-Rate Monitored Pacing: Telemetry Rehabilitation Post-CABG",
+            category: "Cardiorespiratory Rehab",
+            date: "Jun 20, 2026",
+            author: "Dr. Ashok P. Kota",
+            image: "blog_stepdown.png",
+            content: `
+                <p class="lead">Discharge from acute care post-CABG bypass surgery is a huge milestone, but returning home directly can be highly stressful. Reconditioning the heart muscle requires precise <a href="cardiorespiratory-rehab.html" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">cardiorespiratory rehabilitation</a> to establish safe physical boundaries.</p>
+            <h5>1. Sternal Healing & Splinted Protection</h5>
+            <p>Healing a divided breastbone takes 8 to 12 weeks. Patients must avoid unilateral pushing or pulling forces. In a clinical facility, nurses train patients on splinted chest protection when coughing or transferring beds.</p>
+            <h5>2. Telemetry-Monitored Aerobic Progression</h5>
+            <p>Physical loading must be calibrated. Continuous heart-rate tracking and oxygen saturation mapping are deployed during daily exercise sessions to ensure physical efforts remain safely within targeted MET parameters.</p>
+            <h5>3. Breath Re-education & Lung Recruitment</h5>
+            <p>Post-surgical pain often results in shallow breathing, leading to fluid congestion in the lungs. Incorporating diaphragmatic breathing and incentive spirometry drills helps open deep air sacs and prevents post-op pneumonia.</p>
+
+                    <!-- WhatsApp Call to Action (Point 3) -->
+                    <div class="blog-cta-box glass-card" style="margin-top: 40px; padding: 30px; text-align: center; background: rgba(0, 128, 128, 0.05); border: 1px solid rgba(0, 128, 128, 0.15); border-radius: var(--radius-md);">
+                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366; margin-bottom: 15px; display: inline-block;"></i>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: var(--primary);">Need a customized recovery care plan?</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Our Lead Physiotherapist, Dr. Ashok P. Kota (17+ years experience), can build a customized step-down roadmap for you or your loved one.</p>
+                        <a href="https://wa.me/918106822020" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; padding: 12px 25px; align-items: center; justify-content: center; text-decoration: none; gap: 8px; border-radius: var(--radius-sm);">
+                            <i class="fab fa-whatsapp" style="margin-bottom: 0;"></i> Consult with Dr. Ashok
+                        </a>
+                    </div>
+            `
+        },
+
         'neuroplasticity-in-action-rebuilding-independence-after-a-stroke': {
             title: "Neuroplasticity in Action: Rebuilding Independence After a Stroke",
             category: "Neuro Rehab",
