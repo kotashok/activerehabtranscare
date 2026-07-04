@@ -48,6 +48,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Blog Article Database & Dialog Logic
     const articles = {
+        'restoring-balance-advanced-stance-gait-correction-after-knee-replacement': {
+            title: "Restoring Balance: Advanced Stance & Gait Correction After Knee Replacement",
+            category: "Ortho Care",
+            date: "Jul 04, 2026",
+            author: "Dr. Ashok P. Kota",
+            image: "blog_ortho.png",
+            content: `
+                <p class="lead">Undergoing a total knee replacement is the first step toward pain-free living, but the final outcome is determined by <a href="ortho-stepdown.html" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">post-operative orthopedic care</a>. A common complication is the development of an asymmetrical limp, which, if uncorrected, puts stress on the other knee, hips, and lower back.</p>
+            <h5>1. Overcoming the Fear of Weight-Bearing</h5>
+            <p>Directly after surgery, the brain protective reflex restricts loading on the joint. Specialized step-down clinical care utilizes guided parallel rail corridors to systematically retrain the foot-strike pattern and center of gravity, returning immediate walking confidence.</p>
+            <h5>2. Reversing Quadriceps Muscle Atrophy</h5>
+            <p>Surgery causes temporary muscle shutdown. Targeted isometric quadriceps contractions and light progressive resistance band training are essential to stabilize the patella and ensure complete knee extension angles.</p>
+            <h5>3. The Clinical Step-Down Advantage</h5>
+            <p>Step-down transitional facilities bridge the gap between hospital discharge and going home, providing continuous swelling monitoring, sterile dressing oversight, and intensive daily therapy sessions.</p>
+
+                    <!-- WhatsApp Call to Action (Point 3) -->
+                    <div class="blog-cta-box glass-card" style="margin-top: 40px; padding: 30px; text-align: center; background: rgba(0, 128, 128, 0.05); border: 1px solid rgba(0, 128, 128, 0.15); border-radius: var(--radius-md);">
+                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366; margin-bottom: 15px; display: inline-block;"></i>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: var(--primary);">Secure Your Post-Op Recovery Suite</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Our clinical team under Dr. Ashok P. Kota will review your surgical details, coordinate hospital transfer logs, and prepare a custom step-down roadmap.</p>
+                        <a href="https://wa.me/918106822020" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; padding: 12px 25px; align-items: center; justify-content: center; text-decoration: none; gap: 8px; border-radius: var(--radius-sm);">
+                            <i class="fab fa-whatsapp" style="margin-bottom: 0;"></i> Consult with Dr. Ashok
+                        </a>
+                    </div>
+            `
+        },
+
         'elderly-gait-instability-reversing-sarcopenia-to-prevent-falls': {
             title: "Elderly Gait Instability: Reversing Sarcopenia to Prevent Falls",
             category: "Fall Prevention",
@@ -129,32 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
             `
         },
 
-        'restoring-balance-advanced-stance-gait-correction-after-knee-replacement': {
-            title: "Restoring Balance: Advanced Stance & Gait Correction After Knee Replacement",
-            category: "Ortho Care",
-            date: "May 25, 2026",
-            author: "Dr. Ashok P. Kota",
-            image: "blog_ortho.png",
-            content: `
-                <p class="lead">Undergoing a total knee replacement is the first step toward pain-free living, but the final outcome is determined by <a href="ortho-stepdown.html" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">post-operative orthopedic care</a>. A common complication is the development of an asymmetrical limp, which, if uncorrected, puts stress on the other knee, hips, and lower back.</p>
-            <h5>1. Overcoming the Fear of Weight-Bearing</h5>
-            <p>Directly after surgery, the brain protective reflex restricts loading on the joint. Specialized step-down clinical care utilizes guided parallel rail corridors to systematically retrain the foot-strike pattern and center of gravity, returning immediate walking confidence.</p>
-            <h5>2. Reversing Quadriceps Muscle Atrophy</h5>
-            <p>Surgery causes temporary muscle shutdown. Targeted isometric quadriceps contractions and light progressive resistance band training are essential to stabilize the patella and ensure complete knee extension angles.</p>
-            <h5>3. The Clinical Step-Down Advantage</h5>
-            <p>Step-down transitional facilities bridge the gap between hospital discharge and going home, providing continuous swelling monitoring, sterile dressing oversight, and intensive daily therapy sessions.</p>
-
-                    <!-- WhatsApp Call to Action (Point 3) -->
-                    <div class="blog-cta-box glass-card" style="margin-top: 40px; padding: 30px; text-align: center; background: rgba(0, 128, 128, 0.05); border: 1px solid rgba(0, 128, 128, 0.15); border-radius: var(--radius-md);">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366; margin-bottom: 15px; display: inline-block;"></i>
-                        <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: var(--primary);">Secure Your Post-Op Recovery Suite</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Our clinical team under Dr. Ashok P. Kota will review your surgical details, coordinate hospital transfer logs, and prepare a custom step-down roadmap.</p>
-                        <a href="https://wa.me/918106822020" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; padding: 12px 25px; align-items: center; justify-content: center; text-decoration: none; gap: 8px; border-radius: var(--radius-sm);">
-                            <i class="fab fa-whatsapp" style="margin-bottom: 0;"></i> Consult with Dr. Ashok
-                        </a>
-                    </div>
-            `
-        },
 
         'knee-surgery': {
             title: "5 Steps to a Safe and Speedy Recovery After Knee Surgery",
