@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActiveRehab TransCare - Quick Connect Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #003366;       /* Clinical Trust Navy */
+            --saffron: #e65c00;       /* Healing Saffron Orange */
+            --bg-light: #f8fafc;      /* Soft Slate */
+            --text-dark: #0f172a;     /* Dark Slate Text */
+            --text-muted: #64748b;    /* Muted Slate Text */
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 559px;
+            height: 794px;
+            background-color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            overflow: hidden;
+            display: flex;
+            position: relative;
+        }
+
+        /* Left Saffron Architectural Accent Bar */
+        .vertical-accent-bar {
+            width: 50px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--saffron) 0%, rgba(230, 92, 0, 0.4) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .vertical-bar-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Main Content Block (Shifted by Bar Width) */
+        .content-area {
+            flex: 1;
+            margin-left: 50px;
+            padding: 40px 30px 60px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        /* Header Section */
+        .header-section {
+            margin-bottom: 25px;
+        }
+
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-img {
+            height: 78px;
+            width: auto;
+            display: block;
+        }
+
+        .connect-badge {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--saffron);
+            border: 1.5px solid var(--saffron);
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .main-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.65rem;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+            font-weight: 500;
+        }
+
+        .subtitle strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* 2x2 Grid of QRs */
+        .qr-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            flex: 1;
+            margin-bottom: 30px;
+        }
+
+        .qr-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 18px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.01);
+        }
+
+        .qr-border-wrap {
+            padding: 6px;
+            background: #ffffff;
+            border: 1.5px solid rgba(0, 51, 102, 0.08);
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .qr-box {
+            width: 95px;
+            height: 95px;
+            display: block;
+        }
+
+        .qr-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .qr-label-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 100%;
+        }
+
+        .qr-badge {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .qr-badge i {
+            color: var(--saffron);
+            font-size: 0.78rem;
+        }
+
+        .qr-value {
+            font-size: 0.76rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        /* Bottom Footer Strap (Strictly no rounding) */
+        .bottom-footer-strap {
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+            width: calc(100% - 50px);
+            height: 40px;
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .footer-text {
+            color: #ffffff;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-text i {
+            color: var(--saffron);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Left Vertical Accent Bar -->
+    <div class="vertical-accent-bar">
+        <span class="vertical-bar-text">ACTIVEREHAB TRANSCARE</span>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content-area">
+        
+        <!-- Header -->
+        <div class="header-section">
+            <div class="top-row">
+                <img src="logo.png" alt="ActiveRehab Logo" class="logo-img">
+                <span class="connect-badge">Quick Connect</span>
+            </div>
+            <div class="header-text">
+                <h1 class="main-title">Connect With Our Team</h1>
+                <p class="subtitle"><strong>ActiveRehab TransCare</strong> is a premium inpatient rehabilitation center specializing in <strong>Orthopedic Step-down, Stroke & Neuro Recovery, Cardiorespiratory Rehab, and Geriatric Fall Prevention</strong>. Scan any QR code below to connect with us:</p>
+            </div>
+        </div>
+
+        <!-- 2x2 QR Grid -->
+        <div class="qr-grid">
+            
+            <!-- Card 1: Website -->
+            <div class="qr-card">
+                <div class="qr-border-wrap">
+                    <div class="qr-box">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=003366&data=https%3A%2F%2Factiverehabtranscare.in" alt="Website QR Code" class="qr-img">
+                    </div>
+                </div>
+                <div class="qr-label-wrap">
+                    <span class="qr-badge"><i class="fa-solid fa-globe"></i> WEB PORTAL</span>
+                    <span class="qr-value">activerehabtranscare.in</span>
+                </div>
+            </div>
+
+            <!-- Card 2: WhatsApp -->
+            <div class="qr-card">
+                <div class="qr-border-wrap">
+                    <div class="qr-box">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=003366&data=https%3A%2F%2Fwa.me%2F918106822020%3Ftext%3DHello%2520ActiveRehab%2520TransCare%252C%2520I%2520would%2520like%2520to%2520enquire%2520about%2520your%2520rehab%2520suites." alt="WhatsApp QR Code" class="qr-img">
+                    </div>
+                </div>
+                <div class="qr-label-wrap">
+                    <span class="qr-badge"><i class="fa-brands fa-whatsapp"></i> WHATSAPP CHAT</span>
+                    <span class="qr-value">+91 81068 22020</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Google Maps -->
+            <div class="qr-card">
+                <div class="qr-border-wrap">
+                    <div class="qr-box">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=003366&data=https%3A%2F%2Fmaps.google.com%2F%3Fq%3DActiveRehab%2BTransCare%2BLaxmi%2BNagar%2BColony%2BKompally%2BHyderabad" alt="Google Maps QR Code" class="qr-img">
+                    </div>
+                </div>
+                <div class="qr-label-wrap">
+                    <span class="qr-badge"><i class="fa-solid fa-map-location-dot"></i> GOOGLE MAPS</span>
+                    <span class="qr-value">Kompally Center</span>
+                </div>
+            </div>
+
+            <!-- Card 4: Instagram -->
+            <div class="qr-card">
+                <div class="qr-border-wrap">
+                    <div class="qr-box">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=003366&data=https%3A%2F%2Fwww.instagram.com%2Factiverehab.transcare%3Futm_source%3Dqr%26igsh%3DMTdmZXBnYnM3MG14Mg%3D%3D" alt="Instagram QR Code" class="qr-img">
+                    </div>
+                </div>
+                <div class="qr-label-wrap">
+                    <span class="qr-badge"><i class="fa-brands fa-instagram"></i> INSTAGRAM</span>
+                    <span class="qr-value">@activerehab.transcare</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Footer Strap -->
+        <div class="bottom-footer-strap">
+            <span class="footer-text"><i class="fa-solid fa-location-dot"></i> Laxmi Nagar Colony, Kompally, Hyderabad | Admissions Open</span>
+        </div>
+
+    </div>
+
+</body>
+</html>

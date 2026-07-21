@@ -1,0 +1,701 @@
+/* ====================================================================
+   GOOGLE ANTIGRAVITY - e-CARD WHITE SIGNBOARD DESIGN SYSTEM
+   ==================================================================== */
+
+:root {
+    --primary: #003366;       /* Clinical Trust Navy */
+    --saffron: #e65c00;       /* Healing Saffron Orange */
+    --saffron-light: #ff751a;
+    --dark-bg: #0f172a;       /* Slate Dark Interface Backdrop */
+    --card-border: #cbd5e1;   /* Slate Border matching White Signboard */
+    
+    --text-white: #ffffff;
+    --text-dark: #0f172a;     /* Deep slate matching signboard */
+    --text-muted: #64748b;
+    
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* ====================================================================
+   FLOATING ANIMATED BACKGROUND BLOBS
+   ==================================================================== */
+.blob {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 0;
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+.blob-navy {
+    background: var(--primary);
+    top: -50px;
+    left: -50px;
+    animation: floatBlob 16s infinite alternate ease-in-out;
+}
+
+.blob-saffron {
+    background: var(--saffron);
+    bottom: -50px;
+    right: -50px;
+    animation: floatBlob 16s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes floatBlob {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(80px, 50px) scale(1.15); }
+}
+
+/* ====================================================================
+   MAIN LAYOUT CONTAINER
+   ==================================================================== */
+.container {
+    width: 100%;
+    max-width: 440px;
+    padding: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ====================================================================
+   HEADER SECTION
+   ==================================================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    font-family: 'Noto Sans Telugu', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.brand-telugu {
+    color: #ffffff;
+}
+
+.brand-saffron {
+    color: var(--saffron);
+    margin-right: 5px;
+}
+
+.brand-wordmark {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #cbd5e1;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    padding-left: 6px;
+    margin-top: 3px;
+}
+
+.card-hint {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    background: rgba(255,255,255,0.06);
+    padding: 6px 12px;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-hint:hover {
+    color: #ffffff;
+    background: rgba(255,255,255,0.12);
+}
+
+/* ====================================================================
+   3D CARD ANIMATION WRAPPER
+   ==================================================================== */
+.card-wrapper {
+    width: 100%;
+    height: 225px; /* Perfect 3.5:2 physical business card landscape ratio */
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--glass-shadow);
+    border-radius: 24px;
+}
+
+.card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 24px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* ====================================================================
+   CARD FRONT: LANDSCAPE WHITE SIGNBOARD ACP SHEET LAYOUT
+   ==================================================================== */
+.card-front {
+    background-color: #ffffff;
+    border: 3px solid var(--card-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Regional Telugu branding absolute in top-left - centered vertically with the logo */
+.front-telugu-badge {
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    font-family: 'Noto Sans Telugu', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.1;
+    z-index: 5;
+}
+
+.front-telugu-badge .navy-txt {
+    color: var(--primary);
+}
+
+.front-telugu-badge .saffron-txt {
+    color: var(--saffron);
+}
+
+.card-front-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 18px;
+    padding-bottom: 35px;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Horizontal Centered Logo Area - Scaled up & Shifted further upwards */
+.brand-logo-area {
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -28px;
+    margin-bottom: 26px;
+}
+
+.front-logo-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Two-column layout grid below logo */
+.front-grid-area {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+    padding: 0 10px 0 20px;
+}
+
+/* Left Column: Identity block */
+.front-left-col {
+    text-align: left;
+    border-right: 1.5px solid rgba(0, 51, 102, 0.12);
+    padding-right: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.front-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+.front-role {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--saffron);
+    margin-top: 3px;
+}
+
+/* Right Column: Compact Services List */
+.front-right-col {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.front-services-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.front-services-list li {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.25;
+}
+
+.front-services-list li i {
+    color: var(--saffron);
+    font-size: 0.76rem;
+    width: 12px;
+    text-align: center;
+}
+
+/* Solid Navy Footer bar matching signboard spec */
+.front-navy-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background: var(--primary);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.footer-left-txt {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-right-txt {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.footer-right-txt i {
+    color: #f59e0b; /* Gold phone icon */
+    font-size: 0.75rem;
+}
+
+/* ====================================================================
+   CARD BACK: LANDSCAPE WHITE CONTACT INFO GRID
+   ==================================================================== */
+.card-back {
+    background-color: #ffffff;
+    background-image: radial-gradient(rgba(0, 51, 102, 0.05) 1.5px, transparent 1.5px);
+    background-size: 14px 14px;
+    border: 3px solid var(--card-border);
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-back-grid {
+    display: grid;
+    grid-template-columns: 1.65fr 1fr;
+    width: 100%;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.back-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1.1;
+}
+
+.back-subtitle {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--saffron);
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, var(--saffron), transparent);
+    width: 80px;
+    margin: 6px 0 10px 0;
+}
+
+.contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-list li i {
+    font-size: 0.8rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: rgba(0, 51, 102, 0.05);
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-list li div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-list .label {
+    font-size: 0.52rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.contact-list .value {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #334155;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-list .value:hover {
+    color: var(--saffron);
+}
+
+/* Back side QR code Area */
+.back-qr-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.back-logo-img {
+    height: 15px;
+    object-fit: contain;
+    margin-bottom: 2px;
+    opacity: 0.85;
+}
+
+.qr-container {
+    width: 90px;
+    height: 90px;
+    border: 1px solid rgba(0,51,102,0.08);
+    background: white;
+    border-radius: 10px;
+    padding: 6px;
+    box-shadow: 0 6px 15px rgba(0,51,102,0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#qrcode {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#qrcode img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.qr-caption {
+    font-size: 0.52rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ====================================================================
+   ACTION HUB & BUTTON STYLING
+   ==================================================================== */
+.action-hub {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 18px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Saffron Primary Action (Save Contact) */
+.btn-save {
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--saffron-light) 100%);
+    color: #ffffff;
+    height: 60px;
+    box-shadow: 0 10px 25px rgba(230, 92, 0, 0.35);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.btn-save:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(230, 92, 0, 0.45);
+}
+
+.btn-save:active {
+    transform: translateY(-1px);
+}
+
+/* Action Hub Grid */
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.action-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16px);
+}
+
+.action-btn:hover {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.25);
+    transform: translateY(-3px);
+}
+
+.btn-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.35rem;
+    transition: transform 0.3s ease;
+}
+
+.action-btn:hover .btn-icon {
+    transform: scale(1.1);
+}
+
+.call-btn .btn-icon { background: rgba(52, 211, 153, 0.15); color: #34d399; }
+.whatsapp-btn .btn-icon { background: rgba(37, 211, 102, 0.15); color: #25d366; }
+.email-btn .btn-icon { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
+.maps-btn .btn-icon { background: rgba(248, 113, 113, 0.15); color: #f87171; }
+
+.action-btn span {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+/* ====================================================================
+   UTILITY ROW STYLING
+   ==================================================================== */
+.utility-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
+.utility-link {
+    background: none;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+}
+
+.utility-link:hover {
+    color: #ffffff;
+}
+
+/* ====================================================================
+   BRANCH FOOTER DETAIL
+   ==================================================================== */
+.branch-footer {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 16px 20px;
+    backdrop-filter: blur(12px);
+}
+
+.branch-footer .address {
+    font-size: 0.8rem;
+    line-height: 1.45;
+    color: #94a3b8;
+}
+
+.branch-footer strong {
+    color: #e2e8f0;
+}
+
+.branch-footer i {
+    color: var(--saffron);
+    margin-right: 4px;
+}
+
+/* ====================================================================
+   TOAST POPUP STYLING
+   ==================================================================== */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid var(--saffron);
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 100px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast i {
+    color: var(--saffron);
+}
+
+/* ====================================================================
+   FLUID MICRO-ENTRANCE ANIMATIONS
+   ==================================================================== */
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.6s forwards;
+}
+
+.animate-slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+}
+
+.animate-slide-up-delay {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUp 0.6s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+}
+
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes slideUp { to { opacity: 1; transform: translateY(0); } }

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-Op TKR Rehabilitation Protocol | ActiveRehab TransCare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #003366; /* Clinical Navy */
+            --primary-light: #0a4d8c;
+            --saffron: #f59e0b; /* Saffron/Orange Accent */
+            --saffron-dark: #d97706;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            width: 1080px;
+            height: 1350px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Branding Top Header - Light white background for original logo colors */
+        .header-section {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 30px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            border-bottom: 4px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 51, 102, 0.04);
+        }
+
+        .header-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-logo-img {
+            height: 65px;
+            width: auto;
+            /* No color filters: displays untweaked original logo colors */
+        }
+
+        .header-title-area {
+            text-align: right;
+        }
+
+        .header-tag {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--saffron-dark);
+            margin-bottom: 5px;
+        }
+
+        .header-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--primary);
+        }
+
+        .header-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            padding: 40px;
+            background-color: var(--bg-light);
+            background-image: radial-gradient(rgba(0, 51, 102, 0.03) 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Protocol Grid layout */
+        .protocol-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            flex: 1;
+        }
+
+        .left-phases {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Phase Card Styles */
+        .phase-card {
+            background: var(--white);
+            border-left: 6px solid var(--primary);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0, 51, 102, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+        }
+
+        .phase-card.phase-2 {
+            border-left-color: var(--saffron);
+        }
+
+        .phase-card.phase-3 {
+            border-left-color: #10b981; /* Green for Phase 3 */
+        }
+
+        .phase-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .phase-timeline {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 900;
+            color: var(--white);
+            background-color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .phase-card.phase-2 .phase-timeline {
+            background-color: var(--saffron);
+        }
+
+        .phase-card.phase-3 .phase-timeline {
+            background-color: #10b981;
+        }
+
+        .phase-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .phase-focus {
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            background: rgba(0, 51, 102, 0.03);
+            padding: 8px 12px;
+            border-radius: 6px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .phase-card.phase-2 .phase-focus {
+            background: rgba(245, 158, 11, 0.04);
+        }
+
+        .phase-card.phase-3 .phase-focus {
+            background: rgba(16, 185, 129, 0.04);
+        }
+
+        .phase-focus i {
+            color: var(--primary);
+        }
+
+        .phase-card.phase-2 .phase-focus i {
+            color: var(--saffron-dark);
+        }
+
+        .phase-card.phase-3 .phase-focus i {
+            color: #10b981;
+        }
+
+        .phase-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .phase-list li {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: var(--text-muted);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .phase-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        .phase-card.phase-2 .phase-list li::before {
+            color: var(--saffron);
+        }
+
+        .phase-card.phase-3 .phase-list li::before {
+            color: #10b981;
+        }
+
+        /* Right Clinical Protocol Guidelines */
+        .right-guidelines {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 51, 102, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guideline-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            border-bottom: 2px solid rgba(0,51,102,0.1);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guideline-section-title i {
+            color: var(--saffron);
+        }
+
+        .guideline-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .guideline-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .guideline-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(0, 51, 102, 0.05);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .guideline-text h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 3px;
+        }
+
+        .guideline-text p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Critical Warnings panel */
+        .warning-panel {
+            background: rgba(239, 68, 68, 0.04);
+            border: 1px dashed rgba(239, 68, 68, 0.25);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .warning-panel i {
+            color: #ef4444;
+            font-size: 1.3rem;
+            margin-top: 2px;
+        }
+
+        .warning-text h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #ef4444;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .warning-text p {
+            font-size: 0.85rem;
+            color: #7f1d1d;
+            line-height: 1.4;
+        }
+
+        /* Facility-Only Footer Panel (No doctor credentials/portrait) */
+        .footer-panel {
+            background: linear-gradient(135deg, #021a36 0%, #003366 100%);
+            color: var(--white);
+            padding: 30px 40px;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            border-top: 4px solid var(--saffron);
+        }
+
+        .footer-facility-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-facility-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--white);
+        }
+
+        .footer-facility-address {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .footer-facility-address i {
+            color: var(--saffron);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+
+        .footer-contact-details {
+            border-left: 1.5px dashed rgba(255, 255, 255, 0.15);
+            padding-left: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+        }
+
+        .contact-item i {
+            color: var(--saffron);
+            font-size: 1.1rem;
+            width: 16px;
+            text-align: center;
+        }
+
+        .contact-item span {
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header-section">
+        <div class="header-logo-area">
+            <img src="logo.png" alt="ActiveRehab Logo" class="header-logo-img">
+        </div>
+        <div class="header-title-area">
+            <p class="header-tag">Clinical Protocol Infographic</p>
+            <h1 class="header-title">Total Knee Replacement (TKR)</h1>
+            <h2 class="header-subtitle">Evidence-Based Post-Operative Rehabilitation Roadmap</h2>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+        
+        <div class="protocol-grid">
+            
+            <!-- Left: Clinical Phases -->
+            <div class="left-phases">
+                
+                <!-- Phase 1 Card -->
+                <div class="phase-card phase-1">
+                    <div class="phase-header">
+                        <h3 class="phase-title">Phase 1: Acute Healing &amp; Mobility</h3>
+                        <span class="phase-timeline">Days 1–14</span>
+                    </div>
+                    <div class="phase-focus">
+                        <i class="fa-solid fa-notes-medical"></i>
+                        <span>Clinical Focus: Edema Control &amp; Passive Extension</span>
+                    </div>
+                    <ul class="phase-list">
+                        <li>Achieve complete knee extension (0&deg;) and 90&deg; of knee flexion.</li>
+                        <li>Swelling control using ice therapy and continuous elevation.</li>
+                        <li>Ankle pumps &amp; quad sets to restore initial muscle firing.</li>
+                        <li>Gentle passive heel slides and patella mobility drills.</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 2 Card -->
+                <div class="phase-card phase-2">
+                    <div class="phase-header">
+                        <h3 class="phase-title">Phase 2: Gait &amp; Balance Restoration</h3>
+                        <span class="phase-timeline">Weeks 2–6</span>
+                    </div>
+                    <div class="phase-focus">
+                        <i class="fa-solid fa-person-walking"></i>
+                        <span>Clinical Focus: Limp Reversal &amp; Stance Symmetry</span>
+                    </div>
+                    <ul class="phase-list">
+                        <li>Increase knee flexion past 110&deg; and normalize walking gait.</li>
+                        <li>Parallel rail support drills to eliminate protective limping.</li>
+                        <li>Stance re-education using high-density foam balance pods.</li>
+                        <li>Progressive weight-bearing and light resistance band exercises.</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 3 Card -->
+                <div class="phase-card phase-3">
+                    <div class="phase-header">
+                        <h3 class="phase-title">Phase 3: Strength &amp; Proprioception</h3>
+                        <span class="phase-timeline">Weeks 6–12</span>
+                    </div>
+                    <div class="phase-focus">
+                        <i class="fa-solid fa-dumbbell"></i>
+                        <span>Clinical Focus: Muscle Volume &amp; Joint Control</span>
+                    </div>
+                    <ul class="phase-list">
+                        <li>Achieve full range of motion (flexion past 120&deg;+).</li>
+                        <li>Closed-chain exercises (squats, step-ups) to rebuild quadriceps volume.</li>
+                        <li>Advanced coordination drills to restore proprioception.</li>
+                        <li>Safe, pain-free stair climbing and returning to daily activities.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Right: Guidelines & Critical Swelling Info -->
+            <div class="right-guidelines">
+                
+                <div class="guideline-box">
+                    <h3 class="guideline-section-title">
+                        <i class="fa-solid fa-shield-halved"></i> Key Recovery Rules
+                    </h3>
+                    
+                    <div class="guideline-item">
+                        <div class="guideline-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                        <div class="guideline-text">
+                            <h4>R.I.C.E. Protocol Integration</h4>
+                            <p>Apply cold packs for 20 minutes every 2 hours during the first 14 days to minimize surgical inflammation and deep tissue heating.</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon"><i class="fa-solid fa-lock"></i></div>
+                        <div class="guideline-text">
+                            <h4>Extension is Priority #1</h4>
+                            <p>Keeping the knee straight (0&deg; extension) is critical. Never place a pillow directly under the knee joint; place it under the ankle instead.</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                        <div class="guideline-text">
+                            <h4>Calibrated Weight-Bearing</h4>
+                            <p>Gradually load weight as tolerated under therapist guidance to build joint confidence and stimulate bone remodeling.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Panel -->
+                <div class="warning-panel">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <div class="warning-text">
+                        <h4>Red Flag Warnings</h4>
+                        <p>Seek immediate clinical assessment if you experience sudden calf pain/redness (deep vein thrombosis sign), localized heat, or leaking surgical wounds.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer / Facility Panel (No doctor credentials/portrait) -->
+    <footer class="footer-panel">
+        <div class="footer-facility-info">
+            <h3 class="footer-facility-name">ActiveRehab TransCare &amp; Rehabilitation</h3>
+            <p class="footer-facility-address">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Plot No. 4-1-1, 41/A &amp; 48, Laxmi Nagar Colony, Kompally, Near Sri Meru Hospital, Hyderabad, Telangana, 500100</span>
+            </p>
+        </div>
+        <div class="footer-contact-details">
+            <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>Admissions: +91 81068 22020</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-globe"></i>
+                <span>activerehabtranscare.in</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

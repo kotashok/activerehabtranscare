@@ -1,0 +1,1806 @@
+/* ====================================================================
+   ACTIVE REHAB TRANSCARE - VERTICAL ARCHITECTURAL ACCENT BROCHURE CSS
+   ==================================================================== */
+
+:root {
+    --primary: #003366;       /* Clinical Trust Navy */
+    --saffron: #e65c00;       /* Healing Saffron Orange */
+    --saffron-light: #ff751a;
+    --dark-bg: #0f172a;       /* Slate Dark Background */
+    --border-color: #f1f5f9;  /* Minimal divider color */
+    
+    --text-navy: #003366;
+    --text-white: #ffffff;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    
+    --card-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.35);
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ====================================================================
+   FLOATING BACKGROUND BLOBS
+   ==================================================================== */
+.blob {
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: 0;
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.blob-navy {
+    background: var(--primary);
+    top: -100px;
+    left: -100px;
+    animation: float 20s infinite alternate ease-in-out;
+}
+
+.blob-saffron {
+    background: var(--saffron);
+    bottom: -100px;
+    right: -100px;
+    animation: float 20s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translate(0,0) scale(1); }
+    100% { transform: translate(120px, 80px) scale(1.2); }
+}
+
+/* ====================================================================
+   APP HEADER
+   ==================================================================== */
+.app-header {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    font-family: 'Noto Sans Telugu', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+.brand-telugu { color: #ffffff; }
+.brand-saffron { color: var(--saffron); margin-right: 8px; }
+
+.brand-wordmark {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #cbd5e1;
+    border-left: 1.5px solid rgba(255,255,255,0.3);
+    padding-left: 8px;
+    margin-top: 4px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-action {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(12px);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-action:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+.btn-print-pdf {
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--saffron-light) 100%);
+    box-shadow: 0 8px 20px rgba(230, 92, 0, 0.25);
+    border: none;
+}
+
+.btn-print-pdf:hover {
+    background: linear-gradient(135deg, var(--saffron-light) 0%, #ff8c3a 100%);
+    box-shadow: 0 10px 24px rgba(230, 92, 0, 0.35);
+}
+
+/* ====================================================================
+   BROCHURE PORTRAIT CONTAINER & VIEWPORT
+   ==================================================================== */
+.brochure-container {
+    width: 100%;
+    max-width: 520px; /* Perfect Portrait A4 Ratio Screen Width */
+    margin: 15px auto;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.brochure-viewport {
+    width: 100%;
+    height: 735px; /* Perfect Portrait A4 Screen Height Ratio (~1.414) */
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--glass-border);
+    position: relative;
+    background: white;
+}
+
+.brochure-slider {
+    display: flex;
+    width: 400%; /* 4 Pages */
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* ====================================================================
+   UNIVERSAL PORTRAIT PAGE BASE
+   ==================================================================== */
+.brochure-page {
+    width: 25%;
+    height: 100%;
+    background-color: #ffffff;
+    color: var(--text-dark);
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Outer signboard border layout */
+.brochure-page::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 8px solid rgba(0, 51, 102, 0.04);
+    pointer-events: none;
+    border-radius: 28px;
+    z-index: 10;
+}
+
+/* ====================================================================
+   LEFT VERTICAL ARCHITECTURAL ACCENT BAR
+   ==================================================================== */
+.vertical-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.bar-navy {
+    background-color: var(--primary);
+}
+
+.bar-saffron {
+    background-color: var(--saffron);
+}
+
+.vertical-bar-text {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Content Area offset by vertical bar */
+.page-content-wrapper {
+    margin-left: 35px;
+    width: calc(100% - 35px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inner-padding {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* Page Section Headers */
+.page-sec-header {
+    margin-bottom: 5px;
+}
+
+.sec-label {
+    font-family: 'Outfit', sans-serif;
+    color: var(--saffron);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.74rem;
+    letter-spacing: 2px;
+}
+
+.sec-title {
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-top: 2px;
+}
+
+.accent-line {
+    height: 3px;
+    width: 45px;
+    background: linear-gradient(90deg, var(--saffron), transparent);
+    margin-top: 5px;
+}
+
+/* ====================================================================
+   PAGE 1: COVER PAGE
+   ==================================================================== */
+.page-top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 0 24px;
+    height: 50px;
+}
+
+.telugu-badge {
+    font-family: 'Noto Sans Telugu', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.telugu-badge .navy-txt { color: var(--primary); }
+.telugu-badge .saffron-txt { color: var(--saffron); }
+
+.brand-logo {
+    height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.cover-hero-zone {
+    padding: 10px 24px 0 24px;
+    margin-top: 35px; /* Bring hero section down by about 3 lines */
+    width: 100%;
+}
+
+.cover-tagline {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 0.74rem;
+    letter-spacing: 2px;
+    color: var(--saffron);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.cover-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1.15;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.cover-subtitle-english {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--saffron);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 12px;
+    margin-bottom: 15px;
+}
+
+.navy-gradient-text {
+    color: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 30%, #004d99 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cover-paragraph {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: #475569;
+    margin-top: 8px;
+}
+
+/* Cover Image Centerpiece */
+.cover-visual-zone {
+    width: 100%;
+    padding: 12px 24px 8px 24px; /* Natural padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration-frame {
+    width: 100%;
+    height: 210px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 12px 30px rgba(0, 51, 102, 0.05);
+    position: relative;
+}
+
+.badge-overlay {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    z-index: 5;
+    backdrop-filter: blur(8px);
+}
+
+.badge-overlay i {
+    color: var(--saffron);
+    font-size: 0.74rem;
+}
+
+.illustration-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Page 1 Bottom Signboard Footer */
+.cover-navy-footer {
+    width: 100%;
+    height: 48px;
+    background: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    color: #ffffff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    z-index: 5;
+    margin-top: auto; /* Push footer to absolute bottom of the cover page */
+    border-radius: 0 !important; /* Strictly no rounding of the corners of the straps */
+}
+
+.cover-navy-footer span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cover-navy-footer i {
+    color: var(--saffron); /* Saffron icons for perfect consistency! */
+}
+
+/* Services 2-Column List under Front Cover Image */
+.cover-services-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+    width: calc(100% - 48px);
+    margin: 10px auto 16px auto; /* 10px gap below the image (2-3 lines gap) */
+    padding: 12px 0;
+    border-top: 1px solid rgba(0, 51, 102, 0.08);
+    border-bottom: 1px solid rgba(0, 51, 102, 0.08);
+}
+
+.cover-services-columns > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.service-item-inline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.25;
+}
+
+.service-item-inline i {
+    color: var(--saffron);
+    font-size: 0.74rem;
+    flex-shrink: 0;
+}
+
+/* Global Footer Bar for Interior Pages */
+.page-bottom-footer-bar {
+    position: absolute;
+    bottom: 0;
+    left: -35px; /* Escape the wrapper offset to reach full-bleed on screen */
+    width: 100%;
+    height: 48px;
+    padding: 0 24px 0 59px; /* Offset by vertical bar + natural padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    z-index: 10;
+    box-sizing: border-box;
+    border-radius: 0 !important; /* Strictly no rounding of the corners of the straps */
+}
+
+/* Saffron Strap styling */
+.footer-saffron-strap {
+    background-color: var(--saffron);
+}
+
+/* Blue Strap styling */
+.footer-blue-strap {
+    background-color: var(--primary);
+}
+
+.page-bottom-footer-bar span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #ffffff !important;
+}
+
+.page-bottom-footer-bar i,
+.cover-navy-footer i {
+    color: #ffffff !important; /* White icons on solid color backgrounds for maximum class! */
+}
+
+/* Page 4 Large Bottom Logo styling on Screen */
+.back-large-logo-area {
+    position: absolute;
+    bottom: 96px; /* 48px strap + 48px (3 lines gap) */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    margin-left: 18px;
+}
+
+.back-large-logo-img {
+    height: 80px; /* 35% larger than 60px */
+    width: auto;
+    object-fit: contain;
+}
+
+/* ====================================================================
+   PAGE 2: CLINICAL SERVICES VERTICAL STACK
+   ==================================================================== */
+.services-list-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    margin-top: 10px;
+}
+
+.stack-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid var(--border-color);
+}
+
+.stack-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.stack-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: rgba(230, 92, 0, 0.16);
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.stack-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.stack-title-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px; /* Beautiful gap between icon and title text */
+    margin-bottom: 4px;
+}
+
+.stack-content h3 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary);
+    font-size: 0.98rem;
+    font-weight: 800;
+}
+
+.stack-icon {
+    font-size: 0.95rem;
+    color: var(--saffron); /* Beautiful Saffron color */
+    opacity: 1; /* Maximum crisp visibility */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stack-content p {
+    font-size: 0.72rem;
+    color: #475569;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.stack-metric {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 800;
+    color: var(--saffron);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-transform: uppercase;
+}
+
+.stack-metric i {
+    font-size: 0.7rem;
+}
+
+/* ====================================================================
+   PAGE 3: ACCOMMODATIONS & DOCTOR STYLING
+   ==================================================================== */
+.page3-vertical-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    margin-top: 15px;
+}
+
+.block-subtitle {
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary);
+    font-size: 1.05rem;
+    font-weight: 850;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.block-subtitle i {
+    color: var(--saffron);
+}
+
+.suites-row-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.suite-card-clean {
+    background: #f8fafc;
+    border-left: 3px solid var(--primary);
+    padding: 10px 12px;
+}
+
+.suite-card-clean:first-child {
+    border-left-color: var(--saffron);
+}
+
+.suite-header-clean {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.suite-header-clean h4 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary);
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.badge-saffron {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.58rem;
+    color: var(--saffron);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.badge-navy {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.58rem;
+    color: var(--primary);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.suite-card-clean p {
+    font-size: 0.68rem;
+    color: #475569;
+    line-height: 1.35;
+    margin-bottom: 6px;
+}
+
+.suite-details-list {
+    display: flex;
+    gap: 8px;
+}
+
+.suite-details-list span {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.suite-details-list i {
+    color: var(--saffron);
+    font-size: 0.62rem;
+}
+
+/* Doctor Profile styling */
+.doctor-profile-clean {
+    background: #f8fafc;
+    border-top: 3px solid var(--saffron);
+    padding: 12px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.doc-avatar-box-clean {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--saffron);
+    flex-shrink: 0;
+}
+
+.doc-avatar-img-clean {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doc-details-clean {
+    display: flex;
+    flex-direction: column;
+}
+
+.doc-details-clean h4 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary);
+    font-size: 0.95rem;
+    font-weight: 900;
+}
+
+.doc-role-clean {
+    font-size: 0.66rem;
+    color: var(--saffron);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.doc-tags-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+
+.doc-tags-row span {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(0, 51, 102, 0.05);
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.doc-bio-clean {
+    font-size: 0.68rem;
+    line-height: 1.35;
+    color: #475569;
+}
+
+.clinical-alert-box-clean {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.clinical-alert-box-clean i {
+    font-size: 1.1rem;
+    color: #16a34a;
+}
+
+.alert-text-clean h5 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 800;
+    color: #14532d;
+}
+
+.alert-text-clean p {
+    font-size: 0.65rem;
+    color: #166534;
+    line-height: 1.3;
+}
+
+/* ====================================================================
+   PAGE 4: BACK COVER
+   ==================================================================== */
+.back-cover-flex {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.back-brand-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.back-logo {
+    height: 32px;
+    object-fit: contain;
+}
+
+.back-hospital-partnership {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--saffron);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.back-contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    margin-top: 15px;
+    padding-bottom: 128px; /* Safe padding for logo and 3 lines gap */
+}
+
+.details-section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.details-desc {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: #475569;
+    margin-bottom: 12px;
+}
+
+.back-contact-details {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.back-contact-details li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.back-contact-details li i {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: rgba(0, 51, 102, 0.05);
+    color: var(--primary);
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.back-contact-details li div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 0.54rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.contact-value {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #334155;
+    text-decoration: none;
+}
+
+.contact-value:hover {
+    color: var(--saffron);
+}
+
+.contact-value.font-normal {
+    font-weight: 500;
+    line-height: 1.3;
+    color: #475569;
+}
+
+/* Back QR Code Zone */
+.back-qr-zone-dual {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.qr-item-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.qr-border-wrap {
+    padding: 4px;
+    background: white;
+    border: 1px solid rgba(0,51,102,0.08);
+    border-radius: 10px;
+    margin-bottom: 6px;
+    flex-shrink: 0;
+}
+
+.high-res-qr-box {
+    width: 65px;
+    height: 65px;
+}
+
+.qr-code-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.qr-label-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qr-badge {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 950;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.qr-badge i {
+    color: var(--saffron);
+}
+
+.qr-subtext {
+    font-size: 0.58rem;
+    color: var(--text-muted);
+    line-height: 1.3;
+}
+
+/* ====================================================================
+   CAROUSEL NAVIGATION CONTROLS (Hidden in Print)
+   ==================================================================== */
+.brochure-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+    z-index: 10;
+}
+
+.nav-control-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 16px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(12px);
+}
+
+.nav-control-btn:hover:not(:disabled) {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+.nav-control-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.page-dots-indicator {
+    display: flex;
+    gap: 12px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dot:hover {
+    background: rgba(255,255,255,0.5);
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background: var(--saffron);
+    border-color: var(--saffron);
+    width: 28px;
+    border-radius: 100px;
+}
+
+/* ====================================================================
+   BROCHURE CONSOLE APP FOOTER (Hidden in Print)
+   ==================================================================== */
+.app-footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    background: rgba(15, 23, 42, 0.4);
+    z-index: 10;
+}
+
+/* ====================================================================
+   FLUID ENTRANCE ANIMATIONS
+   ==================================================================== */
+.animate-fade-in {
+    opacity: 0;
+    animation: fIn 0.6s forwards;
+}
+
+.animate-slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: sUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+}
+
+@keyframes fIn { to { opacity: 1; } }
+@keyframes sUp { to { opacity: 1; transform: translateY(0); } }
+
+/* ====================================================================
+   NATIVE CSS MULTI-PAGE PRINT DIRECTIVE (CTRL + P AND WINDOW.PRINT)
+   ==================================================================== */
+@media print {
+    /* Hide all screen components */
+    .blob, 
+    .app-header, 
+    .brochure-controls, 
+    .back-actions-ribbon, 
+    .app-footer {
+        display: none !important;
+    }
+
+    html {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 148mm !important;
+    }
+
+    body {
+        background-color: #ffffff !important;
+        color: var(--text-dark) !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: auto !important;
+        display: block !important;
+        width: 148mm !important;
+    }
+
+    .brochure-container {
+        width: 148mm !important;
+        max-width: 148mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 0 !important;
+        display: block !important;
+    }
+
+    .brochure-viewport {
+        width: 148mm !important;
+        height: auto !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .brochure-slider {
+        display: block !important;
+        width: 148mm !important;
+        height: auto !important;
+        transform: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Target perfect A5 Portrait Printable Sheets */
+    .brochure-page {
+        width: 148mm !important;
+        height: 210mm !important;
+        display: block !important; /* Force display block to fix flex layout page-break bugs in Chrome/Puppeteer! */
+        page-break-after: always !important;
+        break-after: page !important; /* Modern CSS page break standard */
+        background: #ffffff !important;
+        color: #0f172a !important;
+        overflow: hidden !important;
+        position: relative !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important; /* Managed by content-wrapper internal paddings */
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Print signboard border layout (completely removed borders/margins) */
+    .brochure-page::after {
+        display: none !important;
+    }
+
+    /* Keep the stunning vertical accent bar visible in print (zero rounding on vertical straps) */
+    .vertical-accent-bar {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 15mm !important;
+        height: 210mm !important; /* Force exact physical A5 height to prevent clipping! */
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        z-index: 5 !important;
+        border-radius: 0 !important; /* Strict zero rounding constraint */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .bar-navy {
+        background-color: #003366 !important;
+    }
+
+    .bar-saffron {
+        background-color: #e65c00 !important;
+    }
+
+    .vertical-bar-text {
+        writing-mode: vertical-lr !important;
+        transform: rotate(180deg) !important;
+        font-family: 'Outfit', sans-serif !important;
+        font-size: 11px !important; /* Premium small, print-safe scale */
+        font-weight: 900 !important;
+        letter-spacing: 4px !important;
+        color: #ffffff !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+    }
+
+    /* Content Area offset by vertical bar in print */
+    .page-content-wrapper {
+        margin-left: 15mm !important;
+        width: calc(100% - 15mm) !important;
+        height: 210mm !important; /* Force exact physical A5 height! */
+        padding: 10mm 12mm 22mm 12mm !important; /* Bottom padding accounts for the 12mm footer strap */
+        display: flex !important;
+        flex-direction: column !important;
+        position: relative !important;
+        overflow: visible !important; /* Allow footer to bleed outside to full A5 width */
+    }
+
+    /* Remove specific heights and adjust flex spaces for print sheets */
+    .inner-padding {
+        padding: 0 !important;
+        height: auto !important;
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+    }
+
+    /* Page 1 (Front Cover) Custom Print Tuning */
+    .page-top-header {
+        padding: 0 0 3mm 0 !important;
+        height: auto !important;
+    }
+
+    .cover-hero-zone {
+        padding: 0 0 3mm 0 !important;
+    }
+
+    .cover-title {
+        font-size: 1.45rem !important;
+        line-height: 1.1 !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .cover-subtitle-english {
+        font-size: 1.05rem !important;
+        letter-spacing: 0.5px !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .cover-paragraph {
+        font-size: 0.85rem !important;
+        line-height: 1.45 !important;
+    }
+
+    .cover-visual-zone {
+        padding: 0 0 3mm 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .illustration-frame {
+        height: 55mm !important; /* Compact, balanced centerpiece for A5 sheet! */
+        width: 100% !important;
+        max-width: 110mm !important;
+    }
+
+    .cover-services-columns {
+        border-top: 1px solid #cbd5e1 !important;
+        border-bottom: 1px solid #cbd5e1 !important;
+        padding: 4mm 0 !important;
+        width: 100% !important;
+        margin: 0 0 6mm 0 !important;
+        background: transparent !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 3mm 8mm !important;
+    }
+
+    .cover-services-columns > div {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3mm !important;
+    }
+
+    .service-item-inline {
+        display: flex !important;
+        align-items: center !important;
+        gap: 2mm !important;
+        font-size: 0.85rem !important;
+        color: #003366 !important;
+    }
+
+    .service-item-inline i {
+        color: #e65c00 !important;
+        font-size: 0.9rem !important;
+    }
+
+    .cover-navy-footer {
+        position: absolute !important;
+        bottom: 0 !important;
+        left: -15mm !important; /* Escape the 15mm wrapper offset — reach full page left edge */
+        width: 148mm !important; /* Full A5 width: covers the vertical strap + content area */
+        height: 12mm !important;
+        background: #003366 !important;
+        padding: 0 12mm !important;
+        color: #ffffff !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        border-radius: 0 !important;
+        z-index: 10 !important; /* Sit above the vertical accent bar */
+        box-sizing: border-box !important;
+    }
+
+    .page-bottom-footer-bar {
+        position: absolute !important;
+        bottom: 0 !important;
+        left: -15mm !important; /* Escape 15mm wrapper offset in print */
+        width: 148mm !important; /* Full A5 width covering the vertical accent strap */
+        height: 12mm !important;
+        padding: 0 12mm !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        font-size: 0.85rem !important;
+        z-index: 10 !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-radius: 0 !important; /* Strictly no rounding of the corners of the straps */
+    }
+
+    .page-bottom-footer-bar.footer-saffron-strap {
+        background: #e65c00 !important;
+    }
+
+    .page-bottom-footer-bar.footer-blue-strap {
+        background: #003366 !important;
+    }
+
+    .page-bottom-footer-bar span {
+        color: #ffffff !important;
+    }
+
+    .page-bottom-footer-bar i {
+        color: #ffffff !important;
+    }
+
+    /* Page 2 (Core Specializations) Custom Print Tuning */
+    .services-list-stack {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5mm !important;
+        margin-top: 2mm !important;
+    }
+
+    .stack-item {
+        padding-bottom: 1.5mm !important;
+        border-bottom: 1.5px solid #cbd5e1 !important;
+    }
+
+    .stack-num {
+        font-size: 1.4rem !important;
+    }
+
+    .stack-content h3 {
+        font-size: 1.05rem !important;
+    }
+
+    .stack-content p {
+        font-size: 0.75rem !important;
+        line-height: 1.32 !important;
+    }
+
+    .stack-metric {
+        font-size: 0.7rem !important;
+    }
+
+    /* Page 3 (Accommodations & Leadership) Custom Print Tuning */
+    .page-sec-header {
+        margin-bottom: 2mm !important;
+    }
+    .sec-label {
+        font-size: 0.65rem !important;
+    }
+    .sec-title {
+        font-size: 1.25rem !important;
+    }
+    .accent-line {
+        height: 2px !important;
+        width: 35px !important;
+        margin-top: 2px !important;
+    }
+
+    .page3-vertical-stack {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2mm !important;
+    }
+
+    .block-subtitle {
+        font-size: 0.95rem !important;
+        margin-bottom: 1mm !important;
+    }
+
+    .suites-row-layout {
+        gap: 3mm !important;
+    }
+
+    .suite-card-clean, .doctor-profile-clean {
+        background: #f8fafc !important;
+        border-left: 3px solid #003366 !important;
+        padding: 2mm 3mm !important;
+    }
+
+    .suite-card-clean:first-child {
+        border-left-color: #e65c00 !important;
+    }
+
+    .suite-header-clean {
+        margin-bottom: 2px !important;
+    }
+
+    .suite-header-clean h4 {
+        font-size: 0.8rem !important;
+    }
+
+    .suite-card-clean p {
+        font-size: 0.68rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 2px !important;
+    }
+
+    .suite-details-list {
+        gap: 6px !important;
+    }
+
+    .suite-details-list span {
+        font-size: 0.62rem !important;
+    }
+
+    .doctor-profile-clean {
+        gap: 3mm !important;
+        margin-bottom: 2px !important;
+    }
+
+    .doc-avatar-box-clean {
+        width: 12mm !important;
+        height: 12mm !important;
+    }
+
+    .doc-details-clean h4 {
+        font-size: 0.9rem !important;
+    }
+
+    .doc-role-clean {
+        font-size: 0.7rem !important;
+        margin-bottom: 2px !important;
+    }
+
+    .doc-tags-row {
+        gap: 4px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .doc-tags-row span {
+        font-size: 0.62rem !important;
+        padding: 0px 4px !important;
+    }
+
+    .doc-bio-clean {
+        font-size: 0.68rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .clinical-alert-box-clean {
+        background: #f0fdf4 !important;
+        border: 1px solid #bbf7d0 !important;
+        padding: 1.5mm 3mm !important;
+        gap: 2mm !important;
+        margin-top: 1mm !important;
+    }
+
+    .alert-text-clean h5 {
+        font-size: 0.78rem !important;
+    }
+
+    .alert-text-clean p {
+        font-size: 0.68rem !important;
+    }
+
+    /* Page 4 (Back Cover) Custom Print Tuning */
+    .back-cover-flex {
+        justify-content: space-between !important;
+    }
+
+    .back-large-logo-area {
+        position: absolute !important;
+        bottom: 24mm !important; /* 12mm strap + 12mm (3 lines gap) */
+        left: -10mm !important;
+        width: 148mm !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        z-index: 5 !important;
+    }
+
+    .back-large-logo-img {
+        height: 22mm !important; /* 35% larger than 16mm */
+        width: auto !important;
+        object-fit: contain !important;
+    }
+
+    .back-brand-header {
+        padding-bottom: 4mm !important;
+    }
+
+    .back-logo {
+        height: 12mm !important;
+    }
+
+    .back-hospital-partnership {
+        font-size: 0.85rem !important;
+    }
+
+    .back-contact-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4mm !important;
+        align-items: stretch !important;
+        padding-bottom: 34mm !important; /* Safe print padding for logo and 3 lines gap */
+    }
+
+    .details-section-title {
+        font-size: 1.3rem !important;
+    }
+
+    .details-desc {
+        font-size: 0.85rem !important;
+        line-height: 1.35 !important;
+        color: #475569 !important;
+    }
+
+    .back-contact-details {
+        gap: 3mm !important;
+    }
+
+    .back-contact-details li i {
+        width: 8mm !important;
+        height: 8mm !important;
+    }
+
+    .contact-label {
+        font-size: 0.65rem !important;
+    }
+
+    .contact-value {
+        font-size: 0.85rem !important;
+    }
+
+    .back-qr-zone-dual {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 2mm !important;
+        width: 100% !important;
+        margin-top: 3mm !important;
+        background: transparent !important;
+    }
+
+    .qr-item-card {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        background: #f8fafc !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 12px !important;
+        padding: 3mm !important;
+    }
+
+    .qr-border-wrap {
+        margin-bottom: 2mm !important;
+        padding: 1.5mm !important;
+        background: white !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+    }
+
+    .high-res-qr-box {
+        width: 20mm !important;
+        height: 20mm !important;
+    }
+
+    .qr-badge {
+        font-size: 0.75rem !important;
+        margin-bottom: 1mm !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 1.5mm !important;
+    }
+
+    .qr-subtext {
+        font-size: 0.58rem !important;
+        line-height: 1.25 !important;
+    }
+
+    /* Strict page break rule */
+    @page {
+        size: A5 portrait;
+        margin: 0;
+    }
+}
+
+/* ====================================================================
+   FLUID MEDIA RESPONSIVENESS (MOBILE VIEWS)
+   ==================================================================== */
+@media (max-width: 900px) {
+    .brochure-container {
+        padding: 0 15px;
+    }
+    
+    .brochure-viewport {
+        height: auto;
+        min-height: 600px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .brochure-slider {
+        display: block;
+        width: 100%;
+        height: auto;
+        transform: none !important;
+    }
+
+    .brochure-page {
+        width: 100%;
+        height: auto;
+        min-height: 550px;
+        margin-bottom: 30px;
+        border-radius: 20px;
+        box-shadow: var(--card-shadow);
+        flex-direction: column;
+    }
+
+    .brochure-page::after {
+        border-radius: 20px;
+    }
+
+    /* Stack vertical bar on top on mobile */
+    .vertical-accent-bar {
+        position: relative;
+        width: 100%;
+        height: 28px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .vertical-bar-text {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+    }
+
+    .page-content-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .inner-padding {
+        padding: 20px 18px;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .page-top-header {
+        padding: 20px 20px 0 20px;
+    }
+
+    .cover-hero-zone {
+        padding: 0 20px;
+    }
+
+    .cover-title {
+        font-size: 1.2rem;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .cover-subtitle-english {
+        font-size: 0.95rem;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .cover-visual-zone {
+        padding: 0 20px 10px 20px;
+    }
+
+    .cover-services-columns {
+        width: calc(100% - 40px);
+        margin: 5px auto 15px auto;
+        padding: 10px 0;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        background: transparent;
+        border-top: 1px solid rgba(0, 51, 102, 0.08);
+        border-bottom: 1px solid rgba(0, 51, 102, 0.08);
+        display: grid;
+    }
+
+    .cover-services-columns > div {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .service-item-inline {
+        font-size: 0.66rem;
+    }
+
+    .page-bottom-footer-bar {
+        padding: 10px 20px;
+        border-radius: 0 0 20px 20px;
+        background-color: #fafbfc;
+        border-top: 1px solid var(--border-color);
+        font-size: 0.66rem;
+    }
+
+    .illustration-frame {
+        height: 160px;
+    }
+
+    .cover-navy-footer {
+        position: relative;
+        height: auto;
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .services-list-stack {
+        gap: 12px;
+    }
+
+    .suites-row-layout {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .doctor-profile-clean {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .back-contact-grid {
+        gap: 20px;
+    }
+
+    .back-brand-header {
+        padding-bottom: 8px;
+    }
+
+    .back-logo {
+        height: 28px;
+    }
+
+    .back-hospital-partnership {
+        font-size: 0.62rem;
+    }
+
+    .back-qr-zone-dual {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+    }
+
+    .brochure-controls {
+        display: none !important;
+    }
+}

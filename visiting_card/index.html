@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumar Yeldi - Digital Visiting Card | ActiveRehab TransCare</title>
+    
+    <!-- Meta Details for SEO & Social Cards -->
+    <meta name="description" content="Digital Business Card of Kumar Yeldi, Business Development Manager at ActiveRehab TransCare & Rehabilitation. Save contact, get directions, or connect directly.">
+    <meta property="og:title" content="Kumar Yeldi - ActiveRehab TransCare">
+    <meta property="og:description" content="Business Development Manager, ActiveRehab TransCare & Rehabilitation. Tap to save contact or chat.">
+    <meta property="og:image" content="../logo.png">
+    
+    <!-- Typography & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Inter:wght@300;400;600;700&family=Noto+Sans+Telugu:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Drifting Animated Background Blobs -->
+    <div class="blob blob-navy"></div>
+    <div class="blob blob-saffron"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Header Clinical Branding -->
+        <header class="header animate-fade-in">
+            <div class="logo-area">
+                <span class="brand-telugu">ఆక్టివ్</span>
+                <span class="brand-saffron">రీహాబ్</span>
+                <span class="brand-wordmark">TRANSCARE</span>
+            </div>
+            <div class="card-hint">
+                <i class="fa-solid fa-rotate"></i> Tap to flip card
+            </div>
+        </header>
+
+        <!-- 3D Flipping Card Section -->
+        <div class="card-wrapper animate-slide-up">
+            <div class="card-inner" id="card">
+                
+                <!-- CARD FRONT SIDE (Inspired by White Sign Board ACP Sheet Layout) -->
+                <div class="card-side card-front">
+                    <!-- Regional Telugu watermark in top-left - aligned horizontally with the logo -->
+                    <div class="front-telugu-badge">
+                        <span class="navy-txt">ఆక్టివ్</span> <span class="saffron-txt">రీహాబ్</span>
+                    </div>
+
+                    <div class="card-front-content">
+                        <!-- Top brand logo - scaled up and shifted slightly upwards -->
+                        <div class="brand-logo-area">
+                            <img src="../logo.png" alt="ActiveRehab Logo" class="front-logo-img">
+                        </div>
+                        
+                        <!-- Middle Section split horizontally into 2 columns (Layout model) -->
+                        <div class="front-grid-area">
+                            <!-- Left Section: Kumar Yeldi Identity -->
+                            <div class="front-left-col">
+                                <h1 class="front-name">Kumar Yeldi</h1>
+                                <p class="front-role">Business Development Manager</p>
+                            </div>
+                            
+                            <!-- Right Section: Core Clinical Services List -->
+                            <div class="front-right-col">
+                                <ul class="front-services-list">
+                                    <li><i class="fa-solid fa-brain"></i> Stroke & Neuro Rehab</li>
+                                    <li><i class="fa-solid fa-bone"></i> Ortho Recovery</li>
+                                    <li><i class="fa-solid fa-user-shield"></i> Fall Prevention</li>
+                                    <li><i class="fa-solid fa-heart-pulse"></i> Cardiac Step-Down</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Navy Signboard Footer Ribbon -->
+                    <div class="front-navy-footer">
+                        <span class="footer-left-txt">Admissions & Enquiries</span>
+                        <span class="footer-right-txt"><i class="fa-solid fa-phone"></i> +91 81068 22020</span>
+                    </div>
+                </div>
+
+                <!-- CARD BACK SIDE (Minimalist Contact & QR) -->
+                <div class="card-side card-back">
+                    <div class="card-back-grid">
+                        
+                        <!-- Contact Detail Text -->
+                        <div class="back-details">
+                            <h3 class="back-title">Kumar Yeldi</h3>
+                            <span class="back-subtitle">Business Development Manager</span>
+                            <div class="divider"></div>
+                            
+                            <ul class="contact-list">
+                                <li>
+                                    <i class="fa-solid fa-phone phone-icon"></i>
+                                    <div>
+                                        <p class="label">Phone</p>
+                                        <a href="tel:+918106822020" class="value">+91 81068 22020</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope mail-icon"></i>
+                                    <div>
+                                        <p class="label">Email</p>
+                                        <a href="mailto:activerehab.tc@gmail.com" class="value">activerehab.tc@gmail.com</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-globe web-icon"></i>
+                                    <div>
+                                        <p class="label">Website</p>
+                                        <a href="https://activerehabtranscare.in" target="_blank" class="value">activerehabtranscare.in</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Themed QR Code Area -->
+                        <div class="back-qr-zone">
+                            <!-- Small mini logo header on back -->
+                            <img src="../logo.png" alt="ActiveRehab Logo" class="back-logo-img">
+                            
+                            <div class="qr-container">
+                                <div id="qrcode"></div>
+                            </div>
+                            <p class="qr-caption">Scan to save</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Action Hub Section -->
+        <main class="action-hub animate-slide-up-delay">
+            
+            <!-- Dynamic Save Contact (vCard .vcf Download) -->
+            <button class="btn btn-save" id="btn-save-contact">
+                <i class="fa-solid fa-user-plus"></i> Add to Contacts (vCard)
+            </button>
+
+            <!-- Grid of Interactive Direct Routes -->
+            <div class="action-grid">
+                <a href="tel:+918106822020" class="action-btn call-btn">
+                    <div class="btn-icon"><i class="fa-solid fa-phone"></i></div>
+                    <span>Call Now</span>
+                </a>
+                <a href="https://wa.me/918106822020?text=Hello%20Kumar%20Yeldi%2C%20I%20would%20like%20to%20enquire%20about%20ActiveRehab%20TransCare" target="_blank" class="action-btn whatsapp-btn">
+                    <div class="btn-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="mailto:activerehab.tc@gmail.com" class="action-btn email-btn">
+                    <div class="btn-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <span>Send Email</span>
+                </a>
+                <a href="https://maps.google.com/?q=ActiveRehab+TransCare+Laxmi+Nagar+Colony+Kompally+Hyderabad" target="_blank" class="action-btn maps-btn">
+                    <div class="btn-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <span>Directions</span>
+                </a>
+            </div>
+
+            <!-- Website link and share card row -->
+            <div class="utility-row">
+                <a href="https://activerehabtranscare.in" target="_blank" class="utility-link">
+                    <i class="fa-solid fa-circle-info"></i> Visit main Website
+                </a>
+                <button class="utility-link" id="btn-share-card">
+                    <i class="fa-solid fa-share-nodes"></i> Share Visiting Card
+                </button>
+            </div>
+
+            <!-- Branch details summary footer -->
+            <div class="branch-footer">
+                <p class="address">
+                    <i class="fa-solid fa-hospital-user"></i> <strong>ActiveRehab TransCare & Rehabilitation</strong><br>
+                    Plot No. 4-1-1, 41/A & 48, Laxmi Nagar Colony, Kompally, Near Sri Meru Hospital, Hyderabad, Telangana, 500100
+                </p>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Toast Notification Popup -->
+    <div id="toast" class="toast">
+        <i class="fa-solid fa-circle-check"></i> <span id="toast-message">Card Link Copied!</span>
+    </div>
+
+    <!-- QR Code Script & Logic -->
+    <script src="script.js"></script>
+
+</body>
+</html>

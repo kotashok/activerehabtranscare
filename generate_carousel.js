@@ -26,8 +26,13 @@ async function generateInstagramCarousel() {
     });
 
     // Define target directories
-    const artifactDir = "C:\\Users\\conta\\.gemini\\antigravity\\brain\\f96fbad7-b2f6-4d01-b97f-60ba183c82e1";
+    const artifactDir = "C:\\Users\\conta\\.gemini\\antigravity\\brain\\8fd083a3-8729-4d82-a0c0-0ddb037a0b02";
     
+    // Ensure artifact directory exists
+    if (!fs.existsSync(artifactDir)) {
+      fs.mkdirSync(artifactDir, { recursive: true });
+    }
+
     // Loop through each of the 9 slides and capture screenshots of individual slide containers
     for (let i = 1; i <= 9; i++) {
       const slideSelector = `#slide-${i}`;
@@ -54,6 +59,41 @@ async function generateInstagramCarousel() {
       fs.writeFileSync(artifactImgPath, screenshotBuffer);
       console.log(`[OK] Saved artifact slide ${i} to: ${artifactImgPath}`);
     }
+
+    console.log("[System] Injecting print styles and compiling multi-page PDF...");
+    // Inject a print stylesheet to remove paddings and force page breaks between slides
+    await page.addStyleTag({
+      content: `
+        @media print {
+          body {
+            background: white !important;
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+          .slide {
+            margin: 0 !important;
+            box-shadow: none !important;
+            page-break-after: always !important;
+            break-after: page !important;
+          }
+        }
+      `
+    });
+
+    const localPdfPath = path.join(__dirname, 'instagram_carousel.pdf');
+    const artifactPdfPath = path.join(artifactDir, 'instagram_carousel.pdf');
+
+    const pdfBuffer = await page.pdf({
+      width: '1080px',
+      height: '1350px',
+      printBackground: true,
+      margin: { top: '0in', right: '0in', bottom: '0in', left: '0in' }
+    });
+
+    fs.writeFileSync(localPdfPath, pdfBuffer);
+    fs.writeFileSync(artifactPdfPath, pdfBuffer);
+    console.log(`[OK] Saved local carousel PDF to: ${localPdfPath}`);
+    console.log(`[OK] Saved artifact carousel PDF to: ${artifactPdfPath}`);
 
     await browser.close();
     console.log("[OK] Instagram 9-slide Carousel successfully compiled!");

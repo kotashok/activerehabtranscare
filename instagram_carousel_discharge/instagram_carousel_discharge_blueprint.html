@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Carousel - Discharge Questions | ActiveRehab TransCare</title>
+    <!-- Load custom fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Telugu:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #003366; /* Clinical Navy */
+            --primary-dark: #002244;
+            --secondary: #008080; /* Teal Accent */
+            --secondary-light: #e0f2f1;
+            --accent: #f59e0b; /* Saffron/Orange Accent */
+            --teal-bg: #1B6B6B; /* Deep Teal Cover/CTA Background */
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #334155;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 0;
+            overflow-y: auto;
+        }
+
+        /* Slide Container */
+        .slide {
+            width: 1080px;
+            height: 1350px;
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Slide Cover / CTA (Dark Theme) */
+        .slide-dark {
+            color: var(--white);
+            padding: 100px 80px;
+        }
+
+        #slide-1 {
+            /* Full-bleed consulting photo background with rich teal gradient overlay */
+            background: linear-gradient(135deg, rgba(27, 107, 107, 0.94) 0%, rgba(17, 74, 74, 0.98) 100%), url('v_discharge_doctor_consult.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #slide-7 {
+            /* Full-bleed recovery suite background with rich teal gradient overlay */
+            background: linear-gradient(135deg, rgba(27, 107, 107, 0.94) 0%, rgba(17, 74, 74, 0.98) 100%), url('v_discharge_facility.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide-dark .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dashed rgba(255, 255, 255, 0.15);
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+            flex-shrink: 0;
+        }
+
+        .slide-dark .logo {
+            width: 320px;
+            height: 105px;
+            object-fit: contain;
+        }
+
+        .slide-dark .content {
+            margin-top: auto;
+            margin-bottom: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Glassmorphic framing box to make Slide 1 cover text extremely premium and high-end */
+        .slide-dark .cover-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .slide-dark .cover-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--primary-dark);
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            padding: 8px 24px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            align-self: flex-start;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .slide-dark .eng-hook {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1.15;
+            color: var(--white);
+        }
+
+        .slide-dark .tel-hook {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1.45;
+            color: #ffd085; /* Lightened saffron for readability on dark backgrounds */
+            border-top: 1.5px dashed rgba(255, 255, 255, 0.15);
+            padding-top: 25px;
+        }
+
+        .slide-dark .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px dashed rgba(255, 255, 255, 0.2);
+            padding-top: 40px;
+            flex-shrink: 0;
+        }
+
+        .slide-dark .swipe-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .slide-dark .page-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 700;
+        }
+
+        /* Standard Slide (Light Theme) */
+        .slide-light {
+            background-color: var(--bg-light);
+        }
+
+        .slide-light .slide-image {
+            height: 700px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 8px solid var(--secondary);
+            flex-shrink: 0;
+        }
+
+        .slide-light .slide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Slide Header for Light Slides */
+        .slide-light-header {
+            height: 130px;
+            padding: 20px 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--white);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.04);
+            z-index: 100;
+            flex-shrink: 0;
+        }
+
+        .logo-light-header {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .slide-light .text-container {
+            flex: 1;
+            padding: 40px 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .slide-light .title-row {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 15px;
+        }
+
+        .slide-light .icon-box {
+            background: var(--secondary-light);
+            color: var(--secondary);
+            width: 95px;
+            height: 95px;
+            min-width: 95px;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 44px;
+            box-shadow: 0 8px 20px rgba(0, 128, 128, 0.1);
+        }
+
+        .slide-light .title-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide-light .eng-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 46px;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1.15;
+        }
+
+        .slide-light .tel-title {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: 4px;
+            line-height: 1.35;
+        }
+
+        .slide-light .description-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .slide-light .eng-body {
+            font-family: 'Inter', sans-serif;
+            font-size: 26px;
+            color: var(--text-dark);
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .slide-light .tel-body {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 22px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .slide-light .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 22px;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            align-self: flex-start;
+            margin-top: 5px;
+        }
+
+        .slide-light .slide-footer {
+            height: 75px;
+            padding: 0 70px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            flex-shrink: 0;
+        }
+
+        .slide-light .swipe-hint {
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .slide-light .page-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        /* Slide 5: Custom CSS vector split graphic */
+        .split-graphic {
+            height: 680px;
+            width: 100%;
+            background-color: var(--white);
+            border-bottom: 8px solid var(--secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 70px;
+            gap: 30px;
+            flex-shrink: 0;
+        }
+
+        .graphic-card {
+            flex: 1;
+            height: 100%;
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+        }
+
+        .hospital-card {
+            background: rgba(0, 51, 102, 0.04);
+            border: 3px solid var(--primary);
+        }
+
+        .home-card {
+            background: rgba(245, 158, 11, 0.04);
+            border: 3px solid var(--accent);
+        }
+
+        .graphic-card i {
+            font-size: 80px;
+            color: var(--primary);
+        }
+
+        .home-card i {
+            color: var(--accent);
+        }
+
+        .graphic-card h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .graphic-card p {
+            font-size: 22px;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        .gap-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 240px;
+            text-align: center;
+            color: #ef4444;
+            flex-shrink: 0;
+        }
+
+        .gap-area i {
+            font-size: 75px;
+            margin-bottom: 15px;
+        }
+
+        .gap-label-eng {
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .gap-label-tel {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #ef4444;
+            line-height: 1.2;
+        }
+
+        /* Slide 7: CTA Specifics */
+        .cta-content {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 50px 45px;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .slide-dark .cta-eng {
+            font-family: 'Outfit', sans-serif;
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .slide-dark .cta-tel {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 28px;
+            color: #ffb685;
+            line-height: 1.4;
+        }
+
+        .slide-dark .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .slide-dark .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 36px;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            color: var(--white);
+            text-decoration: none;
+            background: var(--secondary);
+            padding: 18px 50px;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(0, 128, 128, 0.3);
+        }
+
+        .slide-dark .web-item {
+            font-size: 34px;
+            color: rgba(255, 255, 255, 0.85);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== SLIDE 1 ==================== -->
+    <div class="slide slide-dark" id="slide-1">
+        <div class="header">
+            <span style="font-family: 'Outfit'; font-size: 26px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--secondary-light); text-shadow: 0 2px 4px rgba(0,0,0,0.5);">ActiveRehab TransCare</span>
+            <img class="logo" src="logo.png" alt="ActiveRehab TransCare Logo">
+        </div>
+        <div class="content">
+            <div class="cover-box">
+                <div class="cover-badge">
+                    <i class="fa-solid fa-triangle-exclamation" style="margin-right: 8px;"></i> Critical Care Guide
+                </div>
+                <h1 class="eng-hook">3 questions to ask your surgeon before discharge.<br><span style="color: var(--accent);">Most families ask ZERO of these. 👇</span></h1>
+                <p class="tel-hook">డిశ్చార్జ్ ముందు సర్జన్ని అడగవలసిన 3 ప్రశ్నలు.<br>చాలా కుటుంబాలు ఒక్కటి కూడా అడగరు. 👇</p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="swipe-text" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Swipe to learn more <i class="fas fa-arrow-right"></i></div>
+            <div class="page-number" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5);">1 of 7</div>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 2 ==================== -->
+    <div class="slide slide-light" id="slide-2">
+        <div class="slide-light-header">
+            <span style="font-family: 'Outfit'; font-size: 26px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary);">ActiveRehab TransCare</span>
+            <img class="logo-light-header" src="logo.png" alt="ActiveRehab TransCare Logo">
+        </div>
+        <div class="slide-image">
+            <img src="v_discharge_doctor_consult.png" alt="Doctor consulting elderly patient before hospital discharge">
+        </div>
+        <div class="text-container">
+            <div class="title-row">
+                <div class="icon-box"><i class="fas fa-person-circle-question"></i></div>
+                <div class="title-group">
+                    <h2 class="eng-title">"Is my parent safe to be ALONE at home?"</h2>
+                    <p class="tel-title">"మా వారు ఇంట్లో ఒంటరిగా ఉండటం సురక్షితమేనా?"</p>
+                </div>
+            </div>
+            <div class="description-group">
+                <p class="eng-body">Not "can they go home" — can they walk to the bathroom at 2am without falling? If the answer isn't a clear yes, home isn't ready yet.</p>
+                <p class="tel-body">రాత్రి ఒంటరిగా బాత్రూమ్ వరకు నడవగలరా? సమాధానం స్పష్టంగా "అవును" కాకపోతే, ఇల్లు ఇంకా సిద్ధంగా లేదు.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <div class="swipe-hint">Swipe next <i class="fas fa-chevron-right"></i></div>
+            <div class="page-num">2 of 7</div>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 3 ==================== -->
+    <div class="slide slide-light" id="slide-3">
+        <div class="slide-light-header">
+            <span style="font-family: 'Outfit'; font-size: 26px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary);">ActiveRehab TransCare</span>
+            <img class="logo-light-header" src="logo.png" alt="ActiveRehab TransCare Logo">
+        </div>
+        <div class="slide-image">
+            <img src="v_discharge_physiotherapy.png" alt="Patient training with therapist inside parallel rehabilitation bars">
+        </div>
+        <div class="text-container">
+            <div class="title-row">
+                <div class="icon-box"><i class="fas fa-person-walking-arrow-right"></i></div>
+                <div class="title-group">
+                    <h2 class="eng-title">"What rehab do they need — and who will supervise it?"</h2>
+                    <p class="tel-title">"ఎలాంటి పునరావాసం అవసరం — ఎవరు పర్యవేక్షిస్తారు?"</p>
+                </div>
+            </div>
+            <div class="description-group">
+                <p class="eng-body">A printed exercise sheet is not rehabilitation. Ask: how many therapy sessions per day, for how many weeks, and who checks the progress?</p>
+                <p class="tel-body">కాగితంపై రాసిన వ్యాయామాలు పునరావాసం కాదు. రోజుకు ఎన్ని సెషన్లు, ఎన్ని వారాలు, ఎవరు పరిశీలిస్తారు — అడగండి.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <div class="swipe-hint">Swipe next <i class="fas fa-chevron-right"></i></div>
+            <div class="page-num">3 of 7</div>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 4 ==================== -->
+    <div class="slide slide-light" id="slide-4">
+        <div class="slide-light-header">
+            <span style="font-family: 'Outfit'; font-size: 26px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary);">ActiveRehab TransCare</span>
+            <img class="logo-light-header" src="logo.png" alt="ActiveRehab TransCare Logo">
+        </div>
+        <div class="slide-image">
+            <img src="v_discharge_vitals_monitor.png" alt="Vitals monitor tracking clinical indicators">
+        </div>
+        <div class="text-container">
+            <div class="title-row">
+                <div class="icon-box"><i class="fas fa-triangle-exclamation"></i></div>
+                <div class="title-group">
+                    <h2 class="eng-title">"What warning signs need a doctor IMMEDIATELY?"</h2>
+                    <p class="tel-title">"ఏ లక్షణాలు కనిపిస్తే వెంటనే డాక్టర్ అవసరం?"</p>
+                </div>
+            </div>
+            <div class="description-group">
+                <p class="eng-body">Fever, calf swelling, breathlessness, sudden confusion — every surgery has its own red flags. Get the list in writing before you leave the ward.</p>
+                <p class="tel-body">జ్వరం, కాలు వాపు, ఆయాసం, గందరగోళం — ప్రతి శస్త్రచికిత్సకు ప్రమాద సంకేతాలు ఉంటాయి. రాతపూర్వకంగా తీసుకోండి.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <div class="swipe-hint">Swipe next <i class="fas fa-chevron-right"></i></div>
+            <div class="page-num">4 of 7</div>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 5 ==================== -->
+    <div class="slide slide-light" id="slide-5">
+        <div class="slide-light-header">
+            <span style="font-family: 'Outfit'; font-size: 26px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary);">ActiveRehab TransCare</span>
+            <img class="logo-light-header" src="logo.png" alt="ActiveRehab TransCare Logo">
+        </div>
+        <div class="split-graphic">
+            <div class="graphic-card hospital-card">
+                <i class="fas fa-hospital-alt"></i>
+                <h4>Hospital Ward</h4>
+                <p>24/7 Professional Medical Care &amp; Monitoring</p>
+            </div>
+            <div class="gap-area">
+                <i class="fas fa-arrow-right-to-city"></i>
+                <div class="gap-label-eng">The Safety Gap</div>
+                <div class="gap-label-tel">కోలుకునే లోపం</div>
+            </div>
+            <div class="graphic-card home-card">
+                <i class="fas fa-house-chimney-user"></i>
+                <h4>Unprepared Home</h4>
+                <p>Zero Medical Supervision &amp; Accidental Fall Hazards</p>
+            </div>
+        </div>
+        <div class="text-container">
+            <div class="title-row">
+                <div class="icon-box"><i class="fas fa-route"></i></div>
+                <div class="title-group">
+                    <h2 class="eng-title">If any answer worries you, there's a middle step.</h2>
+                    <p class="tel-title">ఏ సమాధానమైనా ఆందోణన కలిగిస్తే — మధ్యలో ఒక సురక్షిత దశ ఉంది.</p>
+                </div>
+            </div>
+            <div class="description-group">
+                <p class="eng-body">Step-down rehabilitation: daily physiotherapy, 24/7 nursing and vital monitoring — until home is genuinely safe.</p>
+                <p class="tel-body">స్టెప్-డౌన్ పునరావాసం: ప్రతిరోజూ ఫిజియోథెరపీ, 24/7 నర్సింగ్, నిరంతర పర్యవేక్షణ.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <div class="swipe-hint">Swipe next <i class="fas fa-chevron-right"></i></div>
+            <div class="page-num">5 of 7</div>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 6 ==================== -->
+    <div class="slide slide-light" id="slide-6">
+        <div class="slide-light-header">
+            <span style="font-family: 'Outfit'; font-size: 26px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary);">ActiveRehab TransCare</span>
+            <img class="logo-light-header" src="logo.png" alt="ActiveRehab TransCare Logo">
+        </div>
+        <div class="slide-image">
+            <img src="v_discharge_facility.png" alt="ActiveRehab TransCare Premium recovery suite room">
+        </div>
+        <div class="text-container">
+            <div class="title-row">
+                <div class="icon-box"><i class="fas fa-clinic-medical"></i></div>
+                <div class="title-group">
+                    <h2 class="eng-title">ActiveRehab TransCare — Kompally, Hyderabad</h2>
+                    <p class="tel-title">యాక్టివ్ రిహాబ్ ట్రాన్స్కేర్ — కొంపల్లి, హైదరాబాద్</p>
+                </div>
+            </div>
+            <div class="description-group">
+                <p class="eng-body">North Hyderabad's dedicated post-operative step-down facility, led by Dr. Ashok Kota (17+ years, BPT, MPT). Hospital transfers arranged within 24 hours.</p>
+                <p class="tel-body">డా. అశోక్ కోట (17+ సంవత్సరాల అనుభవం) నేతృత్వంలో ప్రత్యేక పోస్ట్-ఆపరేటివ్ పునరావాస కేంద్రం.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <div class="swipe-hint">Swipe next <i class="fas fa-chevron-right"></i></div>
+            <div class="page-num">6 of 7</div>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE 7 ==================== -->
+    <div class="slide slide-dark" id="slide-7">
+        <div class="header">
+            <span style="font-family: 'Outfit'; font-size: 26px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--secondary-light); text-shadow: 0 2px 4px rgba(0,0,0,0.5);">ActiveRehab TransCare</span>
+            <img class="logo" src="logo.png" alt="ActiveRehab TransCare Logo">
+        </div>
+        <div class="content">
+            <h1 class="eng-hook" style="font-size: 52px; text-align: center; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">Surgery planned for someone you love?</h1>
+            <p class="tel-hook" style="text-align: center; color: var(--white); font-size: 34px; margin-top: 10px; border-top: none; padding-top: 0; text-shadow: 0 2px 6px rgba(0,0,0,0.5);">మీ ఆత్మీయులకు శస్త్రచికిత్స జరగబోతోందా?</p>
+            
+            <div class="cta-content">
+                <h3 class="cta-eng">Save this post. Share it with the family WhatsApp group.</h3>
+                <div class="contact-info">
+                    <a href="https://wa.me/918106822020" class="contact-item">
+                        <i class="fab fa-whatsapp"></i> +91 81068 22020
+                    </a>
+                    <a href="https://activerehabtranscare.in" class="web-item">
+                        <i class="fas fa-globe"></i> activerehabtranscare.in
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="swipe-text" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5);"><i class="fas fa-bookmark" style="color: var(--accent);"></i> Save for later</div>
+            <div class="page-number" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5);">7 of 7</div>
+        </div>
+    </div>
+
+</body>
+</html>

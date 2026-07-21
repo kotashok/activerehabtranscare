@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Story Quiz Sequence | ActiveRehab TransCare</title>
+    <!-- Load custom fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Telugu:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #003366; /* Clinical Navy */
+            --primary-dark: #002244;
+            --secondary: #008080; /* Teal Accent */
+            --secondary-light: #e0f2f1;
+            --accent: #f59e0b; /* Saffron/Orange Accent */
+            --teal-bg: #1B6B6B; /* Deep Teal Cover/CTA Background */
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --ig-link: #00f2fe; /* Instagram Link Cyan */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #334155;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 0;
+            overflow-y: auto;
+        }
+
+        /* Story Frame Container */
+        .frame {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 90px 70px;
+        }
+
+        .frame-teal {
+            background: linear-gradient(180deg, var(--teal-bg) 0%, #114a4a 100%);
+        }
+
+        .frame-navy {
+            background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary) 100%);
+        }
+
+        /* Top Header Bar */
+        .story-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            z-index: 100;
+            flex-shrink: 0;
+        }
+
+        .location-sticker {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--primary);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .location-sticker i {
+            color: #ef4444;
+        }
+
+        .logo-story {
+            width: 320px; /* Increased from 260px */
+            height: auto;
+            object-fit: contain;
+            /* Keep original logo colors intact - NO color filter */
+        }
+
+        /* Styled showcase image card to utilize space perfectly */
+        .story-image-card {
+            width: 100%;
+            height: 620px;
+            border-radius: 24px;
+            border: 4px solid rgba(255, 255, 255, 0.25);
+            overflow: hidden;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            flex-shrink: 0;
+        }
+
+        .story-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Bottom Footer Bar */
+        .story-footer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            flex-shrink: 0;
+        }
+
+        /* ==================== FRAME 1 SPECS ==================== */
+        .quiz-intro-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 54px; /* Scaled up from 48px */
+            font-weight: 900;
+            color: var(--white);
+            text-align: center;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            margin-top: 10px;
+        }
+
+        /* Instagram Quiz Sticker */
+        .quiz-sticker {
+            background: var(--white);
+            border-radius: 30px;
+            width: 100%;
+            padding: 45px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .quiz-question {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px; /* Scaled up from 34px */
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.35;
+            text-align: center;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .quiz-option {
+            width: 100%;
+            padding: 26px 36px; /* Increased padding */
+            border-radius: 20px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 30px; /* Scaled up from 28px */
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid #e2e8f0;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        .quiz-option.option-correct {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.08);
+            color: #065f46;
+        }
+
+        .quiz-option.option-correct i {
+            color: #10b981;
+            font-size: 36px;
+        }
+
+        .quiz-option.option-incorrect {
+            color: var(--text-muted);
+        }
+
+        /* ==================== FRAME 2 SPECS ==================== */
+        .reveal-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            text-align: center;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .reveal-badge {
+            background: #10b981;
+            color: var(--white);
+            font-family: 'Outfit', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            padding: 10px 30px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .reveal-text-eng {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 46px; /* Adjusted for better layout spacing */
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.25;
+        }
+
+        .reveal-text-tel {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+            border-top: 1.5px dashed rgba(255,255,255,0.15);
+            padding-top: 25px;
+            width: 100%;
+        }
+
+        /* ==================== FRAME 3 SPECS ==================== */
+        .catch-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 50px 45px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .catch-line {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1.45;
+            color: var(--white);
+        }
+
+        .catch-line.highlight {
+            color: var(--accent);
+        }
+
+        .catch-line.conclusion {
+            font-size: 36px;
+            color: var(--ig-link);
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            border-top: 1.5px dashed rgba(255,255,255,0.15);
+            padding-top: 25px;
+        }
+
+        /* ==================== FRAME 4 SPECS ==================== */
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            gap: 40px;
+        }
+
+        .cta-header-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.35;
+        }
+
+        /* Reshare style sticker container */
+        .reshare-sticker-box {
+            width: 75%;
+            height: 600px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+            border: 5px solid var(--white);
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .reshare-sticker-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Overlay Link Sticker */
+        .link-sticker {
+            background: var(--ig-link);
+            color: var(--primary-dark);
+            padding: 18px 40px;
+            border-radius: 40px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 25px rgba(0, 242, 254, 0.35);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+        }
+
+        /* Bottom WhatsApp Pill */
+        .whatsapp-pill {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 16px 40px;
+            border-radius: 40px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .whatsapp-pill i {
+            color: #25D366;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== FRAME 1 ==================== -->
+    <div class="frame frame-teal" id="frame-1">
+        <div class="story-header">
+            <div class="location-sticker">
+                <i class="fas fa-map-marker-alt"></i> Kompally, Hyderabad
+            </div>
+            <img class="logo-story" src="logo.png" alt="ActiveRehab TransCare Logo">
+        </div>
+        
+        <h2 class="quiz-intro-text">Quick quiz for families 👇</h2>
+
+        <div class="story-image-card">
+            <img src="v_story_tkr_bed.png" alt="Post-operative TKR patient resting on hospital bed">
+        </div>
+
+        <div class="quiz-sticker">
+            <h3 class="quiz-question">True or false: You can walk the SAME DAY as a knee replacement? 🦵</h3>
+            <div class="quiz-options">
+                <div class="quiz-option option-correct">
+                    <span>True</span>
+                    <i class="fas fa-circle-check"></i>
+                </div>
+                <div class="quiz-option option-incorrect">
+                    <span>False</span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-footer">
+            <!-- Space for IG Story UI spacing -->
+        </div>
+    </div>
+
+    <!-- ==================== FRAME 2 ==================== -->
+    <div class="frame frame-navy" id="frame-2">
+        <div class="story-header">
+            <div class="location-sticker">
+                <i class="fas fa-map-marker-alt"></i> Kompally, Hyderabad
+            </div>
+            <img class="logo-story" src="logo.png" alt="ActiveRehab TransCare Logo">
+        </div>
+
+        <div class="story-image-card">
+            <img src="v_discharge_physiotherapy.png" alt="Patient training with therapist inside parallel rehabilitation bars">
+        </div>
+
+        <div class="reveal-container">
+            <div class="reveal-badge">
+                <i class="fas fa-circle-check"></i> CORRECT
+            </div>
+            <h2 class="reveal-text-eng">✅ TRUE — most patients stand and take steps within 24 hours…</h2>
+            <p class="reveal-text-tel">WITH a physiotherapist beside them.</p>
+        </div>
+
+        <div class="story-footer">
+            <!-- Space for IG Story UI spacing -->
+        </div>
+    </div>
+
+    <!-- ==================== FRAME 3 ==================== -->
+    <div class="frame frame-navy" id="frame-3">
+        <div class="story-header">
+            <div class="location-sticker">
+                <i class="fas fa-map-marker-alt"></i> Kompally, Hyderabad
+            </div>
+            <img class="logo-story" src="logo.png" alt="ActiveRehab TransCare Logo">
+        </div>
+
+        <div class="story-image-card">
+            <img src="v_story_knee_anatomy.png" alt="3D medical anatomical knee joint illustration">
+        </div>
+
+        <div class="catch-container">
+            <h2 class="catch-line">What's risky isn't walking early.</h2>
+            <h2 class="catch-line highlight">It's walking unsupervised at home in week 1.</h2>
+            <p class="catch-line conclusion">That's the gap step-down care fills.</p>
+        </div>
+
+        <div class="story-footer">
+            <!-- Space for IG Story UI spacing -->
+        </div>
+    </div>
+
+    <!-- ==================== FRAME 4 ==================== -->
+    <div class="frame frame-teal" id="frame-4">
+        <div class="story-header">
+            <div class="location-sticker">
+                <i class="fas fa-map-marker-alt"></i> Kompally, Hyderabad
+            </div>
+            <img class="logo-story" src="logo.png" alt="ActiveRehab TransCare Logo">
+        </div>
+
+        <div class="cta-container">
+            <h2 class="cta-header-text">3 questions every family should ask before discharge → new post 👇</h2>
+            
+            <div class="reshare-sticker-box">
+                <img class="reshare-sticker-img" src="instagram_carousel_slide_1.png" alt="Tonight's carousel post preview">
+            </div>
+
+            <!-- Interactive Link Sticker -->
+            <div class="link-sticker">
+                <i class="fas fa-link"></i> See Post
+            </div>
+        </div>
+
+        <div class="story-footer">
+            <div class="whatsapp-pill">
+                <i class="fab fa-whatsapp"></i> +91 81068 22020
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

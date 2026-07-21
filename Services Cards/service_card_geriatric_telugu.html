@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geriatric & Fall Prevention Card (Telugu) - ActiveRehab TransCare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #003366;       /* Clinical Trust Navy */
+            --saffron: #e65c00;       /* Healing Saffron Orange */
+            --bg-light: #f8fafc;      /* Soft Slate */
+            --text-dark: #0f172a;     /* Dark Slate Text */
+            --text-muted: #64748b;    /* Muted Slate Text */
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 559px;
+            height: 794px;
+            background-color: #ffffff;
+            font-family: 'Noto Sans Telugu', 'Inter', sans-serif;
+            color: var(--text-dark);
+            overflow: hidden;
+            display: flex;
+            position: relative;
+        }
+
+        /* Left Saffron Architectural Accent Bar */
+        .vertical-accent-bar {
+            width: 50px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--saffron) 0%, rgba(230, 92, 0, 0.4) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .vertical-bar-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Main Content Area */
+        .content-area {
+            flex: 1;
+            margin-left: 50px;
+            padding: 25px 25px 50px 30px; /* Reduced top padding slightly for Telugu text */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        /* Header */
+        .header-section {
+            margin-bottom: 8px;
+        }
+
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .logo-img {
+            height: 65px;
+            width: auto;
+            display: block;
+        }
+
+        .pathway-badge {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--saffron);
+            border: 1.5px solid var(--saffron);
+            padding: 4px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background-color: rgba(230, 92, 0, 0.03);
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .main-title {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            font-weight: 500;
+            font-family: 'Noto Sans Telugu', sans-serif;
+        }
+
+        /* Grid Layout for Treatment Details */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 12px;
+            flex: 1;
+            margin-bottom: 10px;
+        }
+
+        .column-title {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1.5px solid rgba(0, 51, 102, 0.1);
+            padding-bottom: 4px;
+        }
+
+        .column-title i {
+            color: var(--saffron);
+        }
+
+        /* Timeline Box Styles */
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            height: 100%;
+        }
+
+        .timeline-card {
+            background-color: var(--bg-light);
+            border-left: 3.5px solid var(--saffron);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            border-radius: 0 10px 10px 0;
+            padding: 8px 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .timeline-tag {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        .timeline-desc {
+            font-size: 0.66rem;
+            color: var(--text-dark);
+            line-height: 1.35;
+            font-weight: 500;
+        }
+
+        /* Modalities Box Styles */
+        .modalities-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .modalities-card-wrapper {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 10px 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .modality-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            padding: 1px 0;
+        }
+
+        .modality-label {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .modality-label i {
+            font-size: 0.65rem;
+            color: var(--saffron);
+        }
+
+        .modality-desc {
+            font-size: 0.66rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+            padding-left: 12px;
+        }
+
+        /* Action Block */
+        .action-block {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.03) 0%, rgba(230, 92, 0, 0.02) 100%);
+            border: 1px solid rgba(0, 51, 102, 0.1);
+            border-radius: 12px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            margin-bottom: 8px;
+        }
+
+        .action-info {
+            flex: 1;
+            padding-right: 12px;
+        }
+
+        .action-title {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 3px;
+            text-transform: uppercase;
+        }
+
+        .action-text {
+            font-size: 0.66rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        .qr-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .qr-border-box {
+            padding: 3px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .qr-image {
+            width: 65px;
+            height: 65px;
+            display: block;
+        }
+
+        .qr-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            text-align: left;
+        }
+
+        .qr-caption-top {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--saffron);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .qr-caption-bottom {
+            font-size: 0.68rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Bottom Footer Strap */
+        .bottom-footer-strap {
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+            width: calc(100% - 50px);
+            height: 35px;
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .footer-text {
+            color: #ffffff;
+            font-size: 0.66rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Noto Sans Telugu', sans-serif;
+        }
+
+        .footer-text i {
+            color: var(--saffron);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Left Vertical Accent Bar -->
+    <div class="vertical-accent-bar">
+        <span class="vertical-bar-text">ACTIVEREHAB TRANSCARE</span>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content-area">
+        
+        <!-- Header -->
+        <div class="header-section">
+            <div class="top-row">
+                <img src="logo.png" alt="ActiveRehab Logo" class="logo-img">
+                <span class="pathway-badge">వృద్ధాప్య మార్గం</span>
+            </div>
+            <div class="header-text">
+                <h1 class="main-title">వృద్ధులలో పడిపోవుట నివారించడం</h1>
+                <p class="subtitle">వృద్ధ రోగులలో నడకపై నమ్మకాన్ని పెంపొందించడం, కండరాల క్షీణత (sarcopenia) నివారించడం, తలతిరగడం (vertigo) తగ్గించడం మరియు బ్యాలెన్స్ శిక్షణ.</p>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="details-grid">
+            
+            <!-- Column 1: Recovery Timeline -->
+            <div class="timeline-container">
+                <span class="column-title"><i class="fa-solid fa-calendar-check"></i> రికవరీ ప్రణాళిక</span>
+                
+                <div class="timeline-card">
+                    <span class="timeline-tag">రోజులు 1 - 5: భద్రతా సెటప్ & వెస్టిబ్యులర్ శిక్షణ</span>
+                    <p class="timeline-desc">ఇంటి భద్రత (EFPT) పరీక్ష, బ్యాలెన్స్ విశ్లేషణ, సున్నితమైన స్ట్రెచింగ్ మరియు డబుల్-రైల్ నడక శిక్షణ.</p>
+                </div>
+
+                <div class="timeline-card">
+                    <span class="timeline-tag">రోజులు 6 - 15: కండరాల బలం & స్టాన్స్ శిక్షణ</span>
+                    <p class="timeline-desc">కండరాల క్షీణతను నివారించే తక్కువ-తీవ్రత వ్యాయామాలు, బ్యాలెన్స్ మరియు ప్రొప్రియోసెప్షన్ ప్యాడ్ల వ్యాయామాలు.</p>
+                </div>
+
+                <div class="timeline-card">
+                    <span class="timeline-tag">వారాలు 3 - 4: డ్యూయల్-టాస్క్ నడక</span>
+                    <p class="timeline-desc">డ్యూయల్-టాస్క్ కాగ్నిటివ్ నడక శిక్షణ (నడుస్తూ పనులు చేయడం), గృహ వాతావరణ బదిలీలు మరియు సురక్షితమైన స్వతంత్ర నడక.</p>
+                </div>
+            </div>
+
+            <!-- Column 2: Treatment Modalities -->
+            <div class="modalities-container">
+                <span class="column-title"><i class="fa-solid fa-hand-holding-medical"></i> చికిత్స పద్ధతులు</span>
+                <div class="modalities-card-wrapper">
+                
+                <div class="modality-item">
+                    <span class="modality-label"><i class="fa-solid fa-circle-chevron-right"></i> బ్యాలెన్స్ శిక్షణ</span>
+                    <p class="modality-desc">ఇంట్లో ఉండే గడపలు, తివాచీల వంటి అడ్డంకులను అధిగమించే శిక్షణ.</p>
+                </div>
+
+                <div class="modality-item">
+                    <span class="modality-label"><i class="fa-solid fa-circle-chevron-right"></i> వెస్టిబ్యులర్ రిహాబిలిటేషన్</span>
+                    <p class="modality-desc">వృద్ధులలో తలతిరగడం (vertigo) నయం చేసే ఎప్లీ మరియు VOR వ్యాయామాలు.</p>
+                </div>
+
+                <div class="modality-item">
+                    <span class="modality-label"><i class="fa-solid fa-circle-chevron-right"></i> కండరాల బలోపేతం</span>
+                    <p class="modality-desc">పిక్కలు, తొడలు మరియు వెన్నెముక కండరాల ప్రత్యేక క్లినికల్ వ్యాయామాలు.</p>
+                </div>
+
+                <div class="modality-item">
+                    <span class="modality-label"><i class="fa-solid fa-circle-chevron-right"></i> ప్రొప్రియోసెప్షన్ ప్యాడ్లు</span>
+                    <p class="modality-desc">హై-డెన్సిటీ బ్యాలెన్స్ ప్యాడ్లు మరియు డైనమిక్ టిల్ట్ వోబుల్ బోర్డులు.</p>
+                </div>
+                </div> <!-- /modalities-card-wrapper -->
+            </div>
+
+        </div>
+
+        <!-- Action Block -->
+        <div class="action-block">
+            <div class="action-info">
+                <h4 class="action-title">అడ్మిషన్ అర్హతను పరిశీలించండి</h4>
+                <p class="action-text">ఫాల్-రిస్క్ స్క్రీనింగ్ నిర్వహించండి, ఆసుపత్రి బదిలీని సమన్వయం చేయండి మరియు ప్రత్యేక వృద్ధాప్య రికవరీ గదిని పొందండి.</p>
+            </div>
+            <div class="qr-wrap">
+                <div class="qr-border-box">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=003366&data=https%3A%2F%2Fwa.me%2F918106822020%3Ftext%3DHello%2520ActiveRehab%2520TransCare%252C%2520I%2520would%2520like%2520to%2520enquire%2520about%2520admitting%2520a%2520patient%2520to%2520the%2520Geriatric%2520%2526%2520Fall%2520Prevention%2520program%2520(Telugu%2520Card)." alt="WhatsApp QR Code" class="qr-image">
+                </div>
+                <div class="qr-caption">
+                    <span class="qr-caption-top">చాట్ చేయడానికి స్కాన్ చేయండి</span>
+                    <span class="qr-caption-bottom">WhatsApp</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info Row just above bottom strap -->
+        <div class="contact-info-row" style="font-size: 0.76rem; color: var(--primary); font-weight: 800; display: flex; gap: 20px; align-items: center; margin-top: 5px; margin-bottom: 12px; padding-left: 5px;">
+            <span><i class="fa-solid fa-phone" style="color: var(--saffron); margin-right: 6px;"></i> +91 81068 22020</span>
+            <span><i class="fa-solid fa-globe" style="color: var(--saffron); margin-right: 6px;"></i> activerehabtranscare.in</span>
+        </div>
+
+        <!-- Bottom Footer Strap -->
+        <div class="bottom-footer-strap">
+            <span class="footer-text"><i class="fa-solid fa-location-dot"></i> లక్ష్మీ నగర్ కాలనీ, కొంపల్లి, హైదరాబాద్ | అడ్మిషన్లు ప్రారంభమైనవి</span>
+        </div>
+
+    </div>
+
+</body>
+</html>

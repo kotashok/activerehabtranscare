@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Informed Consent & Inpatient Admission Agreement - ActiveRehab TransCare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #003366;       /* Clinical Trust Navy */
+            --saffron: #e65c00;       /* Healing Saffron Orange */
+            --bg-light: #f8fafc;      /* Soft Slate */
+            --text-dark: #0f172a;     /* Dark Slate Text */
+            --text-muted: #64748b;    /* Muted Slate Text */
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            background-color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Standard A4 Page container */
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 20mm 18mm;
+            position: relative;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            page-break-after: always;
+            overflow: hidden;
+        }
+
+        /* Header Styles */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 3px solid var(--saffron);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .logo-box img {
+            height: 52px;
+            width: auto;
+            display: block;
+        }
+
+        .doc-title-box {
+            text-align: right;
+        }
+
+        .doc-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .doc-sublabel {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        /* Headings */
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1.5px solid rgba(0, 51, 102, 0.1);
+            padding-bottom: 4px;
+        }
+
+        .section-title i {
+            color: var(--saffron);
+            font-size: 0.8rem;
+        }
+
+        /* Section blocks */
+        .section-block {
+            margin-bottom: 20px;
+        }
+
+        /* Tables for Patient Info */
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        .details-table th, .details-table td {
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            font-size: 0.76rem;
+            text-align: left;
+        }
+
+        .details-table th {
+            background-color: var(--bg-light);
+            color: var(--primary);
+            font-weight: 700;
+            width: 25%;
+        }
+
+        .details-table td {
+            color: var(--text-dark);
+            width: 25%;
+        }
+
+        /* List Items */
+        .scope-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .scope-item {
+            position: relative;
+            padding-left: 18px;
+            font-size: 0.72rem;
+            line-height: 1.4;
+            color: var(--text-dark);
+        }
+
+        .scope-item::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 1px;
+            color: var(--saffron);
+            font-size: 0.7rem;
+        }
+
+        /* Risks Grid */
+        .risks-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .risk-card {
+            background-color: var(--bg-light);
+            border-left: 3px solid var(--saffron);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            border-radius: 0 8px 8px 0;
+            padding: 8px 12px;
+        }
+
+        .risk-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        .risk-desc {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            line-height: 1.35;
+        }
+
+        /* Special Alert Callout Boxes */
+        .callout-box {
+            background-color: rgba(230, 92, 0, 0.03);
+            border: 1px dashed var(--saffron);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-top: 5px;
+        }
+
+        .callout-header {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--saffron);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+        }
+
+        .callout-text {
+            font-size: 0.7rem;
+            line-height: 1.4;
+            color: var(--text-dark);
+        }
+
+        /* Page Footer styling */
+        .page-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 8px;
+            font-size: 0.64rem;
+            color: var(--text-muted);
+            margin-top: 15px;
+        }
+
+        .page-footer .address {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .page-footer .address i {
+            color: var(--saffron);
+        }
+
+        /* Page 2 Specific Spacings */
+        .protocol-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .protocol-item {
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.72rem;
+            line-height: 1.45;
+        }
+
+        .protocol-item::before {
+            content: "\f0f2";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--primary);
+            font-size: 0.7rem;
+        }
+
+        /* Bilingual Declarations */
+        .bilingual-declarations {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .declaration-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 14px;
+        }
+
+        .decl-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            border-bottom: 1px solid rgba(0, 51, 102, 0.05);
+            padding-bottom: 2px;
+        }
+
+        .decl-text {
+            font-size: 0.68rem;
+            line-height: 1.45;
+            color: var(--text-dark);
+            text-align: justify;
+        }
+
+        .decl-text.telugu {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 0.66rem;
+            line-height: 1.5;
+        }
+
+        /* Signatures Grid */
+        .signatures-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .sig-block {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 14px;
+            height: 95px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sig-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 4px;
+        }
+
+        .sig-placeholder {
+            border-bottom: 1px solid #cbd5e1;
+            height: 35px;
+            margin: 5px 0;
+        }
+
+        .sig-details {
+            font-size: 0.64rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= PAGE 1 ================= -->
+    <div class="page">
+        
+        <!-- Header -->
+        <div class="header-container">
+            <div class="logo-box">
+                <img src="logo.png" alt="ActiveRehab TransCare Logo">
+            </div>
+            <div class="doc-title-box">
+                <h1 class="doc-label">General Consent & Admission</h1>
+                <p class="doc-sublabel">Inpatient Transition Care & Rehab Agreement</p>
+            </div>
+        </div>
+
+        <div class="content-body">
+            
+            <!-- Section I: Patient & Guardian Details -->
+            <div class="section-block">
+                <h2 class="section-title"><i class="fa-solid fa-user-injured"></i> I. Patient & Guardian Information</h2>
+                <table class="details-table">
+                    <tr>
+                        <th>Patient Full Name</th>
+                        <td></td>
+                        <th>Guardian / Next of Kin Name</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Age / Gender</th>
+                        <td></td>
+                        <th>Relation to Patient</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>UHID / Reg No.</th>
+                        <td></td>
+                        <th>Guardian Contact Number</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Primary Diagnosis</th>
+                        <td></td>
+                        <th>Guardian Govt ID / Address</th>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Section II: Scope of Clinical Care -->
+            <div class="section-block">
+                <h2 class="section-title"><i class="fa-solid fa-briefcase-medical"></i> II. Scope of Clinical Care & Protocols</h2>
+                <ul class="scope-list">
+                    <li class="scope-item"><strong>Skilled Nursing Care:</strong> 24/7 monitoring of vitals, sterile wound dressings, subcutaneous injections, and professional medication administration.</li>
+                    <li class="scope-item"><strong>Active Physiotherapy:</strong> Joint mobilization, posture re-education, resistance training, and specialized clinical balance training.</li>
+                    <li class="scope-item"><strong>Gait & Functional Mobility:</strong> Safe transfers practice, progressive corridor walking drills, and stair-climbing assessments.</li>
+                    <li class="scope-item"><strong>Cardiorespiratory Support:</strong> Monitored oxygen therapy, incentive spirometry exercises, and telemetry pacing target metrics.</li>
+                </ul>
+            </div>
+
+            <!-- Section III: Clinical Risks & Complications -->
+            <div class="section-block">
+                <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> III. Anticipated Risks & Clinical Complications</h2>
+                <div class="risks-grid">
+                    <div class="risk-card">
+                        <h3 class="risk-name">Exercise Slips & Slips</h3>
+                        <p class="risk-desc">Accidental slips or loss of balance during weight-bearing shifts or functional balance training despite therapist support.</p>
+                    </div>
+                    <div class="risk-card">
+                        <h3 class="risk-name">Muscle Strains & Pain</h3>
+                        <p class="risk-desc">Temporary post-exercise soreness, muscle spasms, localized joint swelling, or mild ligamentous strain during intensive stretching.</p>
+                    </div>
+                    <div class="risk-card">
+                        <h3 class="risk-name">DVT & Pressure Ulcers</h3>
+                        <p class="risk-desc">Deep vein thrombosis (blood clots in legs) or localized skin breakdown/pressure sores arising from prolonged recumbent bed rest.</p>
+                    </div>
+                    <div class="risk-card">
+                        <h3 class="risk-name">Cardiac & Vital Strain</h3>
+                        <p class="risk-desc">Temporary spike in blood pressure, heart rate pacing elevations, mild shortness of breath, or transient oxygen desaturations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section IV: Special Step-Down Facility Disclosures -->
+            <div class="section-block" style="margin-bottom: 0;">
+                <h2 class="section-title"><i class="fa-solid fa-building-circle-exclamation"></i> IV. Special Step-Down Facility Disclosures</h2>
+                <div class="callout-box">
+                    <h3 class="callout-header"><i class="fa-solid fa-shield-halved"></i> Boundaries of Transitional Inpatient Care</h3>
+                    <p class="callout-text">
+                        The Guardian explicitly acknowledges that ActiveRehab TransCare is a specialized <strong>Step-Down Transitional Inpatient Care & Rehabilitation Facility</strong> and **NOT** a tertiary-care multi-specialty acute hospital. The facility is equipped with oxygen delivery lines, emergency airway carts, crash carts, portable ventilators, and resuscitation tools under on-site intensivists, but **DOES NOT possess an emergency surgical operating theater, emergency bypass surgery access, or invasive arterial hemodynamic lines**.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="page-footer">
+            <span class="address">
+                <i class="fa-solid fa-location-dot"></i> Kompally, Hyderabad | 
+                <i class="fa-solid fa-phone" style="color: var(--saffron); margin-left: 5px; margin-right: 2px;"></i> +91 81068 22020 | 
+                <i class="fa-solid fa-envelope" style="color: var(--saffron); margin-left: 5px; margin-right: 2px;"></i> activerehab.tc@gmail.com | 
+                <i class="fa-solid fa-globe" style="color: var(--saffron); margin-left: 5px; margin-right: 2px;"></i> activerehabtranscare.in
+            </span>
+            <span>Page 1 of 2</span>
+        </div>
+
+    </div>
+
+    <!-- ================= PAGE 2 ================= -->
+    <div class="page">
+        
+        <!-- Header -->
+        <div class="header-container">
+            <div class="logo-box">
+                <img src="logo.png" alt="ActiveRehab TransCare Logo">
+            </div>
+            <div class="doc-title-box">
+                <h1 class="doc-label">General Consent & Admission</h1>
+                <p class="doc-sublabel">Inpatient Transition Care & Rehab Agreement</p>
+            </div>
+        </div>
+
+        <div class="content-body">
+            
+            <!-- Section V: Emergency Tertiary Transfer Protocol -->
+            <div class="section-block">
+                <h2 class="section-title"><i class="fa-solid fa-truck-medical"></i> V. Emergency Tertiary Transfer Protocol</h2>
+                <ul class="protocol-list">
+                    <li class="protocol-item">In the event of a severe, acute clinical deterioration or airway crisis that cannot be resolved on-site, the attending clinical team will immediately initiate resuscitation (CPR), high-flow oxygenation, and mechanical stabilization.</li>
+                    <li class="protocol-item">The facility will simultaneously initiate immediate emergency transit via an <strong>Advanced Life Support (ALS) Cardiac Ambulance</strong> equipped with transport ventilators and clinical escorts to a tertiary critical care facility.</li>
+                    <li class="protocol-item" style="border: 1px dashed var(--primary); padding: 8px 8px 8px 24px; border-radius: 6px; background-color: rgba(0, 51, 102, 0.02);">
+                        <strong>Designated Tertiary Hospital Partner (To be filled by Guardian):</strong><br>
+                        ____________________________________________________________________________________________<br>
+                        <span style="font-size: 0.64rem; color: var(--text-muted); font-style: italic;">(If left blank or unavailable, the facility will transfer the patient to the nearest available tertiary hospital ICU).</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section VI: Financial Responsibility & Liability Waiver -->
+            <div class="section-block">
+                <h2 class="section-title"><i class="fa-solid fa-file-invoice-dollar"></i> VI. Financial Responsibility & Liability Waiver</h2>
+                <ul class="scope-list">
+                    <li class="scope-item" style="grid-column: span 2;">All costs associated with emergency transport, cardiac ambulance, and critical ICU admissions at the receiving tertiary hospital are the **sole financial responsibility of the Guardian**.</li>
+                    <li class="scope-item" style="grid-column: span 2;">The Guardian holds ActiveRehab TransCare free of any clinical or financial liability arising from emergency transit delays (due to traffic, transit variables, or tertiary hospital ICU bed availability).</li>
+                </ul>
+            </div>
+
+            <!-- Section VII: Bilingual Declaration of Consent -->
+            <div class="section-block">
+                <h2 class="section-title"><i class="fa-solid fa-signature"></i> VII. Declaration of Consent & Understanding</h2>
+                <div class="bilingual-declarations">
+                    <div class="declaration-card">
+                        <h4 class="decl-title">English Declaration</h4>
+                        <p class="decl-text">
+                            I hereby declare that I have read this consent form (or had it translated to me in a language I fully understand). I have had a comprehensive discussion with Dr. Ashok P. Kota's clinical team regarding my patient's clinical state, the procedures, risks, and limitations of this step-down facility. I pre-authorize and consent to the Emergency Transfer Protocol and voluntary inpatient admission.
+                        </p>
+                    </div>
+                    <div class="declaration-card">
+                        <h4 class="decl-title">తెలుగు డిక్లరేషన్ (Telugu Declaration)</h4>
+                        <p class="decl-text telugu">
+                            నేను ఈ సమ్మతి పత్రం (consent form) లోని వివరాలను చదువుకున్నాను (లేదా నాకు తెలిసిన భాషలో అనువదించబడినది). నా రోగి యొక్క పరిస్థితి, ఇక్కడి చికిత్స విధానం మరియు అత్యవసర మార్పిడి విధానం (Emergency Transfer Protocol) గురించి వైద్యులతో నేను చర్చించాను. ఈ ట్రాన్సిషన్ కేర్ కేంద్రం యొక్క పరిమితులను నేను పూర్తిగా అంగీకరిస్తూ, రోగి ప్రవేశానికి స్వచ్ఛందంగా సమ్మతిస్తున్నాను.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section VIII: Medico-Legal Signatures Grid -->
+            <div class="section-block" style="margin-bottom: 0;">
+                <h2 class="section-title"><i class="fa-solid fa-pen-clip"></i> VIII. Medico-Legal Execution Signatures</h2>
+                <div class="signatures-grid">
+                    <div class="sig-block">
+                        <span class="sig-label">Signature of Guardian / Next-of-Kin</span>
+                        <div class="sig-placeholder"></div>
+                        <div class="sig-details">
+                            <span>Name: ______________________</span>
+                            <span>Relation: __________________</span>
+                        </div>
+                    </div>
+                    <div class="sig-block">
+                        <span class="sig-label">Signature of Attending Clinician</span>
+                        <div class="sig-placeholder"></div>
+                        <div class="sig-details">
+                            <span>Name: Dr. Ashok P. Kota / Team</span>
+                            <span>Reg No: ____________________</span>
+                        </div>
+                    </div>
+                    <div class="sig-block" style="height: 80px;">
+                        <span class="sig-label">Signature of Witness 1 (Guardian Side)</span>
+                        <div class="sig-placeholder" style="height: 25px;"></div>
+                        <div class="sig-details">
+                            <span>Name: ______________________</span>
+                            <span>Date: ____/____/2026</span>
+                        </div>
+                    </div>
+                    <div class="sig-block" style="height: 80px;">
+                        <span class="sig-label">Signature of Witness 2 (Facility Side)</span>
+                        <div class="sig-placeholder" style="height: 25px;"></div>
+                        <div class="sig-details">
+                            <span>Name: ______________________</span>
+                            <span>Date: ____/____/2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="page-footer">
+            <span class="address">
+                <i class="fa-solid fa-location-dot"></i> Kompally, Hyderabad | 
+                <i class="fa-solid fa-phone" style="color: var(--saffron); margin-left: 5px; margin-right: 2px;"></i> +91 81068 22020 | 
+                <i class="fa-solid fa-envelope" style="color: var(--saffron); margin-left: 5px; margin-right: 2px;"></i> activerehab.tc@gmail.com | 
+                <i class="fa-solid fa-globe" style="color: var(--saffron); margin-left: 5px; margin-right: 2px;"></i> activerehabtranscare.in
+            </span>
+            <span>Page 2 of 2</span>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geriatric & Fall Prevention Card - ActiveRehab TransCare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #003366;       /* Clinical Trust Navy */
+            --saffron: #e65c00;       /* Healing Saffron Orange */
+            --bg-light: #f8fafc;      /* Soft Slate */
+            --text-dark: #0f172a;     /* Dark Slate Text */
+            --text-muted: #64748b;    /* Muted Slate Text */
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 559px;
+            height: 794px;
+            background-color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            overflow: hidden;
+            display: flex;
+            position: relative;
+        }
+
+        /* Left Saffron Architectural Accent Bar */
+        .vertical-accent-bar {
+            width: 50px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--saffron) 0%, rgba(230, 92, 0, 0.4) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .vertical-bar-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Main Content Area */
+        .content-area {
+            flex: 1;
+            margin-left: 50px;
+            padding: 30px 25px 50px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        /* Header */
+        .header-section {
+            margin-bottom: 12px;
+        }
+
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            height: 65px;
+            width: auto;
+            display: block;
+        }
+
+        .pathway-badge {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--saffron);
+            border: 1.5px solid var(--saffron);
+            padding: 4px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background-color: rgba(230, 92, 0, 0.03);
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .main-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        /* Grid Layout for Treatment Details */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 15px;
+            flex: 1;
+            margin-bottom: 15px;
+        }
+
+        .column-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1.5px solid rgba(0, 51, 102, 0.1);
+            padding-bottom: 4px;
+        }
+
+        .column-title i {
+            color: var(--saffron);
+        }
+
+        /* Timeline Box Styles */
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            height: 100%;
+        }
+
+        .timeline-card {
+            background-color: var(--bg-light);
+            border-left: 3.5px solid var(--saffron);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            border-radius: 0 10px 10px 0;
+            padding: 10px 14px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .timeline-tag {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 3px;
+            display: block;
+        }
+
+        .timeline-desc {
+            font-size: 0.72rem;
+            color: var(--text-dark);
+            line-height: 1.35;
+            font-weight: 500;
+        }
+
+        /* Modalities Box Styles */
+        .modalities-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .modalities-card-wrapper {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 14px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .modality-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding: 2px 0;
+        }
+
+        .modality-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .modality-label i {
+            font-size: 0.7rem;
+            color: var(--saffron);
+        }
+
+        .modality-desc {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+            padding-left: 12px;
+        }
+
+        /* Action Block */
+        .action-block {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.03) 0%, rgba(230, 92, 0, 0.02) 100%);
+            border: 1px solid rgba(0, 51, 102, 0.1);
+            border-radius: 12px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            margin-bottom: 8px;
+        }
+
+        .action-info {
+            flex: 1;
+            padding-right: 15px;
+        }
+
+        .action-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .action-text {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        .qr-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qr-border-box {
+            padding: 4px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .qr-image {
+            width: 72px;
+            height: 72px;
+            display: block;
+        }
+
+        .qr-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            text-align: left;
+        }
+
+        .qr-caption-top {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--saffron);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .qr-caption-bottom {
+            font-size: 0.72rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Bottom Footer Strap */
+        .bottom-footer-strap {
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+            width: calc(100% - 50px);
+            height: 35px;
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .footer-text {
+            color: #ffffff;
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-text i {
+            color: var(--saffron);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Left Vertical Accent Bar -->
+    <div class="vertical-accent-bar">
+        <span class="vertical-bar-text">ACTIVEREHAB TRANSCARE</span>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content-area">
+        
+        <!-- Header -->
+        <div class="header-section">
+            <div class="top-row">
+                <img src="logo.png" alt="ActiveRehab Logo" class="logo-img">
+                <span class="pathway-badge">Geriatric Pathway</span>
+            </div>
+            <div class="header-text">
+                <h1 class="main-title">Geriatric & Fall Prevention</h1>
+                <p class="subtitle">Reclaiming confidence in every step. Senior balance reconditioning, muscle sarcopenia reversal, vertigo relief, and double-rail walking safety training.</p>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="details-grid">
+            
+            <!-- Column 1: Recovery Timeline -->
+            <div class="timeline-container">
+                <span class="column-title"><i class="fa-solid fa-calendar-check"></i> Interactive Recovery Protocol</span>
+                
+                <div class="timeline-card">
+                    <span class="timeline-tag">Days 1 - 5: Safety Setup & Vestibular</span>
+                    <p class="timeline-desc">Environmental Fall Risk (EFPT) assessment, baseline balance profiling, gentle posture stretching, and double-rail walking guides.</p>
+                </div>
+
+                <div class="timeline-card">
+                    <span class="timeline-tag">Days 6 - 15: Strength & Stance</span>
+                    <p class="timeline-desc">Low-impact progressive muscle reconditioning to reverse sarcopenia, center-of-gravity drills, and proprioception balance pads exercises.</p>
+                </div>
+
+                <div class="timeline-card">
+                    <span class="timeline-tag">Weeks 3 - 4: Dual-Task Walking</span>
+                    <p class="timeline-desc">Advanced dual-task cognitive walking drills (solving tasks while walking), home simulation transfers, and safe independent pacing.</p>
+                </div>
+            </div>
+
+            <!-- Column 2: Treatment Modalities -->
+            <div class="modalities-container">
+                <span class="column-title"><i class="fa-solid fa-hand-holding-medical"></i> expectations</span>
+                <div class="modalities-card-wrapper">
+                
+                <div class="modality-item">
+                    <span class="modality-label"><i class="fa-solid fa-circle-chevron-right"></i> Balance Framework</span>
+                    <p class="modality-desc">EFPT training to clear thresholds, rugs, and overcome trip risks.</p>
+                </div>
+
+                <div class="modality-item">
+                    <span class="modality-label"><i class="fa-solid fa-circle-chevron-right"></i> Vestibular Rehab</span>
+                    <p class="modality-desc">Epley maneuvers and gaze stabilization (VOR) to cure senior vertigo.</p>
+                </div>
+
+                <div class="modality-item">
+                    <span class="modality-label"><i class="fa-solid fa-circle-chevron-right"></i> Sarcopenia Reversal</span>
+                    <p class="modality-desc">Custom clinical calf, quad, and spinal stabilizer strengthening.</p>
+                </div>
+
+                <div class="modality-item">
+                    <span class="modality-label"><i class="fa-solid fa-circle-chevron-right"></i> Proprioception Pods</span>
+                    <p class="modality-desc">High-density balance pads and dynamic tilt wobble boards.</p>
+                </div>
+                </div> <!-- /modalities-card-wrapper -->
+            </div>
+
+        </div>
+
+        <!-- Action Block -->
+        <div class="action-block">
+            <div class="action-info">
+                <h4 class="action-title">Verify Admission Eligibility</h4>
+                <p class="action-text">Conduct standard fall-risk screening, coordinate hospital transfers, and secure your specialized senior recovery suite.</p>
+            </div>
+            <div class="qr-wrap">
+                <div class="qr-border-box">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=003366&data=https%3A%2F%2Fwa.me%2F918106822020%3Ftext%3DHello%2520ActiveRehab%2520TransCare%252C%2520I%2520would%2520like%2520to%2520enquire%2520about%2520admitting%2520a%2520patient%2520to%2520the%2520Geriatric%2520%2526%2520Fall%2520Prevention%2520program." alt="WhatsApp QR Code" class="qr-image">
+                </div>
+                <div class="qr-caption">
+                    <span class="qr-caption-top">SCAN TO CHAT</span>
+                    <span class="qr-caption-bottom">WhatsApp</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info Row just above bottom strap -->
+        <div class="contact-info-row" style="font-size: 0.76rem; color: var(--primary); font-weight: 800; display: flex; gap: 20px; align-items: center; margin-top: 5px; margin-bottom: 12px; padding-left: 5px;">
+            <span><i class="fa-solid fa-phone" style="color: var(--saffron); margin-right: 6px;"></i> +91 81068 22020</span>
+            <span><i class="fa-solid fa-globe" style="color: var(--saffron); margin-right: 6px;"></i> activerehabtranscare.in</span>
+        </div>
+
+        <!-- Bottom Footer Strap -->
+        <div class="bottom-footer-strap">
+            <span class="footer-text"><i class="fa-solid fa-location-dot"></i> Laxmi Nagar Colony, Kompally, Hyderabad | Admissions Open</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
