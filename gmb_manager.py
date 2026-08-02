@@ -128,6 +128,25 @@ ActiveRehab TransCare bridges the gap perfectly. We manage the hard clinical det
 ✅ Complete parent/family coaching for home navigation
 
 Ensure a smooth, safe transition from hospital bed to home living. Click the 'Book' button below to consult with our clinical team directly on WhatsApp!"""
+    },
+    "Day 8: OPD General Physiotherapy": {
+        "title": "Advanced Outpatient Physiotherapy Clinic Services",
+        "category": "OPD Care",
+        "image_prompt": "A premium high-resolution professional photo for a healthcare GMB post. Inside the modern, brightly lit ActiveRehab TransCare outpatient department (OPD) clinic in Kompally, a South Asian Indian professional male physiotherapist in a solid dark blue polo shirt is performing specialized manual osteopathic adjustments on the shoulder joint of a South Asian Indian patient. The therapy room is clean, features modern exercise machines, soft warm lighting, and high ceilings. On the wall in the background, a clean 3D corporate sign of 'ActiveRehab TransCare' (navy and saffron/orange) is professionally mounted, appearing as a natural part of the facility.",
+        "text": """🏥 Complete Outpatient (OPD) Physiotherapy Services | ActiveRehab TransCare Hyderabad
+
+Are you struggling with chronic back pain, stiff joints, sports injuries, or recovery from an accident? You don't need to be hospitalized to receive world-class, evidence-based care.
+
+At our advanced outpatient clinic in Kompally, Lead Physiotherapist Dr. Ashok P. Kota (17+ years experience) and our specialist team provide customized OPD treatments for all major physical conditions:
+✅ Orthopedic & Joint Pain (Osteoarthritis, Frozen Shoulder, Sciatica, Chronic Back/Neck Pain)
+✅ Neurological Rehabilitation (Stroke Recovery, Parkinson's Balance Correction, Bell's Palsy)
+✅ Sports Injury Recovery (Ligament Tears, Sprains, Muscle Strains, Post-Arthroscopy rehabilitation)
+✅ Cardiorespiratory Care (Post-infectious lung expansion, chronic asthma stamina building)
+✅ Pediatric & Geriatric posture correction and balance training
+
+We combine advanced Canadian osteopathic adjustments, Swedish chiropractic techniques, and state-of-the-art clinical modalities to eliminate pain and restore full function.
+
+📍 Walk-in or book a dedicated OPD consultation today! Click the 'Call Now' button below to schedule your appointment immediately."""
     }
 }
 

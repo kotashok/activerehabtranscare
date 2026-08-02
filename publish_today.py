@@ -13,7 +13,8 @@ CAMPAIGN_MAP = [
     "Day 4: Premium Recovery Suites",
     "Day 5: Cardiorespiratory Rehab",
     "Day 6: Dr. Ashok P. Kota Spotlight",
-    "Day 7: Hospital-to-Home Transition"
+    "Day 7: Hospital-to-Home Transition",
+    "Day 8: OPD General Physiotherapy"
 ]
 
 def load_state():
