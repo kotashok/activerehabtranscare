@@ -527,6 +527,12 @@ def publish_blog():
         with open(app_js_path, "r", encoding="utf-8") as f:
             app_js_content = f.read()
             
+        # Clean up existing database record if it exists to prevent duplicates
+        pattern = re.compile(r"\s*'" + re.escape(slug) + r"':\s*\{.*?\}\s*,\n*", re.DOTALL)
+        if pattern.search(app_js_content):
+            app_js_content = pattern.sub("\n", app_js_content)
+            print(f"[OK] Cleaned existing database record for {slug} in {app_js_path}")
+            
         articles_marker = "const articles = {"
         if articles_marker in app_js_content:
             js_entry = f"""        '{slug}': {{
@@ -543,13 +549,54 @@ def publish_blog():
             app_js_content = app_js_content.replace(articles_marker, f"{articles_marker}\n{js_entry}")
             with open(app_js_path, "w", encoding="utf-8") as f:
                 f.write(app_js_content)
-            print(f"[OK] Successfully appended article record to {app_js_path}")
+            print(f"[OK] Successfully registered/updated article record in {app_js_path}")
             
     # 4. Update index.html (Incorporate into HTML card grid with direct <a href="{slug}.html"> link)
     index_html_path = "index.html"
     if os.path.exists(index_html_path):
         with open(index_html_path, "r", encoding="utf-8") as f:
             index_html_content = f.read()
+            
+        # Clean up existing HTML card if it exists
+        def find_html_card_bounds(html_content, card_slug):
+            link_str = f'href="{card_slug}.html"'
+            pos = html_content.find(link_str)
+            if pos == -1:
+                return None
+            start_comment = html_content.rfind('<!-- Blog Card:', 0, pos)
+            start_div = html_content.rfind('<div class="glass-card blog-card">', 0, pos)
+            start_pos = start_div
+            if start_comment != -1 and start_comment < start_div and (start_div - start_comment) < 150:
+                start_pos = start_comment
+            if start_pos == -1:
+                return None
+            open_div_pos = html_content.find('<div', start_pos)
+            if open_div_pos == -1:
+                return None
+            idx = open_div_pos + 4
+            nest_level = 1
+            while nest_level > 0 and idx < len(html_content):
+                next_open = html_content.find('<div', idx)
+                next_close = html_content.find('</div>', idx)
+                if next_close == -1:
+                    break
+                if next_open != -1 and next_open < next_close:
+                    nest_level += 1
+                    idx = next_open + 4
+                else:
+                    nest_level -= 1
+                    idx = next_close + 6
+            if nest_level == 0:
+                end_pos = idx
+                while end_pos < len(html_content) and html_content[end_pos] in '\r\n\t ':
+                    end_pos += 1
+                return start_pos, end_pos
+            return None
+
+        bounds = find_html_card_bounds(index_html_content, slug)
+        if bounds:
+            index_html_content = index_html_content[:bounds[0]] + index_html_content[bounds[1]:]
+            print(f"[OK] Cleaned existing HTML card for {slug} in {index_html_path}")
             
         grid_marker = '<div class="blog-grid">'
         if grid_marker in index_html_content:
@@ -574,7 +621,7 @@ def publish_blog():
             index_html_content = index_html_content.replace(grid_marker, f"{grid_marker}\n{html_card}")
             with open(index_html_path, "w", encoding="utf-8") as f:
                 f.write(index_html_content)
-            print(f"[OK] Successfully appended blog card to {index_html_path}")
+            print(f"[OK] Successfully registered/updated blog card in {index_html_path}")
             
     # 5. Commit and Deploy via Git
     print("\nPushing changes to GitHub Pages production server...")
