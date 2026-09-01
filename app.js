@@ -48,6 +48,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Blog Article Database & Dialog Logic
     const articles = {
+        'elderly-gait-instability-reversing-sarcopenia-to-prevent-falls': {
+            title: "Elderly Gait Instability: Reversing Sarcopenia to Prevent Falls",
+            category: "Fall Prevention",
+            date: "Sep 01, 2026",
+            author: "Dr. Ashok P. Kota",
+            image: "blog_fall_prevention.png",
+            content: `
+                <p class="lead">For senior citizens, a single fall can instantly threaten independence, leading to a fear of walking, muscle wasting, and prolonged hospital readmissions. However, advanced <a href="geriatric-fall-prevention.html" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">elderly fall prevention therapy</a> can successfully eliminate these hazards.</p>
+            <h5>1. Reversing Age-Related Sarcopenia</h5>
+            <p>As we age, we naturally lose muscle mass, especially in the calves, quadriceps, and core stabilizing groups. Targeted, low-impact geriatric rehabilitation builds strength back into these crucial balance muscle groups safely.</p>
+            <h5>2. Retraining the Somatosensory Pathways</h5>
+            <p>Our balance relies on proprioceptors in the soles of our feet. Exercising under professional guidance on high-density foam balance pods stimulates these sensors, allowing older adults to react instantly to changes in walking surfaces.</p>
+            <h5>3. Vestibular Equilibrium and Vertigo Relief</h5>
+            <p>Dizzy spells triggered by sudden head movements are major fall hazards. Dedicated vestibular exercises like gaze stabilization stabilize the visual field, restoring absolute walking confidence at home.</p>
+
+                    <!-- WhatsApp Call to Action -->
+                    <div class="blog-cta-box glass-card" style="margin-top: 40px; padding: 30px; text-align: center; background: rgba(0, 128, 128, 0.05); border: 1px solid rgba(0, 128, 128, 0.15); border-radius: var(--radius-md);">
+                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366; margin-bottom: 15px; display: inline-block;"></i>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: var(--primary); font-family: 'Outfit';">Book a Senior Fall-Risk Assessment</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Our clinical team will perform dynamic balance mappings and vestibular ocular checks to design an independent walking confidence plan.</p>
+                        <a href="https://wa.me/918106822020" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; padding: 12px 25px; align-items: center; justify-content: center; text-decoration: none; gap: 8px; border-radius: var(--radius-sm);">
+                            <i class="fab fa-whatsapp" style="margin-bottom: 0;"></i> Consult with Dr. Ashok
+                        </a>
+                    </div>
+            `
+        },
+
         'heart-rate-monitored-pacing-telemetry-rehabilitation-post-cabg': {
             title: "Heart-Rate Monitored Pacing: Telemetry Rehabilitation Post-CABG",
             category: "Cardiorespiratory Rehab",
@@ -122,33 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366; margin-bottom: 15px; display: inline-block;"></i>
                         <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: var(--primary); font-family: 'Outfit';">Secure Your Post-Op Recovery Suite</h3>
                         <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Our clinical team under Dr. Ashok P. Kota will review your surgical details, coordinate hospital transfer logs, and prepare a custom step-down roadmap.</p>
-                        <a href="https://wa.me/918106822020" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; padding: 12px 25px; align-items: center; justify-content: center; text-decoration: none; gap: 8px; border-radius: var(--radius-sm);">
-                            <i class="fab fa-whatsapp" style="margin-bottom: 0;"></i> Consult with Dr. Ashok
-                        </a>
-                    </div>
-            `
-        },
-
-        'elderly-gait-instability-reversing-sarcopenia-to-prevent-falls': {
-            title: "Elderly Gait Instability: Reversing Sarcopenia to Prevent Falls",
-            category: "Fall Prevention",
-            date: "Jul 21, 2026",
-            author: "Dr. Ashok P. Kota",
-            image: "blog_stepdown.png",
-            content: `
-                <p class="lead">For senior citizens, a single fall can instantly threaten independence, leading to a fear of walking, muscle wasting, and prolonged hospital readmissions. However, advanced <a href="geriatric-fall-prevention.html" style="color: var(--secondary); font-weight: 600; text-decoration: underline;">elderly fall prevention therapy</a> can successfully eliminate these hazards.</p>
-            <h5>1. Reversing Age-Related Sarcopenia</h5>
-            <p>As we age, we naturally lose muscle mass, especially in the calves, quadriceps, and core stabilizing groups. Targeted, low-impact geriatric rehabilitation builds strength back into these crucial balance muscle groups safely.</p>
-            <h5>2. Retraining the Somatosensory Pathways</h5>
-            <p>Our balance relies on proprioceptors in the soles of our feet. Exercising under professional guidance on high-density foam balance pods stimulates these sensors, allowing older adults to react instantly to changes in walking surfaces.</p>
-            <h5>3. Vestibular Equilibrium and Vertigo Relief</h5>
-            <p>Dizzy spells triggered by sudden head movements are major fall hazards. Dedicated vestibular exercises like gaze stabilization stabilize the visual field, restoring absolute walking confidence at home.</p>
-
-                    <!-- WhatsApp Call to Action (Point 3) -->
-                    <div class="blog-cta-box glass-card" style="margin-top: 40px; padding: 30px; text-align: center; background: rgba(0, 128, 128, 0.05); border: 1px solid rgba(0, 128, 128, 0.15); border-radius: var(--radius-md);">
-                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366; margin-bottom: 15px; display: inline-block;"></i>
-                        <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: var(--primary);">Book a Senior Fall-Risk Assessment</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Our clinical team will perform dynamic balance mappings and vestibular ocular checks to design an independent walking confidence plan.</p>
                         <a href="https://wa.me/918106822020" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; padding: 12px 25px; align-items: center; justify-content: center; text-decoration: none; gap: 8px; border-radius: var(--radius-sm);">
                             <i class="fab fa-whatsapp" style="margin-bottom: 0;"></i> Consult with Dr. Ashok
                         </a>
